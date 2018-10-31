@@ -8,108 +8,261 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Full Slider - Start Bootstrap Template</title>
+    <title>Creative - Start Bootstrap Theme</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
     <!-- Custom styles for this template -->
-    <link href="css/full-slider.css" rel="stylesheet">
+    <link href="css/creative.min.css" rel="stylesheet">
 
   </head>
 
-  <body>
+  <body id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Nutrinder</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#saved">Saved</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link js-scroll-trigger" href="#explore">Explore</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="#preferences">Preferences</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <header>
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-          <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active" style="background-image: url('http://placehold.it/1900x1080')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>First Slide</h3>
-              <p>This is a description for the first slide.</p>
+    <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase">
+              <strong>Your Favorite Source of Free Bootstrap Themes</strong>
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="text-faded mb-5">Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#saved">Find Out More</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-primary" id="saved">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading text-white">We've got what you need!</h2>
+            <hr class="light my-4">
+            <p class="text-faded mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
+            <a class="btn btn-light btn-xl js-scroll-trigger" href="#explore">Get Started!</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="explore">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">At Your Service</h2>
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fas fa-4x fa-gem text-primary mb-3 sr-icon-1"></i>
+              <h3 class="mb-3">Sturdy Templates</h3>
+              <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
             </div>
           </div>
-          <!-- Slide Two - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>Second Slide</h3>
-              <p>This is a description for the second slide.</p>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fas fa-4x fa-paper-plane text-primary mb-3 sr-icon-2"></i>
+              <h3 class="mb-3">Ready to Ship</h3>
+              <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
             </div>
           </div>
-          <!-- Slide Three - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>Third Slide</h3>
-              <p>This is a description for the third slide.</p>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fas fa-4x fa-code text-primary mb-3 sr-icon-3"></i>
+              <h3 class="mb-3">Up to Date</h3>
+              <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fas fa-4x fa-heart text-primary mb-3 sr-icon-4"></i>
+              <h3 class="mb-3">Made with Love</h3>
+              <p class="text-muted mb-0">You have to make your websites with love these days!</p>
             </div>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      </div>
+
+      <!-- SLIDER/CAROUSEL!!!!-->
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="img/header.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/header.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/header.jpg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
       </div>
-    </header>
 
-    <!-- Page Content -->
-    <section class="py-5">
-      <div class="container">
-        <h1>Full Slider by Start Bootstrap</h1>
-        <p>The background images for the slider are set directly in the HTML using inline CSS. The rest of the styles for this template are contained within the
-          <code>full-slider.css</code>
-          file.</p>
+    </section>
+
+    <section class="p-0" id="preferences">
+      <div class="container-fluid p-0">
+        <div class="row no-gutters popup-gallery">
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+    <section class="bg-dark text-white">
+      <div class="container text-center">
+        <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
+        <a class="btn btn-light btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Download Now!</a>
       </div>
-      <!-- /.container -->
-    </footer>
+    </section>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
 
   </body>
 
