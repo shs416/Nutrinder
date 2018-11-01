@@ -21,6 +21,14 @@
     position: absolute;
 }
 
+.heartIcon {
+    right: 20px;
+    top: 20px;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+}
+
 .sliderImg {
     height: 350px;
     width: 250px;

@@ -33,6 +33,11 @@ function addIngredientCards() {
         var img = document.createElement('img');
         img.src = ingredientCards[i].imgLink;
         imgDiv.appendChild(img);
+        
+        var img = document.createElement('img');
+        img.className = "heartIcon";
+        img.src = "img/heart_empty.png";
+        img.onclick = function() {toggleHeart(this);};
 
         var nameNode = document.createElement('H3');
         var t_name = document.createTextNode(ingredientCards[i].name);
@@ -43,12 +48,21 @@ function addIngredientCards() {
         statsNode.appendChild(t_stats);
 
         sliderCard.appendChild(imgDiv);
+        sliderCard.appendChild(img);
         sliderCard.appendChild(nameNode);
         sliderCard.appendChild(statsNode);
 
         sliderCard.style.left = String((screenWidth / 2 - 135) + 290 * i) + "px";
         sliderCard.style.zIndex = String(-1 * i);
         exploreSlider.appendChild(sliderCard);
+    }
+}
+
+function toggleHeart(heart) {
+    if (heart.src.includes("heart_empty.png")) {
+        heart.src = "img/heart_full.png";
+    } else {
+        heart.src = "img/heart_empty.png";
     }
 }
 
