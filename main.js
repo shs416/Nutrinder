@@ -18,6 +18,10 @@ var ingredientCards = [
 
 
 var sliderIndex = 0;
+var savedIngredients = [];
+if (Cookies.get('savedIngredients')) {
+    savedIngredients = JSON.parse(Cookies.get('savedIngredients'))
+}
 
 
 function addIngredientCards() {
@@ -33,11 +37,17 @@ function addIngredientCards() {
         var img = document.createElement('img');
         img.src = ingredientCards[i].imgLink;
         imgDiv.appendChild(img);
-        
+
         var img = document.createElement('img');
         img.className = "heartIcon";
-        img.src = "img/heart_empty.png";
-        img.onclick = function() {toggleHeart(this);};
+        if (savedIngredients.indexOf(ingredientCards[i].name) > -1) {
+            img.src = "img/heart_full.png";
+        } else {
+            img.src = "img/heart_empty.png";
+        }
+        img.onclick = function () {
+            toggleHeart(this);
+        };
 
         var nameNode = document.createElement('H3');
         var t_name = document.createTextNode(ingredientCards[i].name);
@@ -59,24 +69,37 @@ function addIngredientCards() {
 }
 
 function toggleHeart(heart) {
+    var ingName = heart.parentElement.getElementsByTagName('h3')[0].innerText;
     if (heart.src.includes("heart_empty.png")) {
         heart.src = "img/heart_full.png";
+        savedIngredients.push(ingName);
+        updateSaved();
     } else {
         heart.src = "img/heart_empty.png";
+        for (var i = savedIngredients.length - 1; i >= 0; i--) {
+            if (savedIngredients[i] == ingName) {
+                savedIngredients.splice(i, 1);
+            }
+        }
+        updateSaved();
     }
 }
 
 function moveSliderLeft() {
     if (sliderIndex > 0) {
-        $('.sliderCard').animate({left: "+=290"}, 200);
+        $('.sliderCard').animate({
+            left: "+=290"
+        }, 200);
         sliderIndex--;
     }
 }
 
 function moveSliderRight() {
-    var numCards = document.getElementsByClassName('sliderCard').length-1;
+    var numCards = document.getElementsByClassName('sliderCard').length - 1;
     if (sliderIndex < numCards) {
-        $('.sliderCard').animate({left: "-=290"}, 200);
+        $('.sliderCard').animate({
+            left: "-=290"
+        }, 200);
         sliderIndex++;
     }
 }
@@ -84,3 +107,7 @@ function moveSliderRight() {
 window.onload = function () {
     addIngredientCards();
 };
+
+function updateSaved() {
+    Cookies.set('savedIngredients', JSON.stringify(savedIngredients));
+}
