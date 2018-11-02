@@ -64,10 +64,10 @@
     <div id="savedTabSwitcher">
         <ul class="nav nav-pills nav-fill">
             <li class="nav-item">
-                <a class="nav-link active" href="#">Recipes</a>
+                <a class="nav-link active" href="#">Ingredients</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="saved_ingredients.html">Ingredients</a>
+                <a class="nav-link" href="saved_recipes.html">Recipes</a>
             </li>
         </ul>
     </div>
@@ -96,39 +96,41 @@
         };
 
         function populateList() {
-            if (Cookies.get('savedRecipes')) {
-                var savedRecipeIndexes = JSON.parse(Cookies.get('savedRecipes'));
+            if (Cookies.get('savedIngredients')) {
+                var savedIngredientIndexes = JSON.parse(Cookies.get('savedIngredients'));
+
+                //                console.log(savedIngredientIndexes);
 
                 $.getJSON("database.json", function(result) {
-                    var recipes = result.recipes;
+                    var ingredients = result.ingredients;
 
-                    for (var i = 0; i < savedRecipeIndexes.length; i++) {
-                        var recipe = recipes[savedRecipeIndexes[i]];
-                        if (recipe) {
+                    for (var i = 0; i < savedIngredientIndexes.length; i++) {
+                        var ingredient = ingredients[savedIngredientIndexes[i]];
+                        if (ingredient) {
 
                             var item = document.createElement('li');
 
                             var imgDiv = document.createElement('div');
                             imgDiv.className = 'savedItemImg';
-                            imgDiv.style.backgroundImage = "url(" + recipe.imgLink + ")";
+                            imgDiv.style.backgroundImage = "url(" + ingredient.imgLink + ")";
                             item.appendChild(imgDiv);
 
                             var itemInfo = document.createElement('div');
                             itemInfo.className = 'itemInfo';
 
                             var title = document.createElement('h4');
-                            title.innerHTML = recipe.name;
+                            title.innerHTML = ingredient.name;
                             itemInfo.append(title);
 
                             var info = document.createElement('p');
-                            info.innerHTML = recipe.ingredients.length+" nutritious ingredients";
+                            info.innerHTML = ingredient.stats.join('\t');
                             itemInfo.appendChild(info);
 
                             item.appendChild(itemInfo);
-                            let recipeIndex = savedRecipeIndexes[i];
+                            let ingredientIndex = savedIngredientIndexes[i];
                             item.onclick = function() {
-                                Cookies.set('recipeInputID', recipeIndex);
-                                window.location = 'recipe.html';
+                                Cookies.set('ingredientInputID', ingredientIndex);
+                                window.location = 'ingredient.html';
                             }
                             document.getElementById('savedItems').appendChild(item);
                         }
