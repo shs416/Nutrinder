@@ -28,6 +28,7 @@
 
 <body id="page-top">
     <script src="js/js-cookie.js"></script>
+    <script src="js/versionManager.js"></script>
 
     <div class="ingredientInfo">
         <div class="bannerDiv">
@@ -120,7 +121,7 @@
                     heartImg.onclick = function() {
                         if (this.src.includes("heart_empty.png")) {
                             this.src = "img/heart_full.png";
-                            savedIngredients.push(Cookies.get('ingredientInputID'));
+                            savedIngredients.push(Number(Cookies.get('ingredientInputID')));
                             Cookies.set('savedIngredients', JSON.stringify(savedIngredients));
                         } else {
                             this.src = "img/heart_empty.png";

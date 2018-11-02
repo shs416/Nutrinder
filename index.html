@@ -90,13 +90,14 @@
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
     <script src="js/js-cookie.js"></script>
+    <script src="js/versionManager.js"></script>
     <script>
         window.onload = function() {
             populateList();
         };
 
         function populateList() {
-            var savedIngredientIndexes = JSON.parse(Cookies.get('savedRecipes'));
+            var savedIngredientIndexes = JSON.parse(Cookies.get('savedIngredients'));
             if (savedIngredientIndexes && savedIngredientIndexes.length > 0) {
                 $.getJSON("database.json", function(result) {
                     var ingredients = result.ingredients;

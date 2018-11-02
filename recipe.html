@@ -28,6 +28,7 @@
 
 <body id="page-top">
     <script src="js/js-cookie.js"></script>
+    <script src="js/versionManager.js"></script>
 
     <div class="ingredientInfo">
         <div class="bannerDiv"> </div>
@@ -107,7 +108,7 @@
                 var ingredients = result.ingredients;
                 var savedRecipes = [];
                 if (Cookies.get('savedRecipes')) {
-                    savedRecipes = JSON.parse(Cookies.get('savedRecipes'))
+                    savedRecipes = JSON.parse(Cookies.get('savedRecipes'));
                 }
 
                 var recipe = recipes[Cookies.get('recipeInputID')];
@@ -134,7 +135,7 @@
                     heartImg.onclick = function() {
                         if (this.src.includes("heart_empty.png")) {
                             this.src = "img/heart_full.png";
-                            savedRecipes.push(Cookies.get('recipeInputID'));
+                            savedRecipes.push(Number(Cookies.get('recipeInputID')));
                             Cookies.set('savedRecipes', JSON.stringify(savedRecipes));
                         } else {
                             this.src = "img/heart_empty.png";
