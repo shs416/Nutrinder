@@ -14,6 +14,11 @@
             "name": "Pasta",
             "stats": ["↑↑Carbs", "↑↑Dopamine", "↑↑Italy"],
             "imgLink": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/4/1/RX-FNM_030111-Lighten-Up-012_s4x3.jpg.rend.hgtvcom.616.462.suffix/1382539856907.jpeg"
+        },
+        {
+            "name": "Cheese",
+            "stats": ["↑↑Calcium", "↑Protein", "↑Zinc"],
+            "imgLink": "https://alittlebityummy.com/wp-content/uploads/2015/11/Cheese-And-The-Low-FODMAP-Diet.jpg"
         }
     ],
 
