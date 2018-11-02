@@ -9,7 +9,7 @@
 }
 
 .sliderCard {
-    top: 0;
+    top: 35px;
     padding: 10px;
     background-color: rgba(0,0,0,0.1);
     text-align: center;
@@ -25,7 +25,7 @@
 }
 
 .sliderImg {
-    height: 350px;
+    height: 320px;
     width: 250px;
     display: flex;
     justify-content: center;
@@ -119,4 +119,11 @@ body {
 #stepsList {
     list-style-type: none;
     padding-left: 25px;
+}
+
+.text-uppercase {
+    top: 65px;
+    position: relative;
+    text-align: center;
+    width: 100%;
 }
