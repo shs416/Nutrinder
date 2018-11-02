@@ -24,6 +24,14 @@
     position: absolute;
 }
 
+.big_heartIcon {
+    right: 10px;
+    top: 67px;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+}
+
 .sliderImg {
     height: 320px;
     width: 250px;

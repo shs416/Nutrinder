@@ -32,23 +32,23 @@
     <div class="ingredientInfo">
         <div class="bannerDiv">
         </div>
-        
+
         <div class="ingredientTitles">
             <h4 id="ingredientTitle">Loading Ingredient...</h4>
             <ul id="statsList">
             </ul>
         </div>
-        
+
         <div class="recipeInfo">
-            
+
             <h4>Recipes</h4>
-            
+
             <div class='featuredSlider'>
                 <div class='featuredSlider_inner'>
-                   
+
                 </div>
             </div>
-            
+
         </div>
     </div>
 
@@ -88,7 +88,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
-    <script>        
+    <script>
         window.onload = function() {
             populateIngredient();
         };
@@ -97,7 +97,11 @@
             $.getJSON("database.json", function(result) {
                 var ingredients = result.ingredients;
                 var recipes = result.recipes;
-                
+                var savedIngredients = [];
+                if (Cookies.get('savedIngredients')) {
+                    savedIngredients = JSON.parse(Cookies.get('savedIngredients'))
+                }
+
                 var ingredient = ingredients[Cookies.get('ingredientInputID')];
                 if (ingredient) {
                     document.getElementById('ingredientTitle').innerHTML = ingredient.name;
@@ -105,13 +109,37 @@
                     var img = document.createElement('img');
                     img.src = ingredient.imgLink;
                     document.getElementsByClassName('bannerDiv')[0].appendChild(img);
-                    
+
+                    var heartImg = document.createElement('img');
+                    heartImg.className = "big_heartIcon";
+                    if (savedIngredients.indexOf(Number(Cookies.get('ingredientInputID'))) > -1) {
+                        heartImg.src = "img/heart_full.png";
+                    } else {
+                        heartImg.src = "img/heart_empty.png";
+                    }
+                    heartImg.onclick = function() {
+                        if (this.src.includes("heart_empty.png")) {
+                            this.src = "img/heart_full.png";
+                            savedIngredients.push(Cookies.get('ingredientInputID'));
+                            Cookies.set('savedIngredients', JSON.stringify(savedIngredients));
+                        } else {
+                            this.src = "img/heart_empty.png";
+                            for (var i = savedIngredients.length - 1; i >= 0; i--) {
+                                if (savedIngredients[i] == Cookies.get('ingredientInputID')) {
+                                    savedIngredients.splice(i, 1);
+                                }
+                            }
+                            Cookies.set('savedIngredients', JSON.stringify(savedIngredients));
+                        }
+                    };
+                    document.getElementsByTagName("body")[0].appendChild(heartImg);
+
                     for (var i = 0; i < ingredient.stats.length; i++) {
                         var stat = document.createElement('li');
                         stat.innerHTML = ingredient.stats[i];
                         document.getElementById('statsList').appendChild(stat);
                     }
-                    
+
                     for (var i = 0; i < recipes.length; i++) {
                         var containsIngredient = false;
                         if (recipes[i].name.includes(ingredient.name)) {
@@ -127,16 +155,16 @@
                             outerDiv.className = 'featuredBlock';
                             var imgDiv = document.createElement('div');
                             imgDiv.className = 'featuredBlockImg';
-                            
+
                             var img = document.createElement('img');
                             img.src = recipes[i].imgLink;
                             imgDiv.appendChild(img);
                             outerDiv.appendChild(imgDiv);
-                            
+
                             var blockTitle = document.createElement('h6');
                             blockTitle.innerHTML = recipes[i].name;
                             outerDiv.appendChild(blockTitle);
-                            
+
                             document.getElementsByClassName('featuredSlider_inner')[0].appendChild(outerDiv);
                             let recipeID = i;
                             outerDiv.onclick = function() {
@@ -152,6 +180,7 @@
                 }
             });
         };
+
     </script>
 
 </body>

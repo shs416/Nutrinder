@@ -123,7 +123,7 @@
                             itemInfo.append(title);
 
                             var info = document.createElement('p');
-                            info.innerHTML = ingredient.stats.join(', ');
+                            info.innerHTML = ingredient.stats.join('\t');
                             itemInfo.appendChild(info);
 
                             item.appendChild(itemInfo);

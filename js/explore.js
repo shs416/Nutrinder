@@ -32,7 +32,7 @@ function addIngredientCards() {
             heartImg.onclick = function () {
                 toggleHeart(this);
             };
-            sliderCard.appendChild(heartImg)
+            sliderCard.appendChild(heartImg);
 
             var nameNode = document.createElement('h3');
             nameNode.innerHTML = ingredientCards[i].name;
