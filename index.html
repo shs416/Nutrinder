@@ -96,11 +96,8 @@
         };
 
         function populateList() {
-            if (Cookies.get('savedIngredients')) {
-                var savedIngredientIndexes = JSON.parse(Cookies.get('savedIngredients'));
-
-                //                console.log(savedIngredientIndexes);
-
+            var savedIngredientIndexes = JSON.parse(Cookies.get('savedRecipes'));
+            if (savedIngredientIndexes && savedIngredientIndexes.length > 0) {
                 $.getJSON("database.json", function(result) {
                     var ingredients = result.ingredients;
 
@@ -138,7 +135,9 @@
 
                 });
             } else {
-                //TODO: No saved recipes
+                var noItems = document.createElement('h5');
+                noItems.innerHTML = "No saved ingredients! Add some by going to \"Explore\" and pressing the ♥ icon";
+                document.getElementsByTagName('body')[0].appendChild(noItems);
             }
         };
 

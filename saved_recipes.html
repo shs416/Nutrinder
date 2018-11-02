@@ -96,9 +96,8 @@
         };
 
         function populateList() {
-            if (Cookies.get('savedRecipes')) {
-                var savedRecipeIndexes = JSON.parse(Cookies.get('savedRecipes'));
-
+            var savedRecipeIndexes = JSON.parse(Cookies.get('savedRecipes'));
+            if (savedRecipeIndexes && savedRecipeIndexes.length > 0) {
                 $.getJSON("database.json", function(result) {
                     var recipes = result.recipes;
 
@@ -136,7 +135,9 @@
 
                 });
             } else {
-                //TODO: No saved recipes
+                var noItems = document.createElement('h5');
+                noItems.innerHTML = "No saved recipes! Add some by going to \"Explore\" and pressing the ♥ icon";
+                document.getElementsByTagName('body')[0].appendChild(noItems);
             }
         };
 
