@@ -24,7 +24,7 @@ function addIngredientCards() {
 
             var heartImg = document.createElement('img');
             heartImg.className = "heartIcon";
-            if (savedIngredients.indexOf(ingredientCards[i].name) > -1) {
+            if (savedIngredients.indexOf(i) > -1) {
                 heartImg.src = "img/heart_full.png";
             } else {
                 heartImg.src = "img/heart_empty.png";
@@ -56,6 +56,7 @@ function addIngredientCards() {
             var leftStart = (window.innerWidth/2)-(sliderCard.offsetWidth/2)
             var leftVal = leftStart + ((sliderCard.offsetWidth+sliderCardSpacing)*i);
             sliderCard.style.left = String(leftVal) + "px";
+            sliderCard.index = i;
             
             console.log("leftVal="+leftVal);
             console.log("extra="+(sliderCard.offsetWidth+sliderCardSpacing)*i);
@@ -69,15 +70,15 @@ function addIngredientCards() {
 }
 
 function toggleHeart(heart) {
-    var ingName = heart.parentElement.getElementsByTagName('h3')[0].innerText;
+    var ingIndex = heart.parentElement.index;
     if (heart.src.includes("heart_empty.png")) {
         heart.src = "img/heart_full.png";
-        savedIngredients.push(ingName);
+        savedIngredients.push(ingIndex);
         updateSaved();
     } else {
         heart.src = "img/heart_empty.png";
         for (var i = savedIngredients.length - 1; i >= 0; i--) {
-            if (savedIngredients[i] == ingName) {
+            if (savedIngredients[i] == ingIndex) {
                 savedIngredients.splice(i, 1);
             }
         }
