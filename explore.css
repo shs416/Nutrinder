@@ -83,35 +83,40 @@ body {
     min-height: 100%;
 }
 
-.ingredientTitles, .recipeInfo {
+.ingredientTitles, .recipeTitles, .recipeSteps, .recipeInfo {
     padding: 10px;
 }
 
-.recipeSlider {
+.featuredSlider {
     overflow: scroll;
 }
 
-.recipeSlider_inner {
+.featuredSlider_inner {
     display: inline-flex;
 /*    width: 1000px;*/
 }
 
-.recipeBlock {
+.featuredBlock {
 /*    background-color: grey;*/
     width: 100px;
     margin: 2px;
 }
 
-.recipeBlock h6 {
+.featuredBlock h6 {
     padding: 4px;
 }
 
-.recipeBlockImg {
+.featuredBlockImg {
     height: 70px;
 }
 
-.recipeBlockImg img {
+.featuredBlockImg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+#stepsList {
+    list-style-type: none;
+    padding-left: 25px;
 }

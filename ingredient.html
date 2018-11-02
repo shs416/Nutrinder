@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="explore.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+    <script src="js/js-cookie.js"></script>
+
+    <div class="ingredientInfo">
+        <div class="bannerDiv">
+        </div>
+        
+        <div class="ingredientTitles">
+            <h4 id="ingredientTitle">Loading Ingredient...</h4>
+            <ul id="statsList">
+            </ul>
+        </div>
+        
+        <div class="recipeInfo">
+            
+            <h4>Recipes</h4>
+            
+            <div class='featuredSlider'>
+                <div class='featuredSlider_inner'>
+                   
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">Nutrinder</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="index.html">Saved</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="explore.html">Explore</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="preferences.html">Preferences</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+    <script>        
+        window.onload = function() {
+            populateIngredient();
+        };
+
+        function populateIngredient() {
+            $.getJSON("database.json", function(result) {
+                var ingredients = result.ingredients;
+                var recipes = result.recipes;
+                
+                var ingredient = ingredients[Cookies.get('ingredientInputID')];
+                if (ingredient) {
+                    document.getElementById('ingredientTitle').innerHTML = ingredient.name;
+
+                    var img = document.createElement('img');
+                    img.src = ingredient.imgLink;
+                    document.getElementsByClassName('bannerDiv')[0].appendChild(img);
+                    
+                    for (var i = 0; i < ingredient.stats.length; i++) {
+                        var stat = document.createElement('li');
+                        stat.innerHTML = ingredient.stats[i];
+                        document.getElementById('statsList').appendChild(stat);
+                    }
+                    
+                    for (var i = 0; i < recipes.length; i++) {
+                        var containsIngredient = false;
+                        if (recipes[i].name.includes(ingredient.name)) {
+                            containsIngredient = true
+                        };
+                        for (var j = 0; j < recipes[i].ingredients.length; j++) {
+                            if (recipes[i].ingredients[j].includes(ingredient.name)) {
+                                containsIngredient = true;
+                            }
+                        }
+                        if (containsIngredient) {
+                            var outerDiv = document.createElement('div');
+                            outerDiv.className = 'featuredBlock';
+                            var imgDiv = document.createElement('div');
+                            imgDiv.className = 'featuredBlockImg';
+                            
+                            var img = document.createElement('img');
+                            img.src = recipes[i].imgLink;
+                            imgDiv.appendChild(img);
+                            outerDiv.appendChild(imgDiv);
+                            
+                            var blockTitle = document.createElement('h6');
+                            blockTitle.innerHTML = recipes[i].name;
+                            outerDiv.appendChild(blockTitle);
+                            
+                            document.getElementsByClassName('featuredSlider_inner')[0].appendChild(outerDiv);
+                            let recipeID = i;
+                            outerDiv.onclick = function() {
+                                Cookies.set('recipeInputID', recipeID);
+                                window.location = 'recipe.html';
+                            }
+                        }
+                    }
+
+
+                } else {
+                    //TODO: Recipe not found
+                }
+            });
+        };
+    </script>
+
+</body>
+
+</html>
