@@ -2,7 +2,12 @@
     "ingredients": [
         {
             "name": "Chicken Breast",
-            "stats": ["↑↑Protein", "↑↑Meat", "↑↑Chicken"],
+            "stats": {
+                "calories": 100,
+                "protein": 28,
+                "vitaminA": 30,
+                "fiber": 20
+            },
             "imgLink": "https://www.onceuponachef.com/images/2010/06/6a0115721bb963970b013481996702970c-450wi.jpg"
         },
         {
