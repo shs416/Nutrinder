@@ -79,8 +79,8 @@
         <div class="card">
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    DIET
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="dietButton">
+                        DIET
                     </button>
               </h5>
             </div>
@@ -90,46 +90,49 @@
             <strong>Select your diet:</strong>
           </div>  
           <div class="options">
+            <form id="dietForm">            
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+              <input class="form-check-input" type="radio" name="radio1" id="radio1" value="No preference" checked>
               <label class="form-check-label" for="exampleRadios1">
                 No preference
               </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                        <label class="form-check-label" for="exampleRadios1">
-                Gluten-free
-              </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                        <label class="form-check-label" for="exampleRadios2">
-                Paleo
-              </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-                        <label class="form-check-label" for="exampleRadios3">
-                Vegan
-              </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-                        <label class="form-check-label" for="exampleRadios3">
-                Vegetarian
-              </label>
-                    </div>
-                </div>
+             </div>
+             <div class="form-check">
+                <input class="form-check-input" type="radio" name="radio1" id="radio1" value="Gluten-free">
+                <label class="form-check-label" for="exampleRadios1">
+                    Gluten-free
+                </label>
             </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="radio1" id="radio1" value="Paleo">
+                <label class="form-check-label" for="exampleRadios2">
+                    Paleo
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="radio1" id="radio1" value="Vegan">
+                <label class="form-check-label" for="exampleRadios3">
+                    Vegan
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="radio1" id="radio1" value="Vegetarian">
+                <label class="form-check-label" for="exampleRadios3">
+                    Vegetarian
+                </label>
+            </div>
+        </form>
+            </div>
+
+        </div>
         </div>
 
         <div class="card">
             <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              CARBOHYDRATES
-            </button>
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="carbButton">
+                        CARBOHYDRATES
+                    </button>
                 </h5>
             </div>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
@@ -137,25 +140,26 @@
                     <strong>Select your carbohydrate level:</strong>
                 </div>
                 <div class="options">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                        <label class="form-check-label" for="exampleRadios1">
-                No preference
-              </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                        <label class="form-check-label" for="exampleRadios2">
-                Low
-              </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-                        <label class="form-check-label" for="exampleRadios3">
-                High
-              </label>
-                    </div>
-
+                    <form id="carbForm">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radio2" id="radio2" value="No preference" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                            No preference
+                          </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radio2" id="radio2" value="Low">
+                            <label class="form-check-label" for="exampleRadios2">
+                            Low
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radio2" id="radio2" value="High">
+                            <label class="form-check-label" for="exampleRadios3">
+                            High
+                            </label>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -163,9 +167,9 @@
         <div class="card">
             <div class="card-header" id="headingThree">
                 <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              PROTEIN
-            </button>
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id="proteinButton">
+                        PROTEIN
+                    </button>
                 </h5>
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
@@ -173,34 +177,37 @@
                     <strong>Select your protein level:</strong>
                 </div>
                 <div class="options">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                        <label class="form-check-label" for="exampleRadios1">
-                No preference
-              </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                        <label class="form-check-label" for="exampleRadios2">
-                Low
-              </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-                        <label class="form-check-label" for="exampleRadios3">
-                High
-              </label>
-                    </div>
+                    <form id="proteinForm">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radio3" id="radio3" value="No preference" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                No preference
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radio3" id="radio3" value="Low">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Low
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radio3" id="radio3" value="High">
+                            <label class="form-check-label" for="exampleRadios3">
+                                High
+                            </label>
+                        </div>
+                    </form>
                 </div>
+            </form>
             </div>
 
             <div class="card">
                 <div class="card-header" id="headingFour">
                     <h5 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-              ALLERGIES
-            </button>
-          </h5>
+                            ALLERGIES
+                        </button>
+                    </h5>
         </div>
         <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
           <div class="card-body">
@@ -258,7 +265,9 @@
             <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
             <!-- Custom scripts for this template -->
+            <script src="js/preferences.js"></script>           
             <script src="js/creative.min.js"></script>
+
 
 </body>
 
