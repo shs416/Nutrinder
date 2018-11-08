@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <Title>Recipe Info</Title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="img/favicons/site.webmanifest">
+    <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#00a300">
+    <meta name="msapplication-config" content="img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="css/explore.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+    <script src="js/js-cookie.js"></script>
+    <script src="js/versionManager.js"></script>
+
+    <div class="ingredientInfo">
+        <div class="bannerDiv"> </div>
+
+        <div class="ingredientTitles">
+            <h4 class="recipeTitle">Recipe Title</h4>
+            <h6 class="recipeTitle">You'll need...</h6>
+            <ul id="ingredientList">
+            </ul>
+        </div>
+
+        <div class="recipeSteps">
+            <h4>Instructions</h4>
+            <h6 id="recipeInfo">1 Serving - 1.5 Hours</h6>
+            <ul id="stepsList">
+            </ul>
+        </div>
+
+        <div class="recipeInfo">
+
+            <h4>Featured Ingredients</h4>
+
+            <div class='featuredSlider'>
+                <div class='featuredSlider_inner'>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">Nutrinder</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="index.html">Saved</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="explore.html">Explore</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="preferences.html">Preferences</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+    <script src="js/js-cookie.js"></script>
+    <script>
+        window.onload = function() {
+            populateRecipe();
+        };
+
+        function populateRecipe() {
+            $.getJSON("database.json", function(result) {
+                var recipes = result.recipes;
+                var ingredients = result.ingredients;
+                var savedRecipes = [];
+                if (Cookies.get('savedRecipes')) {
+                    savedRecipes = JSON.parse(Cookies.get('savedRecipes'));
+                }
+
+                var recipe = recipes[Cookies.get('recipeInputID')];
+                if (recipe) {
+                    document.getElementsByClassName('recipeTitle')[0].innerHTML = recipe.name;
+
+                    var img = document.createElement('img');
+                    img.src = recipe.imgLink;
+                    document.getElementsByClassName('bannerDiv')[0].appendChild(img);
+
+                    for (var i = 0; i < recipe.ingredients.length; i++) {
+                        var ingred = document.createElement('li');
+                        ingred.innerHTML = recipe.ingredients[i];
+                        document.getElementById('ingredientList').appendChild(ingred);
+                    }
+
+                    var heartImg = document.createElement('img');
+                    heartImg.className = "big_heartIcon";
+                    if (savedRecipes.indexOf(Number(Cookies.get('recipeInputID'))) > -1) {
+                        heartImg.src = "img/heart_full.png";
+                    } else {
+                        heartImg.src = "img/heart_empty.png";
+                    }
+                    heartImg.onclick = function() {
+                        if (this.src.includes("heart_empty.png")) {
+                            this.src = "img/heart_full.png";
+                            savedRecipes.push(Number(Cookies.get('recipeInputID')));
+                            Cookies.set('savedRecipes', JSON.stringify(savedRecipes));
+                        } else {
+                            this.src = "img/heart_empty.png";
+                            for (var i = savedRecipes.length - 1; i >= 0; i--) {
+                                if (savedRecipes[i] == Cookies.get('recipeInputID')) {
+                                    savedRecipes.splice(i, 1);
+                                }
+                            }
+                            Cookies.set('savedRecipes', JSON.stringify(savedRecipes));
+                        }
+                    };
+                    document.getElementsByTagName("body")[0].appendChild(heartImg);
+
+                    for (var i = 0; i < recipe.steps.length; i++) {
+                        var step = document.createElement('li');
+                        step.innerHTML = recipe.steps[i];
+                        document.getElementById('stepsList').appendChild(step);
+                    }
+
+                    for (var i = 0; i < ingredients.length; i++) {
+                        var containsIngredient = false;
+                        if (recipe.name.includes(ingredients[i].name)) {
+                            containsIngredient = true
+                        };
+                        for (var j = 0; j < recipe.ingredients.length; j++) {
+                            if (recipe.ingredients[j].includes(ingredients[i].name)) {
+                                containsIngredient = true;
+                            }
+                        }
+
+                        if (containsIngredient) {
+                            var outerDiv = document.createElement('div');
+                            outerDiv.className = 'featuredBlock';
+                            var imgDiv = document.createElement('div');
+                            imgDiv.className = 'featuredBlockImg';
+
+                            var img = document.createElement('img');
+                            img.src = ingredients[i].imgLink;
+                            imgDiv.appendChild(img);
+                            outerDiv.appendChild(imgDiv);
+
+                            var blockTitle = document.createElement('h6');
+                            blockTitle.innerHTML = ingredients[i].name;
+                            outerDiv.appendChild(blockTitle);
+
+                            document.getElementsByClassName('featuredSlider_inner')[0].appendChild(outerDiv);
+                            let ingredientID = i;
+                            outerDiv.onclick = function() {
+                                Cookies.set('ingredientInputID', ingredientID);
+                                window.location = 'ingredient.html';
+                            }
+                        }
+                    }
+
+
+
+                } else {
+                    //TODO: Recipe not found
+                }
+            });
+        };
+
+    </script>
+
+</body>
+
+</html>

@@ -2,13 +2,24 @@
 <html lang="en">
 
 <head>
+    <Title>Explore</Title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="img/favicons/site.webmanifest">
+    <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#00a300">
+    <meta name="msapplication-config" content="img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    
-    <link href="style.css" rel="stylesheet">
+
+    <link href="css/explore.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -22,24 +33,20 @@
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/creative.min.css" rel="stylesheet">
+    <link href="css/creative.css" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
-    <script src="main.js"></script>
-    
-    <div id="sliderDiv">
-    </div>
-    
-    <img onclick="moveSliderRight()" id='arrow-right' src='img/arrow_right.png'>
-    <img onclick="moveSliderLeft()" id='arrow-left' src='img/arrow_left.png'>
+    <script src="js/js-cookie.js"></script>
+    <script src="js/versionManager.js"></script>
+    <script src="js/explore.js"></script>
 
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">Nutrinder</a>
+            <a class="navbar-brand js-scroll-trigger" href="index.html">Nutrinder</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -58,6 +65,16 @@
             </div>
         </div>
     </nav>
+
+    <h1 class="text-uppercase">
+        <strong>EXPLORE</strong>
+    </h1>
+
+    <div id="sliderDiv">
+    </div>
+
+    <img onclick="moveSliderRight()" id='arrow-right' src='img/arrow_right.png'>
+    <img onclick="moveSliderLeft()" id='arrow-left' src='img/arrow_left.png'>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>

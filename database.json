@@ -1,0 +1,342 @@
+{
+    "ingredients": [
+        {
+            "name": "Chicken Breast",
+            "stats": {
+                "calories": 198,
+                "totalfat": 4.3,
+                "carbs": 0,
+                "protein": 37,
+                "vitaminA": 0.5,
+                "vitaminC": 0,
+                "calcium": 1.4,
+                "iron": 6.9,
+            },
+            "imgLink": "https://www.onceuponachef.com/images/2010/06/6a0115721bb963970b013481996702970c-450wi.jpg"
+        },
+
+        {
+            "name": "Spinach",
+            "stats": {
+                "calories": 26,
+                "totalfat": 0.3,
+                "carbs": 4.3,
+                "protein": 3.4,
+                "vitaminA": 238,
+                "vitaminC": 19,
+                "calcium": 12,
+                "iron": 22,
+            },
+            "imgLink": "https://www.highmowingseeds.com/pub/media/catalog/product/cache/image/675x675/e9c3970ab036de70892d86c6d221abfe/2/8/2885.jpg"
+        },
+
+        {
+            "name": "Pasta",
+            "stats": {
+                "calories": 179,
+                "totalfat": 1.1,
+                "carbs": 35,
+                "protein": 6.6,
+                "vitaminA": 0,
+                "vitaminC": 0,
+                "calcium": 0.6,
+                "iron": 8.1,
+            },
+            "imgLink": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/4/1/RX-FNM_030111-Lighten-Up-012_s4x3.jpg.rend.hgtvcom.616.462.suffix/1382539856907.jpeg"
+        },
+
+        {
+            "name": "Pepper Jack Cheese",
+            "stats": {
+                "calories": 104,
+                "totalfat": 8.5,
+                "carbs": 0.2,
+                "protein": 6.9,
+                "vitaminA": 4.3,
+                "vitaminC": 0,
+                "calcium": 16,
+                "iron": 1.1,
+            },
+            "imgLink": "https://us.123rf.com/450wm/bwf211/bwf2111604/bwf211160400166/57329969-a-single-slice-of-pepper-jack-cheese-isolated-on-a-white-background-.jpg?ver=6"
+        },
+
+        {
+            "name": "Eggs",
+            "stats": {
+                "calories": 72,
+                "totalfat": 4.8,
+                "carbs": 0.4,
+                "protein": 6.3,
+                "vitaminA": 5.4,
+                "vitaminC": 0,
+                "calcium": 2.2,
+                "iron": 4.9,
+            },
+            "imgLink": "https://us.123rf.com/450wm/bwf211/bwf2111604/bwf211160400166/57329969-a-single-slice-of-pepper-jack-cheese-isolated-on-a-white-background-.jpg?ver=6"
+        },
+
+        {
+            "name": "Broccoli",
+            "stats": {
+                "calories": 13,
+                "totalfat": 0.1,
+                "carbs": 2.7,
+                "protein": 0.9,
+                "vitaminA": 11,
+                "vitaminC": 40,
+                "calcium": 1.1,
+                "iron": 1.4,
+            },
+            "imgLink": "https://us.123rf.com/450wm/bwf211/bwf2111604/bwf211160400166/57329969-a-single-slice-of-pepper-jack-cheese-isolated-on-a-white-background-.jpg?ver=6"
+        },
+
+        {
+            "name": "Steak",
+            "stats": {
+                "calories": 307,
+                "totalfat": 20.5,
+                "carbs": 0,
+                "protein": 29,
+                "vitaminA": 0,
+                "vitaminC": 0,
+                "calcium": 1.4,
+                "iron": 10.5,
+            },
+            "imgLink": "https://us.123rf.com/450wm/bwf211/bwf2111604/bwf211160400166/57329969-a-single-slice-of-pepper-jack-cheese-isolated-on-a-white-background-.jpg?ver=6"
+        },
+
+        {
+            "name": "Salmon",
+            "stats": {
+                "calories": 234,
+                "totalfat": 14,
+                "carbs": 0,
+                "protein": 25,
+                "vitaminA": 5,
+                "vitaminC": 7,
+                "calcium": 1.3,
+                "iron": 2.1,
+            },
+            "imgLink": "https://us.123rf.com/450wm/bwf211/bwf2111604/bwf211160400166/57329969-a-single-slice-of-pepper-jack-cheese-isolated-on-a-white-background-.jpg?ver=6"
+        },
+
+        {
+            "name": "Bell Pepper",
+            "stats": {
+                "calories": 32,
+                "totalfat": 0.2,
+                "carbs": 7.6,
+                "protein": 1,
+                "vitaminA": 67,
+                "vitaminC": 325,
+                "calcium": 0.8,
+                "iron": 2.9,
+            },
+            "imgLink": "https://us.123rf.com/450wm/bwf211/bwf2111604/bwf211160400166/57329969-a-single-slice-of-pepper-jack-cheese-isolated-on-a-white-background-.jpg?ver=6"
+        },
+
+        {
+            "name": "Lettuce",
+            "stats": {
+                "calories": 16,
+                "totalfat": 0.3,
+                "carbs": 3.1,
+                "protein": 1.2,
+                "vitaminA": 164,
+                "vitaminC": 6.3,
+                "calcium": 2.4,
+                "iron": 5.1,
+            },
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/657_thumb.jpg"
+        },
+
+        {
+            "name": "Shrimp",
+            "stats": {
+                "calories": 114,
+                "totalfat": 1.4,
+                "carbs": 1.5,
+                "protein": 20.9,
+                "vitaminA": 5.7,
+                "vitaminC": 0,
+                "calcium": 6.6,
+                "iron": 1.7,
+            },
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/204_thumb.jpg"
+        },
+
+        {
+            "name": "Kale",
+            "stats": {
+                "calories": 36,
+                "totalfat": 0.5,
+                "carbs": 7.3,
+                "protein": 2.5,
+                "vitaminA": 354,
+                "vitaminC": 89,
+                "calcium": 7.2,
+                "iron": 6.5,
+            },
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/644_thumb.jpg"
+        },
+
+        {
+            "name": "Whole Wheat Bread",
+            "stats": {
+                "calories": 81,
+                "totalfat": 1.1,
+                "carbs": 14,
+                "protein": 4,
+                "vitaminA": 0,
+                "vitaminC": 0,
+                "calcium": 4,
+                "iron": 4.4,
+            },
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/1862_thumb.jpg"
+        },
+
+        {
+            "name": "White Rice",
+            "stats": {
+                "calories": 205,
+                "totalfat": 0.4,
+                "carbs": 45,
+                "protein": 4.3,
+                "vitaminA": 0,
+                "vitaminC": 0,
+                "calcium": 1.1,
+                "iron": 11,
+            },
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/85_thumb.jpg"
+        },
+
+        {
+            "name": "Peanut Butter",
+            "stats": {
+                "calories": 188,
+                "totalfat": 16,
+                "carbs": 7.7,
+                "protein": 7,
+                "vitaminA": 0,
+                "vitaminC": 0,
+                "calcium": 1.3,
+                "iron": 3.8,
+            },
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/199_thumb.jpg"
+        },
+
+        {
+            "name": "American Cheese",
+            "stats": {
+                "calories": 66,
+                "totalfat": 4.9,
+                "carbs": 1.8,
+                "protein": 3.6,
+                "vitaminA": 5.3,
+                "vitaminC": 0,
+                "calcium": 22,
+                "iron": 1,
+            },
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/382_thumb.jpg"
+        },
+
+        {
+            "name": "Parmesan Cheese",
+            "stats": {
+                "calories": 21,
+                "totalfat": 1.4,
+                "carbs": 0.7,
+                "protein": 1.4,
+                "vitaminA": 1,
+                "vitaminC": 0,
+                "calcium": 3.3,
+                "iron": 0.1,
+            },
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/594_thumb.jpg"
+        },
+
+    ],
+
+    "recipes": [
+        {
+            "name": "Chicken Alfredo",
+            "ingredients": ["2 Boneless Chicken Breasts", "2 tbsp. olive oil", "Salt and pepper", "1 jar of Alfredo's Alfredo Sauce", "1 cup Parmesan Cheese"],
+            "imgLink": "https://hips.hearstapps.com/del.h-cdn.co/assets/17/24/1024x512/landscape-1497458683-delish-one-pot-chicken-alfredo-1-1024.jpg",
+            "steps": ["1. Heat oil in large skillet, cook chicken breasts until cooked, then season with salt and pepper", "2. Add pasta and stir in Alfredo's Alfredo Sauce. Simmer until pasta is soft" "3. Remove from heat and serve."]
+        },
+        {
+            "name": "Honey Garlic Chicken",
+            "ingredients": ["1 Chicken Breast", "3 Honey", "8mL of Garlic"],
+            "imgLink": "https://i1.wp.com/cafedelites.com/wp-content/uploads/2016/09/Honey-Garlic-Chicken-IMAGE-1.jpg?resize=980%2C1470&ssl=1",
+            "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
+        },
+        {
+            "name": "Chicken Picatta",
+            "ingredients": ["A Chicken Breast", "Several Picatta"],
+            "imgLink": "https://www.simplyrecipes.com/wp-content/uploads/2015/07/chicken-piccata-vertical-a-1600.jpg",
+            "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
+        },
+        {
+            "name": "Chicken Tikka Masala",
+            "ingredients": ["Chicken Breast", "Tikka", "Masala", "Mountain Dew"],
+            "imgLink": "https://i0.wp.com/cafedelites.com/wp-content/uploads/2018/04/Best-Chicken-Tikka-Masala-IMAGE-1.jpg?w=1600&ssl=1",
+            "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
+        },
+        {
+            "name": "Caprese Stuffed Chicken",
+            "ingredients": ["Chicken Breast", "5 Italy", "A spicy meatball", "1.3 Leaves of Spinach"],
+            "imgLink": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-caprese-stuffed-chicken-pinterest-still001-1521230500.jpg",
+            "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
+        },
+        {
+            "name": "Cheesy Spinach Artichoke Bagels",
+            "ingredients": ["Cheesy Spinach", "Cheesy Artichoke", "Cheesy Cheese", "Cheesy Bagels"],
+            "imgLink": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gallery-1515429625-delish-spinach-artichoke-pizza-bagels-pin-2-1529095463.jpg",
+            "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
+        },
+        {
+            "name": "Creamed Spinach Stuffed Salmon",
+            "ingredients": ["Spinach", "Cream", "Cheese", "Cream Cheese", "Tuna"],
+            "imgLink": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-creamed-spinach-stuffed-salmon-pinterest-still001-1532720411.jpg",
+            "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
+        },
+        {
+            "name": "Strangolapreti",
+            "ingredients": ["Strangolapreti", "Spinach", "More Strangolapreti", "Extra-Strength Italy", "Chicken Alfredo"],
+            "imgLink": "http://www.mylittleitaliankitchen.com/wp-content/uploads/2016/06/strangolapreti1.jpg",
+            "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
+        },
+        {
+            "name": "Spinach and Ricotta Ravioli",
+            "ingredients": ["Spinach", "Ricotta", "Pasta", "Other Cheese", "Sure, how about some pasta", "Ravioli", "Ravioli", "Give me the Formioli"],
+            "imgLink": "https://www.saveur.com/g00/3_c-5eee.aidmcz.kwu_/c-5UWZMXPMCA09x24pbbx78ax3ax2fx2feee.aidmcz.kwux2faqbmax2faidmcz.kwux2fnqtmax2fabgtmax2f688_9f_x2fx78cjtqkx2fquiomax2f0893x2f87x2f5-aid938-921.ax78qvikpzidqwtq-9488f9088.rx78ox3fqbwsx3d6dGk3v2-x26q98k.uizsx3dquiom_$/$/$/$/$/$/$/$/$/$/$",
+            "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
+        },
+        {
+            "name": "Chicken Noodle Soup",
+            "ingredients": ["Campbell's Chicken Noodle Soup", "Chicken Breast", "Pasta"],
+            "imgLink": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pasta-recipes-chicken-noodle-1541004778.jpg",
+            "steps": ["1. Just boil everything together"]
+        },
+        {
+            "name": "Anchor Steam Mac and Cheese",
+            "ingredients": ["Pasta", "Mac", "Cheese", "There's beer in this omg", "Live Anchors"],
+            "imgLink": "https://hips.hearstapps.com/clv.h-cdn.co/assets/17/19/1494521586-recipes-anchor-steam-mac-and-cheese-0617.jpg",
+            "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
+        },
+        {
+            "name": "Spaghetti",
+            "ingredients": ["Pasta", "Tomatoes", "Oodles of Noodles", "8 Forks", "Meat Sauce", "Your friend Kevin"],
+            "imgLink": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pasta-recipes-spaghetti-red-onion-1540999367.jpg",
+            "steps": ["1. Ask your mom"]
+        }
+        {
+            "name": "Shrimp Jambalaya",
+            "ingredients": ["1 pound of shrimp", "1 cup chopped onion", "2 tomatoes, diced", "2 bell peppers, julienned", "3 cups vegetable broth", "2 cups uncooked rice", "2 teaspoons Creole Seasoning", "2 tbsp. olive oil"],
+            "imgLink": "https://static01.nyt.com/images/2016/01/19/dining/19COOKING_JAMBALAYA/19COOKING_JAMBALAYA-superJumbo.jpg",
+            "steps": ["1. Heat oil in large pan, saute onions and peppers until tender.","2. Add vegetable broth, rice, Creole seasoning, and bring to a boil for 15 minutes","3. Add shrimp and tomatoes, and heat thoroughly. Serve while hot."]
+        }
+
+    ]
+
+}
