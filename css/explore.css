@@ -9,7 +9,7 @@
 }
 
 .sliderCard {
-    top: 0;
+    top: 35px;
     padding: 10px;
     background-color: rgba(0,0,0,0.1);
     text-align: center;
@@ -24,8 +24,16 @@
     position: absolute;
 }
 
+.big_heartIcon {
+    right: 10px;
+    top: 67px;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+}
+
 .sliderImg {
-    height: 350px;
+    height: 320px;
     width: 250px;
     display: flex;
     justify-content: center;
@@ -83,35 +91,47 @@ body {
     min-height: 100%;
 }
 
-.ingredientTitles, .recipeInfo {
+.ingredientTitles, .recipeTitles, .recipeSteps, .recipeInfo {
     padding: 10px;
 }
 
-.recipeSlider {
+.featuredSlider {
     overflow: scroll;
 }
 
-.recipeSlider_inner {
+.featuredSlider_inner {
     display: inline-flex;
 /*    width: 1000px;*/
 }
 
-.recipeBlock {
+.featuredBlock {
 /*    background-color: grey;*/
     width: 100px;
     margin: 2px;
 }
 
-.recipeBlock h6 {
+.featuredBlock h6 {
     padding: 4px;
 }
 
-.recipeBlockImg {
+.featuredBlockImg {
     height: 70px;
 }
 
-.recipeBlockImg img {
+.featuredBlockImg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+#stepsList {
+    list-style-type: none;
+    padding-left: 25px;
+}
+
+.text-uppercase {
+    top: 65px;
+    position: relative;
+    text-align: center;
+    width: 100%;
 }
