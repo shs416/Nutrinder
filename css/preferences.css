@@ -4,9 +4,21 @@ html {
 /*  height: 100%;
 */}
 
+#subtitle {
+	color:#808080;
+	padding-top: .5rem;
+	padding-bottom: 1rem;
+	line-height: normal;
+}
+
 .options {
 	padding-left: 1rem;
 	padding-bottom: 1rem;
+}
+
+.card-header {
+	background-color: #50c878d1;
+
 }
 
 .card-body {
@@ -14,9 +26,16 @@ html {
 }
 
 .btn-link {
-	color: #808080;
+	color: white;
 }
 
 .btn-link:hover {
-	color: #808080;
+	color: white;
 }
+
+@media (min-width: 992px) {
+.accordion {
+	width: 90%;
+	margin-left: 5%;
+}
+
