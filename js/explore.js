@@ -2,6 +2,9 @@ var sliderCardSpacing = 20;
 var sliderIndex = 0;
 var savedIngredients = [];
 
+let twoArrowUpperPercentile = .45;
+let oneArrowUpperPercentile = .9;
+
 let currentNutrients = ["calories", "totalfat", "carbs", "protein", "vitaminA", "vitaminC", "calcium", "iron"];
 
 if (Cookies.get('savedIngredients')) {
@@ -12,6 +15,25 @@ function addIngredientCards() {
     $.getJSON("database.json", function (result) {
         var ingredientCards = result.ingredients;
         var exploreSlider = document.getElementById('sliderDiv');
+
+        var nutrients = {};
+        currentNutrients.forEach(function(item, index) {
+            nutrients[item] = {vals: []};
+        });
+        for (var i = 0; i < ingredientCards.length; i++) {
+            for (var j = 0; j < currentNutrients.length; j++) {
+                nutrients[currentNutrients[j]].vals.push(ingredientCards[i].stats[currentNutrients[j]]);
+            }
+        }
+        for (var i = 0; i < currentNutrients.length; i++) {
+            var arr = nutrients[currentNutrients[i]].vals;
+            arr.sort(function (a, b) {
+                return a - b;
+            });
+            nutrients[currentNutrients[i]].twoArrowCutoff = arr[arr.length-1]-(arr[arr.length-1]-arr[0])*twoArrowUpperPercentile;
+            nutrients[currentNutrients[i]].oneArrowCutoff = arr[arr.length-1]-(arr[arr.length-1]-arr[0])*oneArrowUpperPercentile;
+        }
+        
 
         for (var i = 0; i < ingredientCards.length; i++) {
             var sliderCard = document.createElement('div');
@@ -40,19 +62,18 @@ function addIngredientCards() {
             nameNode.innerHTML = ingredientCards[i].name;
             sliderCard.appendChild(nameNode);
 
-            var nutriStats = result.thresholds;
             var oneArrowStats = [];
             var twoArrowStats = [];
             for (var j = 0; j < currentNutrients.length; j++) {
                 if (ingredientCards[i].stats[currentNutrients[j]]) {
-                    if (ingredientCards[i].stats[currentNutrients[j]] > nutriStats[currentNutrients[j]].twoArrow) {
+                    if (ingredientCards[i].stats[currentNutrients[j]] > nutrients[currentNutrients[j]].twoArrowCutoff) {
                         var statsNode = document.createElement('h6');
-                        statsNode.innerHTML = "↑↑ "+currentNutrients[j]+" ("+ingredientCards[i].stats[currentNutrients[j]]+")";
+                        statsNode.innerHTML = "↑↑ " + currentNutrients[j] + " (" + ingredientCards[i].stats[currentNutrients[j]] + ")";
                         statsNode.style.color = "#07c41d";
                         twoArrowStats.push(statsNode);
-                    } else if (ingredientCards[i].stats[currentNutrients[j]] > nutriStats[currentNutrients[j]].oneArrow) {
+                    } else if (ingredientCards[i].stats[currentNutrients[j]] > nutrients[currentNutrients[j]].oneArrowCutoff) {
                         var statsNode = document.createElement('h6');
-                        statsNode.innerHTML = "↑ "+currentNutrients[j]+" ("+ingredientCards[i].stats[currentNutrients[j]]+")";
+                        statsNode.innerHTML = "↑ " + currentNutrients[j] + " (" + ingredientCards[i].stats[currentNutrients[j]] + ")";
                         statsNode.style.color = "#8ef29a";
                         oneArrowStats.push(statsNode);
                     }
@@ -122,42 +143,8 @@ function moveSliderRight() {
 
 window.onload = function () {
     addIngredientCards();
-    //    generateNutrientStats();
 };
 
 function updateSaved() {
     Cookies.set('savedIngredients', JSON.stringify(savedIngredients));
-}
-
-
-
-
-
-function generateNutrientStats() {
-    $.getJSON("database.json", function (result) {
-        var nutrients = [[], [], [], [], [], [], [], []];
-        for (var i = 0; i < result.ingredients.length; i++) {
-            nutrients[0].push(result.ingredients[i].stats.calories);
-            nutrients[1].push(result.ingredients[i].stats.totalfat);
-            nutrients[2].push(result.ingredients[i].stats.carbs);
-            nutrients[3].push(result.ingredients[i].stats.protein);
-            nutrients[4].push(result.ingredients[i].stats.vitaminA);
-            nutrients[5].push(result.ingredients[i].stats.vitaminC);
-            nutrients[6].push(result.ingredients[i].stats.calcium);
-            nutrients[7].push(result.ingredients[i].stats.iron);
-        }
-
-        for (var i = 0; i < nutrients.length; i++) {
-            nutrients[i].sort(function (a, b) {
-                return a - b
-            });
-            console.log("\"nutrient\": {")
-            console.log("\"normal\": " + nutrients[i][parseInt(1 * nutrients[i].length / 4)] + ",");
-            console.log("\"oneArrow\": " + nutrients[i][parseInt(2 * nutrients[i].length / 4)] + ",");
-            console.log("\"twoArrow\": " + nutrients[i][parseInt(3 * nutrients[i].length / 4)] + ",");
-            console.log("},")
-        }
-
-        console.log(nutrients[0]);
-    });
 }

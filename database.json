@@ -477,49 +477,6 @@
             "steps": ["1. Heat oil in large pan, saute onions and peppers until tender.", "2. Add vegetable broth, rice, Creole seasoning, and bring to a boil for 15 minutes", "3. Add shrimp and tomatoes, and heat thoroughly. Serve while hot."]
         }
 
-    ],
-
-    "thresholds": {
-        "calories": {
-            "normal": 26,
-            "oneArrow": 81,
-            "twoArrow": 179
-        },
-        "totalfat": {
-            "normal": 0.3,
-            "oneArrow": 1.1,
-            "twoArrow": 4.8
-        },
-        "carbs": {
-            "normal": 1,
-            "oneArrow": 4.8,
-            "twoArrow": 14
-        },
-        "protein": {
-            "normal": 1.3,
-            "oneArrow": 3.4,
-            "twoArrow": 6.9
-        },
-        "vitaminA": {
-            "normal": 0,
-            "oneArrow": 2,
-            "twoArrow": 9.3
-        },
-        "vitaminC": {
-            "normal": 0,
-            "oneArrow": 1.6,
-            "twoArrow": 17
-        },
-        "calcium": {
-            "normal": 0.9,
-            "oneArrow": 1.6,
-            "twoArrow": 4.6
-        },
-        "iron": {
-            "normal": 1.2,
-            "oneArrow": 2.9,
-            "twoArrow": 7.2
-        }
-    }
+    ]
 
 }
