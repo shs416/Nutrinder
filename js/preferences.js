@@ -3,13 +3,13 @@ if (Cookies.get('preferences')) {
     preferences = JSON.parse(Cookies.get('preferences'));
     
     $(":radio[value=\'"+preferences.diet+"\']", "#dietForm").prop("checked", true);
-    $('#dietButton').html("Diet: " + preferences.diet);
+    $('#dietButton').html(preferences.diet ? "Diet: " + preferences.diet : "Diet");
                           
     $(":radio[value=\'"+preferences.carbs+"\']", "#carbForm").prop("checked", true);
-    $('#carbButton').html("Carbohydrates: " + preferences.carbs);
+    $('#carbButton').html(preferences.carbs ? "Carbohydrates: " + preferences.carbs : "Carbohydrates");
                           
     $(":radio[value=\'"+preferences.protein+"\']", "#proteinForm").prop("checked", true);
-    $('#proteinButton').html("Protein: " + preferences.protein);
+    $('#proteinButton').html(preferences.protein ? "Protein: " + preferences.protein : "Protein");
 }
 
 function savePreferences() {
