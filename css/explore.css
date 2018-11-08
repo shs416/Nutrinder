@@ -11,7 +11,8 @@
 .sliderCard {
     top: 35px;
     padding: 10px;
-    background-color: rgba(0,0,0,0.1);
+    background-color: white;
+    box-shadow: 1px 1px 6px #bbbbbb;
     text-align: center;
     position: absolute;
 }
@@ -49,7 +50,8 @@
 }
 
 .sliderCard h3 {
-    color: darkgray;
+    margin-top: 10px;
+    color: #4f4e4e;
 }
 
 .sliderCard h6 {
