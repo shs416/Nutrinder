@@ -5,6 +5,9 @@ var savedIngredients = [];
 let twoArrowUpperPercentile = .45;
 let oneArrowUpperPercentile = .9;
 
+let sliderScrollSensitivity = 20;
+var scrollSwipeDone = true;
+
 let currentNutrients = ["calories", "totalfat", "carbs", "protein", "vitaminA", "vitaminC", "calcium", "iron"];
 
 if (Cookies.get('savedIngredients')) {
@@ -17,8 +20,10 @@ function addIngredientCards() {
         var exploreSlider = document.getElementById('sliderDiv');
 
         var nutrients = {};
-        currentNutrients.forEach(function(item, index) {
-            nutrients[item] = {vals: []};
+        currentNutrients.forEach(function (item, index) {
+            nutrients[item] = {
+                vals: []
+            };
         });
         for (var i = 0; i < ingredientCards.length; i++) {
             for (var j = 0; j < currentNutrients.length; j++) {
@@ -30,10 +35,10 @@ function addIngredientCards() {
             arr.sort(function (a, b) {
                 return a - b;
             });
-            nutrients[currentNutrients[i]].twoArrowCutoff = arr[arr.length-1]-(arr[arr.length-1]-arr[0])*twoArrowUpperPercentile;
-            nutrients[currentNutrients[i]].oneArrowCutoff = arr[arr.length-1]-(arr[arr.length-1]-arr[0])*oneArrowUpperPercentile;
+            nutrients[currentNutrients[i]].twoArrowCutoff = arr[arr.length - 1] - (arr[arr.length - 1] - arr[0]) * twoArrowUpperPercentile;
+            nutrients[currentNutrients[i]].oneArrowCutoff = arr[arr.length - 1] - (arr[arr.length - 1] - arr[0]) * oneArrowUpperPercentile;
         }
-        
+
 
         for (var i = 0; i < ingredientCards.length; i++) {
             var sliderCard = document.createElement('div');
@@ -122,27 +127,51 @@ function toggleHeart(heart) {
     }
 }
 
-function moveSliderLeft() {
-    if (sliderIndex > 0) {
-        $('.sliderCard').animate({
-            left: "+=290"
-        }, 200);
-        sliderIndex--;
-    }
+function moveSliderLeft(speed) {
+        animationDone = false;
+        if (sliderIndex > 0) {
+            $('.sliderCard').animate({
+                left: "+=290"
+            }, speed, function () {
+                animationDone = true;
+            });
+            sliderIndex--;
+        }
 }
 
-function moveSliderRight() {
-    var numCards = document.getElementsByClassName('sliderCard').length - 1;
-    if (sliderIndex < numCards) {
-        $('.sliderCard').animate({
-            left: "-=290"
-        }, 200);
-        sliderIndex++;
-    }
+function moveSliderRight(speed) {
+        animationDone = false;
+        var numCards = document.getElementsByClassName('sliderCard').length - 1;
+        if (sliderIndex < numCards) {
+            $('.sliderCard').animate({
+                left: "-=290"
+            }, 200, function () {
+                animationDone = true;
+            });
+            sliderIndex++;
+        }
 }
 
 window.onload = function () {
     addIngredientCards();
+
+    $('#sliderDiv').on('mousewheel DOMMouseScroll', function (e) {
+        var delta = e.originalEvent.deltaX;
+        if (delta < sliderScrollSensitivity && delta > -1 * sliderScrollSensitivity) {
+            scrollSwipeDone = true;
+        } else if (delta < -1 * sliderScrollSensitivity) {
+            if (scrollSwipeDone) {
+                scrollSwipeDone = false;
+                moveSliderLeft(120);
+            }
+        } else if (delta > sliderScrollSensitivity) {
+            if (scrollSwipeDone) {
+                scrollSwipeDone = false;
+                moveSliderRight(120);
+            }
+        }
+        e.preventDefault();
+    });
 };
 
 function updateSaved() {
