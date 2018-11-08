@@ -51,7 +51,11 @@
 }
 
 a {
-    color: dodgerblue;
+    color: #50C878;
+}
+
+a:hover {
+    color:#50C878;
 }
 
 h5 {
