@@ -36,9 +36,14 @@ html {
 	color: white;
 }
 
+.card-body {
+	color:black;
+}
+
 @media (min-width: 992px) {
 .accordion {
 	width: 90%;
 	margin-left: 5%;
 }
+
 
