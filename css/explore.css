@@ -136,4 +136,9 @@ body {
     position: relative;
     text-align: center;
     width: 100%;
+    font-size: 2rem;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #50C878;
 }
