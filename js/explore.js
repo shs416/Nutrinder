@@ -88,14 +88,21 @@ function addIngredientCards() {
                 sliderCard.appendChild(nameNode);
                 
 
+                var statsListNode = document.createElement('div');
+                statsListNode.classList = 'tooltipDiv';
+                var statsToolTip = document.createElement('span');
+                statsToolTip.classList = 'tooltiptext';
+                statsToolTip.textContent = '↑ is >20% of your daily needs, ↑↑ is >60% of your daily needs';
+                statsListNode.appendChild(statsToolTip);
                 var statsList = formatItemStats(ingredientCards, ingredientCards[i].stats);
                 for (var j = 0; j < (statsList.length > maxStatsShown ? maxStatsShown : statsList.length); j++) {
                     var statsNode = document.createElement('h6');
                     statsNode.innerHTML = statsList[j][0]+' '+statsList[j][1];
                     if (statsList[j] == '↑') statsNode.style.color = "#8ef29a";
                     else if (statsList[j] == '↑↑') statsNode.style.color = "#07c41d";
-                    sliderCard.appendChild(statsNode);
+                    statsListNode.appendChild(statsNode);
                 }
+                sliderCard.appendChild(statsListNode);
 
                 let inputIngredientID = i;
                 sliderCard.onclick = function (pointing) {
