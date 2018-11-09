@@ -154,11 +154,11 @@
 
                     for (var i = 0; i < recipes.length; i++) {
                         var containsIngredient = false;
-                        if (recipes[i].name.includes(ingredient.name)) {
-                            containsIngredient = true
+                        if (recipes[i].name.toUpperCase().includes(ingredient.name.toUpperCase())) {
+                            containsIngredient = true;
                         };
                         for (var j = 0; j < recipes[i].ingredients.length; j++) {
-                            if (recipes[i].ingredients[j].includes(ingredient.name)) {
+                            if (recipes[i].ingredients[j].toUpperCase().includes(ingredient.name.toUpperCase())) {
                                 containsIngredient = true;
                             }
                         }
