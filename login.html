@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <Title>Explore</Title>
-    
+    <Title>Login</Title>
+
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
@@ -19,7 +19,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link href="css/explore.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -39,8 +39,7 @@
 
 <body id="page-top">
     <script src="js/js-cookie.js"></script>
-    <script src="js/checkLogin.js"></script>
-    <script src="js/explore.js"></script>
+    <script src="js/login.js"></script>
 
 
     <!-- Navigation -->
@@ -48,8 +47,8 @@
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="index.html">Nutrinder</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
@@ -67,14 +66,22 @@
     </nav>
 
     <h1 class="text-uppercase">
-        <strong>EXPLORE</strong>
+        <strong>LOGIN</strong>
     </h1>
 
-    <div id="sliderDiv">
+    <div id="loginDiv">
+        <form onsubmit="return checkLogin();">
+            Username<br>
+            <input type="text" name="firstname" id="usernameField">
+            <br>
+            Password<br>
+            <input type="text" name="lastname" id="passwordField">
+            <br><br>
+            <input type="submit" value="Login">
+        </form>
     </div>
 
-    <img onclick="moveSliderRight(200)" id='arrow-right' src='img/arrow_right.png'>
-    <img onclick="moveSliderLeft(200)" id='arrow-left' src='img/arrow_left.png'>
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>

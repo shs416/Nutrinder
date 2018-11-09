@@ -74,10 +74,6 @@ function addIngredientCards() {
                 }
             } catch {}
 
-            if (!dietAllows) {
-                console.log('Not allowing', ingredientCards[i].name)
-            }
-
 
             if (dietAllows) {
 
