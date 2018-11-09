@@ -40,6 +40,10 @@ html {
 	color:black;
 }
 
+#logoutCard {
+	padding-top:100px;
+}
+
 @media (min-width: 992px) {
 .accordion {
 	width: 90%;

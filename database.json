@@ -490,7 +490,7 @@
         },
         {
             "name": "Chicken Tikka Masala",
-            "ingredients": ["Chicken Breast", "Tikka", "Masala", "Mountain Dew"],
+            "ingredients": ["Chicken Breast", "Tikka", "Masala"],
             "imgLink": "https://i0.wp.com/cafedelites.com/wp-content/uploads/2018/04/Best-Chicken-Tikka-Masala-IMAGE-1.jpg?w=1600&ssl=1",
             "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
         },
@@ -508,19 +508,19 @@
         },
         {
             "name": "Creamed Spinach Stuffed Salmon",
-            "ingredients": ["Spinach", "Cream", "Cheese", "Cream Cheese", "Tuna"],
+            "ingredients": ["Spinach", "Cream", "pepperjack cheese", "Cream Cheese", "Tuna"],
             "imgLink": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-creamed-spinach-stuffed-salmon-pinterest-still001-1532720411.jpg",
             "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
         },
         {
             "name": "Strangolapreti",
-            "ingredients": ["Strangolapreti", "Spinach", "More Strangolapreti", "Extra-Strength Italy", "Chicken Alfredo"],
+            "ingredients": ["Strangolapreti", "Spinach", "american cheese", "Chicken Alfredo"],
             "imgLink": "http://www.mylittleitaliankitchen.com/wp-content/uploads/2016/06/strangolapreti1.jpg",
             "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
         },
         {
             "name": "Spinach and Ricotta Ravioli",
-            "ingredients": ["Spinach", "Ricotta", "Pasta", "Other Cheese", "Sure, how about some pasta", "Ravioli", "Ravioli", "Give me the Formioli"],
+            "ingredients": ["Spinach", "Ricotta", "Pasta", "Parmesan Cheese", "Ravioli", "Ravioli", "Eggs"],
             "imgLink": "https://www.saveur.com/g00/3_c-5eee.aidmcz.kwu_/c-5UWZMXPMCA09x24pbbx78ax3ax2fx2feee.aidmcz.kwux2faqbmax2faidmcz.kwux2fnqtmax2fabgtmax2f688_9f_x2fx78cjtqkx2fquiomax2f0893x2f87x2f5-aid938-921.ax78qvikpzidqwtq-9488f9088.rx78ox3fqbwsx3d6dGk3v2-x26q98k.uizsx3dquiom_$/$/$/$/$/$/$/$/$/$/$",
             "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
         },
@@ -532,13 +532,13 @@
         },
         {
             "name": "Anchor Steam Mac and Cheese",
-            "ingredients": ["Pasta", "Mac", "Cheese", "There's beer in this omg", "Live Anchors"],
+            "ingredients": ["Pasta", "Mac", "Cheese"],
             "imgLink": "https://hips.hearstapps.com/clv.h-cdn.co/assets/17/19/1494521586-recipes-anchor-steam-mac-and-cheese-0617.jpg",
             "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
         },
         {
             "name": "Spaghetti",
-            "ingredients": ["Pasta", "Tomatoes", "Oodles of Noodles", "8 Forks", "Meat Sauce", "Your friend Kevin"],
+            "ingredients": ["Pasta", "Tomato", "Meat Sauce"],
             "imgLink": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pasta-recipes-spaghetti-red-onion-1540999367.jpg",
             "steps": ["1. Ask your mom"]
         },
@@ -547,8 +547,31 @@
             "ingredients": ["1 pound of shrimp", "1 cup chopped onion", "2 tomatoes, diced", "2 bell peppers, julienned", "3 cups vegetable broth", "2 cups uncooked rice", "2 teaspoons Creole Seasoning", "2 tbsp. olive oil"],
             "imgLink": "https://static01.nyt.com/images/2016/01/19/dining/19COOKING_JAMBALAYA/19COOKING_JAMBALAYA-superJumbo.jpg",
             "steps": ["1. Heat oil in large pan, saute onions and peppers until tender.", "2. Add vegetable broth, rice, Creole seasoning, and bring to a boil for 15 minutes", "3. Add shrimp and tomatoes, and heat thoroughly. Serve while hot."]
-        }
-
+        },
+        {
+            "name": "Tomato Basil Salmon",
+            "ingredients": ["2 boneless salmon fillets", "1 tbsp basil", "2 tomatoes, diced", "2 tbsp parmesan", "2 tbsp. olive oil"],
+            "imgLink": "https://images.media-allrecipes.com/userphotos/560x315/691788.jpg",
+            "steps": ["1. Preheat oven to 375 degrees F (190 degrees C). "
+                      "2. Line a baking sheet with a piece of aluminum foil, and spray with nonstick cooking spray." 
+                      "3. Place the salmon fillets onto the foil, sprinkle with basil, top with tomato slices, drizzle with olive oil, and sprinkle with the Parmesan cheese.Heat oil in large pan, saute onions and peppers until tender.", 
+                      "4. Bake in the preheated oven until the salmon is opaque in the center, and the Parmesan cheese is lightly browned on top, about 20 minutes."]
+        },
+        {
+            "name": "Romaine and Mandarin Orange Salad",
+            "ingredients": ["10 cups lettuce", "1 cup chopped orange", "2 tomatoes, diced", "2 apples, julienned", "1 onion", "2 cups uncooked rice", "2 teaspoons mustard", "2 tbsp. salt"],
+            "imgLink": "https://images.media-allrecipes.com/userphotos/560x315/366742.jpg",
+            "steps": ["1. Place red onion, mustard powder, and salt into the bowl of a blender. Cover, and puree on high until smooth.", 
+                "2. Toss the lettuce in a large bowl with the Mandarin oranges and enough dressing to moisten."]
+        },  
+        {
+            "name": "Orange and Milk-Braised Pork Carnitas",
+            "ingredients": ["10 cups pork", "1 orange", "2 bay leaves", "1 onion", "2 cups milk", "2 teaspoons mustard", "2 tbsp. salt"],
+            "imgLink": "https://images.media-allrecipes.com/userphotos/720x405/2280918.jpg",
+            "steps": ["1. Season pork with bay leaves, cumin, dried oregano, and cayenne pepper. Stir in fresh orange juice, orange zest, and milk. Bring mixture to a boil over high heat; reduce heat to low. ",
+                "2. Cover and simmer, stirring occasionally, until meat is fork tender but not falling apart, about 2 hours.", 
+                "3. Preheat oven to 450 degrees F (230 degrees C). Bake in preheated oven until pork is browned, about 15 minutes. Stir pork."]
+        }              
     ]
 
 }
