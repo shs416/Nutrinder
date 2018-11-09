@@ -24,6 +24,7 @@ function checkLogin() {
         window.location = 'index.html';
     } else {
         Cookies.set('loggedIn', false);
+        $('#loginStatus').text('Incorrect username or password');
     }
     return false;
 }

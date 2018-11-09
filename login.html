@@ -72,11 +72,13 @@
     <div id="loginDiv">
         <form onsubmit="return checkLogin();">
             Username<br>
-            <input type="text" name="firstname" id="usernameField">
+            <input type="text" id="usernameField">
             <br>
             Password<br>
-            <input type="text" name="lastname" id="passwordField">
-            <br><br>
+            <input type="password" id="passwordField">
+            <br>
+            <br>
+            <h6 id="loginStatus"></h6>
             <input type="submit" value="Login">
         </form>
     </div>
