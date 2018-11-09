@@ -54,7 +54,14 @@
                 "calcium": 0.6,
                 "iron": 8.1
             },
-            "imgLink": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/4/1/RX-FNM_030111-Lighten-Up-012_s4x3.jpg.rend.hgtvcom.616.462.suffix/1382539856907.jpeg"
+            "imgLink": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/4/1/RX-FNM_030111-Lighten-Up-012_s4x3.jpg.rend.hgtvcom.616.462.suffix/1382539856907.jpeg",
+            "diet": {
+                "Gluten-free": false,
+                "Paleo": false,
+                "Vegan": true,
+                "Vegetarian": true
+            }
+
         },
 
         {
@@ -69,8 +76,15 @@
                 "calcium": 16,
                 "iron": 1.1
             },
-            "imgLink": "https://us.123rf.com/450wm/bwf211/bwf2111604/bwf211160400166/57329969-a-single-slice-of-pepper-jack-cheese-isolated-on-a-white-background-.jpg?ver=6"
+            "imgLink": "https://us.123rf.com/450wm/bwf211/bwf2111604/bwf211160400166/57329969-a-single-slice-of-pepper-jack-cheese-isolated-on-a-white-background-.jpg?ver=6",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": false,
+                "Vegan": false,
+                "Vegetarian": true
+            }
         },
+
 
         {
             "name": "Eggs",
@@ -84,7 +98,14 @@
                 "calcium": 2.2,
                 "iron": 4.9
             },
-            "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR57WAjXsB0pqp6WDZ4h1zDwLjqL2whoiemYecwrp4HAgX0gNvaiw"
+            "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR57WAjXsB0pqp6WDZ4h1zDwLjqL2whoiemYecwrp4HAgX0gNvaiw",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": false,
+                "Vegetarian": true
+            }
+
         },
 
         {
@@ -99,7 +120,14 @@
                 "calcium": 1.1,
                 "iron": 1.4
             },
-            "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0WI-A6RM_1OsHphXc4IWjL6DK-riOjH43avfFwfTXwJJsJT6U"
+            "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0WI-A6RM_1OsHphXc4IWjL6DK-riOjH43avfFwfTXwJJsJT6U",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": true,
+                "Vegetarian": true
+            }
+
         },
 
         {
@@ -114,7 +142,14 @@
                 "calcium": 1.4,
                 "iron": 10.5
             },
-            "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRW6CqbRI0g2eKgSTTZ1RuAbo0O5R4He8larUHIywivqEcPiA2"
+            "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRW6CqbRI0g2eKgSTTZ1RuAbo0O5R4He8larUHIywivqEcPiA2",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": false,
+                "Vegetarian": false
+            }
+
         },
 
         {
@@ -129,7 +164,14 @@
                 "calcium": 1.3,
                 "iron": 2.1
             },
-            "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlZbQ7_b9YKINkga1HIFibZOikpKA_9xhvc7vTRYRr3Nnc50HN"
+            "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlZbQ7_b9YKINkga1HIFibZOikpKA_9xhvc7vTRYRr3Nnc50HN",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": false,
+                "Vegetarian": false
+            }
+
         },
 
         {
@@ -144,7 +186,14 @@
                 "calcium": 0.8,
                 "iron": 2.9
             },
-            "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm1quk_5WzisOS4lVNIov2mj5Y3WgdAY9duS8Wl9nFoLqtO9-_BA"
+            "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm1quk_5WzisOS4lVNIov2mj5Y3WgdAY9duS8Wl9nFoLqtO9-_BA",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": true,
+                "Vegetarian": true
+            }
+
         },
 
         {
@@ -159,7 +208,14 @@
                 "calcium": 2.4,
                 "iron": 5.1
             },
-            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/657_thumb.jpg"
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/657_thumb.jpg",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": true,
+                "Vegetarian": true
+            }
+
         },
 
         {
@@ -174,7 +230,14 @@
                 "calcium": 6.6,
                 "iron": 1.7
             },
-            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/204_thumb.jpg"
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/204_thumb.jpg",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": false,
+                "Vegetarian": false
+            }
+
         },
 
         {
@@ -189,7 +252,14 @@
                 "calcium": 7.2,
                 "iron": 6.5
             },
-            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/644_thumb.jpg"
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/644_thumb.jpg",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": true,
+                "Vegetarian": true
+            }
+
         },
 
         {
@@ -204,7 +274,13 @@
                 "calcium": 4,
                 "iron": 4.4
             },
-            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/1862_thumb.jpg"
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/1862_thumb.jpg",
+            "diet": {
+                "Gluten-free": false,
+                "Paleo": false,
+                "Vegan": true,
+                "Vegetarian": true
+            }
         },
 
         {
@@ -219,7 +295,14 @@
                 "calcium": 1.1,
                 "iron": 11
             },
-            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/85_thumb.jpg"
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/85_thumb.jpg",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": false,
+                "Vegan": true,
+                "Vegetarian": true
+            }
+
         },
 
         {
@@ -234,7 +317,13 @@
                 "calcium": 1.3,
                 "iron": 3.8
             },
-            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/199_thumb.jpg"
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/199_thumb.jpg",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": true,
+                "Vegetarian": true
+            }
         },
 
         {
@@ -249,7 +338,14 @@
                 "calcium": 22,
                 "iron": 1
             },
-            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/382_thumb.jpg"
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/382_thumb.jpg",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": false,
+                "Vegan": false,
+                "Vegetarian": true
+            }
+
         },
 
         {
@@ -264,7 +360,14 @@
                 "calcium": 3.3,
                 "iron": 0.1
             },
-            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/594_thumb.jpg"
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/594_thumb.jpg",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": false,
+                "Vegan": false,
+                "Vegetarian": true
+            }
+
         },
         {
             "name": "2% Milk",
@@ -284,7 +387,7 @@
                 "Paleo": false,
                 "Vegan": false,
                 "Vegetarian": true
-            }            
+            }
         },
         {
             "name": "Onion",
@@ -304,7 +407,7 @@
                 "Paleo": true,
                 "Vegan": true,
                 "Vegetarian": true
-            }            
+            }
         },
         {
             "name": "Mushroom",
@@ -344,7 +447,7 @@
                 "Paleo": false,
                 "Vegan": true,
                 "Vegetarian": true
-            }        
+            }
         },
         {
             "name": "Garlic",
@@ -549,6 +652,7 @@
             "steps": ["1. Heat oil in large pan, saute onions and peppers until tender.", "2. Add vegetable broth, rice, Creole seasoning, and bring to a boil for 15 minutes", "3. Add shrimp and tomatoes, and heat thoroughly. Serve while hot."]
         },
         {
+
             "name": "Tomato Basil Salmon",
             "ingredients": ["2 boneless salmon fillets", "1 tbsp basil", "2 tomatoes, diced", "2 tbsp parmesan", "2 tbsp. olive oil"],
             "imgLink": "https://images.media-allrecipes.com/userphotos/560x315/691788.jpg",
@@ -571,7 +675,28 @@
             "steps": ["1. Season pork with bay leaves, cumin, dried oregano, and cayenne pepper. Stir in fresh orange juice, orange zest, and milk. Bring mixture to a boil over high heat; reduce heat to low. ",
                 "2. Cover and simmer, stirring occasionally, until meat is fork tender but not falling apart, about 2 hours.", 
                 "3. Preheat oven to 450 degrees F (230 degrees C). Bake in preheated oven until pork is browned, about 15 minutes. Stir pork."]
-        }              
+        },              
+        {
+            "name": "Vegetable Curry",
+            "ingredients": ["1 bell pepper, julienned", "1 cup chopped onion",  "4 cups coconut milk", "2 tbsp. olive oil", "4 tbsp curry powder"],
+            "imgLink": "https://images.media-allrecipes.com/userphotos/720x405/2280918.jpg",
+            "steps": ["1. Heat oil in large pan, saute onions and peppers until tender.", 
+                "2. Add coconut milk, add curry powder, and bring to boil.", 
+                "3. Reduce to simmer for 20 minutes. Serve over rice."]
+        },
+        {
+            "name": "Garden Salad",
+            "ingredients": ["2 cups lettuce", "1 cup kale",  "1 cup spinach", "2 tomatoes, diced", "2 tbsp. olive oil", "1/2 cup salad dressing", "4 tbsp parmesan cheese"],
+            "imgLink": "https://images.media-allrecipes.com/userphotos/720x405/2280918.jpgk",
+            "steps": ["1. Add all ingredients to large bowl.", "2. Mix well and serve."]
+        },
+        {
+            "name": "Philly Cheesesteak Sandwich",
+            "ingredients": ["1 lb of Steak, sliced thinly", "1 onion, sliced thinly",  "1 bell pepper, julienned", "4 medium mushrooms, sliced thinly","8 slices of white bread", "2 tbsp. olive oil", "4 slices of pepper jack cheese"],
+            "imgLink": "https://images.media-allrecipes.com/userphotos/720x405/2280918.jpg",
+            "steps": ["1. Heat oil in large pan, add thinly sliced steak. Cook until outer edges are browned.", "2. Add onions, bell peppers, mushrooms, and season with salt and pepper.", "3. Separate into 4 sections, add cheese to top until melted.","Top bread with steak, make into sandwich. Serve with fries."]
+        }
     ]
+
 
 }
