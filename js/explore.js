@@ -91,7 +91,7 @@ function addIngredientCards() {
                 var statsList = formatItemStats(ingredientCards, ingredientCards[i].stats);
                 for (var j = 0; j < (statsList.length > maxStatsShown ? maxStatsShown : statsList.length); j++) {
                     var statsNode = document.createElement('h6');
-                    statsNode.innerHTML = statsList[j][0]+' '+statsList[j][1]+' ('+statsList[j][2]+')';
+                    statsNode.innerHTML = statsList[j][0]+' '+statsList[j][1];
                     if (statsList[j] == '↑') statsNode.style.color = "#8ef29a";
                     else if (statsList[j] == '↑↑') statsNode.style.color = "#07c41d";
                     sliderCard.appendChild(statsNode);
