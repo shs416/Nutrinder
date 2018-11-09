@@ -60,7 +60,11 @@ a:hover {
     color:#50C878;
 }
 
-h5 {
+#emptyMessage {
     margin: 30px;
     text-align: center;
+    padding: 12px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 2px 2px 10px #dddddd;
 }

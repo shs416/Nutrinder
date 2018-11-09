@@ -150,9 +150,13 @@
 
                 });
             } else {
+                var outerDiv = document.createElement('a');
+                outerDiv.href = 'explore.html';
                 var noItems = document.createElement('h5');
-                noItems.innerHTML = "No saved ingredients! Find some by going to \"Explore\" in the menu on the top right";
-                document.getElementsByTagName('body')[0].appendChild(noItems);
+                noItems.innerHTML = "No saved ingredients! Find some by clicking here, or going to \"Explore\" in the top right menu";
+                noItems.id = 'emptyMessage';
+                outerDiv.appendChild(noItems);
+                document.getElementsByTagName('body')[0].appendChild(outerDiv);
             }
         };
 
