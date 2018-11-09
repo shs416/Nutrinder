@@ -168,11 +168,11 @@
 
                     for (var i = 0; i < ingredients.length; i++) {
                         var containsIngredient = false;
-                        if (recipe.name.includes(ingredients[i].name)) {
+                        if (recipe.name.toUpperCase().includes(ingredients[i].name.toUpperCase())) {
                             containsIngredient = true
                         };
                         for (var j = 0; j < recipe.ingredients.length; j++) {
-                            if (recipe.ingredients[j].includes(ingredients[i].name)) {
+                            if (recipe.ingredients[j].toUpperCase().includes(ingredients[i].name.toUpperCase())) {
                                 containsIngredient = true;
                             }
                         }
