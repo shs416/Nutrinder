@@ -12,6 +12,11 @@ if (Cookies.get('preferences')) {
     $('#proteinButton').html(preferences.protein ? "Protein: " + preferences.protein : "Protein");
 }
 
+function logout() {
+    Cookies.set('loggedIn', false);
+    window.location = 'login.html';
+}
+
 function savePreferences() {
     Cookies.set('preferences', JSON.stringify(preferences));
 }
