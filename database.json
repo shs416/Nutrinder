@@ -266,7 +266,13 @@
                 "calcium": 23,
                 "iron": 0.3
             },
-            "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1OD_embHpO1Gx02gVGy4fLNZPPeuRCDr8eVko4woCHU9aseyf5w"
+            "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1OD_embHpO1Gx02gVGy4fLNZPPeuRCDr8eVko4woCHU9aseyf5w",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": false,
+                "Vegan": false,
+                "Vegetarian": true
+            }            
         },
         {
             "name": "Onion",
@@ -280,7 +286,13 @@
                 "calcium": 1.6,
                 "iron": 1.3
             },
-            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/717_thumb.jpg"
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/717_thumb.jpg",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": true,
+                "Vegetarian": true
+            }            
         },
         {
             "name": "Mushroom",
@@ -294,7 +306,13 @@
                 "calcium": 0.4,
                 "iron": 7.2
             },
-            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/148_thumb.jpg"
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/148_thumb.jpg",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": true,
+                "Vegetarian": true
+            }
         },
         {
             "name": "White bread",
@@ -308,7 +326,13 @@
                 "calcium": 4.1,
                 "iron": 7.4
             },
-            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/227_thumb.jpg"
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/227_thumb.jpg",
+            "diet": {
+                "Gluten-free": false,
+                "Paleo": false,
+                "Vegan": true,
+                "Vegetarian": true
+            }        
         },
         {
             "name": "Garlic",
@@ -322,7 +346,13 @@
                 "calcium": 0.4,
                 "iron": 0.3
             },
-            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/330_thumb.jpg"
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/330_thumb.jpg",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": true,
+                "Vegetarian": true
+            }
         },
         {
             "name": "Tomato",
@@ -336,7 +366,13 @@
                 "calcium": 0.9,
                 "iron": 1.8
             },
-            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/191_thumb.jpg"
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/191_thumb.jpg",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": true,
+                "Vegetarian": true
+            }
         },
         {
             "name": "Coconut Milk",
@@ -350,7 +386,13 @@
                 "calcium": 3.1,
                 "iron": 41
             },
-            "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjciTsNjCwF1m6a7U003cIz1CGMMXVBqqtxzopeNAn0BB0VzY2mg"
+            "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjciTsNjCwF1m6a7U003cIz1CGMMXVBqqtxzopeNAn0BB0VzY2mg",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": true,
+                "Vegetarian": true
+            }
         },
         {
             "name": "Apple",
@@ -364,7 +406,13 @@
                 "calcium": 0.8,
                 "iron": 1.2
             },
-            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/384_thumb.jpg"
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/384_thumb.jpg",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": true,
+                "Vegetarian": true
+            }
         },
         {
             "name": "Orange",
@@ -378,7 +426,13 @@
                 "calcium": 4.6,
                 "iron": 1
             },
-            "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvLRI-Y6pikD8g9p3JNuhcn0h_eTkOlExdN-IRTeR096DMvbljFg"
+            "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvLRI-Y6pikD8g9p3JNuhcn0h_eTkOlExdN-IRTeR096DMvbljFg",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": true,
+                "Vegetarian": true
+            }
         },
         {
             "name": "Banana",
@@ -392,7 +446,13 @@
                 "calcium": 0.5,
                 "iron": 1.7
             },
-            "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRppgNVJMPIU5Xe2SWq3KWEsD1u6vQmNkAx5PY5PGzE-EtVzC60A"
+            "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRppgNVJMPIU5Xe2SWq3KWEsD1u6vQmNkAx5PY5PGzE-EtVzC60A",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": true,
+                "Vegetarian": true
+            }
         }
 
     ],
