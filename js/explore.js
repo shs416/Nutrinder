@@ -50,6 +50,34 @@ function addIngredientCards() {
                 if (!ingredientCards[i].diet[preferences.diet]) dietAllows = false;
             } catch {}
 
+            try {
+                if (preferences.carbs == 'Low' && ingredientCards[i].stats.carbs > nutrients.carbs.twoArrowCutoff) {
+                    dietAllows = false;
+                }
+            } catch {}
+
+            try {
+                if (preferences.carbs == 'High' && ingredientCards[i].stats.carbs < nutrients.carbs.twoArrowCutoff) {
+                    dietAllows = false;
+                }
+            } catch {}
+
+            try {
+                if (preferences.protein == 'Low' && ingredientCards[i].stats.protein > nutrients.protein.twoArrowCutoff) {
+                    dietAllows = false;
+                }
+            } catch {}
+
+            try {
+                if (preferences.protein == 'High' && ingredientCards[i].stats.protein < nutrients.protein.twoArrowCutoff) {
+                    dietAllows = false;
+                }
+            } catch {}
+
+            if (!dietAllows) {
+                console.log('Not allowing', ingredientCards[i].name)
+            }
+
 
             if (dietAllows) {
 
