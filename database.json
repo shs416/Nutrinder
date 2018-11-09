@@ -96,7 +96,7 @@
                 "vitaminA": 5.4,
                 "vitaminC": 0,
                 "calcium": 2.2,
-                "iron": 4.9,
+                "iron": 4.9
             },
             "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR57WAjXsB0pqp6WDZ4h1zDwLjqL2whoiemYecwrp4HAgX0gNvaiw",
             "diet": {
@@ -125,7 +125,7 @@
                 "Gluten-free": true,
                 "Paleo": true,
                 "Vegan": true,
-                "Vegetarian": true,
+                "Vegetarian": true
             }
 
         },
@@ -147,7 +147,7 @@
                 "Gluten-free": true,
                 "Paleo": true,
                 "Vegan": false,
-                "Vegetarian": false,
+                "Vegetarian": false
             }
 
         },
@@ -169,7 +169,7 @@
                 "Gluten-free": true,
                 "Paleo": true,
                 "Vegan": false,
-                "Vegetarian": false,
+                "Vegetarian": false
             }
 
         },
@@ -650,19 +650,19 @@
             "ingredients": ["1 pound of shrimp", "1 cup chopped onion", "2 tomatoes, diced", "2 bell peppers, julienned", "3 cups vegetable broth", "2 cups uncooked rice", "2 teaspoons Creole Seasoning", "2 tbsp. olive oil"],
             "imgLink": "https://static01.nyt.com/images/2016/01/19/dining/19COOKING_JAMBALAYA/19COOKING_JAMBALAYA-superJumbo.jpg",
             "steps": ["1. Heat oil in large pan, saute onions and peppers until tender.", "2. Add vegetable broth, rice, Creole seasoning, and bring to a boil for 15 minutes", "3. Add shrimp and tomatoes, and heat thoroughly. Serve while hot."]
-        }
+        },
         {
             "name": "Vegetable Curry",
             "ingredients": ["1 bell pepper, julienned", "1 cup chopped onion",  "4 cups coconut milk", "2 tbsp. olive oil", "4 tbsp curry powder"],
             "imgLink": "needs link",
             "steps": ["1. Heat oil in large pan, saute onions and peppers until tender.", "2. Add coconut milk, add curry powder, and bring to boil.", "3. Reduce to simmer for 20 minutes. Serve over rice."]
-        }
+        },
         {
             "name": "Garden Salad",
             "ingredients": ["2 cups lettuce", "1 cup kale",  "1 cup spinach", "2 tomatoes, diced", "2 tbsp. olive oil", "1/2 cup salad dressing", "4 tbsp parmesan cheese"],
             "imgLink": "needs link",
             "steps": ["1. Add all ingredients to large bowl.", "2. Mix well and serve."]
-        }
+        },
         {
             "name": "Philly Cheesesteak Sandwich",
             "ingredients": ["1 lb of Steak, sliced thinly", "1 onion, sliced thinly",  "1 bell pepper, julienned", "4 medium mushrooms, sliced thinly","8 slices of white bread", "2 tbsp. olive oil", "4 slices of pepper jack cheese"],
