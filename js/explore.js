@@ -15,7 +15,9 @@ if (Cookies.get('savedIngredients')) {
 }
 
 function addIngredientCards() {
+    var preferences = JSON.parse(Cookies.get('preferences'));
     $.getJSON("database.json", function (result) {
+
         var ingredientCards = result.ingredients;
         var exploreSlider = document.getElementById('sliderDiv');
 
@@ -40,72 +42,112 @@ function addIngredientCards() {
         }
 
 
+        var numCards = 0;
         for (var i = 0; i < ingredientCards.length; i++) {
-            var sliderCard = document.createElement('div');
-            sliderCard.className = 'sliderCard';
 
-            var imgDiv = document.createElement('div');
-            imgDiv.className = 'sliderImg';
-            var img = document.createElement('img');
-            img.src = ingredientCards[i].imgLink;
-            imgDiv.appendChild(img);
-            sliderCard.appendChild(imgDiv);
+            var dietAllows = true;
+            try {
+                if (!ingredientCards[i].diet[preferences.diet]) dietAllows = false;
+            } catch {}
 
-            var heartImg = document.createElement('img');
-            heartImg.className = "heartIcon";
-            if (savedIngredients.indexOf(i) > -1) {
-                heartImg.src = "img/heart_full.png";
-            } else {
-                heartImg.src = "img/heart_empty.png";
-            }
-            heartImg.onclick = function () {
-                toggleHeart(this);
-            };
-            sliderCard.appendChild(heartImg);
+            try {
+                if (preferences.carbs == 'Low' && ingredientCards[i].stats.carbs > nutrients.carbs.twoArrowCutoff) {
+                    dietAllows = false;
+                }
+            } catch {}
 
-            var nameNode = document.createElement('h3');
-            nameNode.innerHTML = ingredientCards[i].name;
-            sliderCard.appendChild(nameNode);
+            try {
+                if (preferences.carbs == 'High' && ingredientCards[i].stats.carbs < nutrients.carbs.twoArrowCutoff) {
+                    dietAllows = false;
+                }
+            } catch {}
 
-            var oneArrowStats = [];
-            var twoArrowStats = [];
-            for (var j = 0; j < currentNutrients.length; j++) {
-                if (ingredientCards[i].stats[currentNutrients[j]]) {
-                    if (ingredientCards[i].stats[currentNutrients[j]] > nutrients[currentNutrients[j]].twoArrowCutoff) {
-                        var statsNode = document.createElement('h6');
-                        statsNode.innerHTML = "↑↑ " + currentNutrients[j] + " (" + ingredientCards[i].stats[currentNutrients[j]] + ")";
-                        statsNode.style.color = "#07c41d";
-                        twoArrowStats.push(statsNode);
-                    } else if (ingredientCards[i].stats[currentNutrients[j]] > nutrients[currentNutrients[j]].oneArrowCutoff) {
-                        var statsNode = document.createElement('h6');
-                        statsNode.innerHTML = "↑ " + currentNutrients[j] + " (" + ingredientCards[i].stats[currentNutrients[j]] + ")";
-                        statsNode.style.color = "#8ef29a";
-                        oneArrowStats.push(statsNode);
+            try {
+                if (preferences.protein == 'Low' && ingredientCards[i].stats.protein > nutrients.protein.twoArrowCutoff) {
+                    dietAllows = false;
+                }
+            } catch {}
+
+            try {
+                if (preferences.protein == 'High' && ingredientCards[i].stats.protein < nutrients.protein.twoArrowCutoff) {
+                    dietAllows = false;
+                }
+            } catch {}
+
+
+            if (dietAllows) {
+
+                var sliderCard = document.createElement('div');
+                sliderCard.className = 'sliderCard';
+
+                var imgDiv = document.createElement('div');
+                imgDiv.className = 'sliderImg';
+                var img = document.createElement('img');
+                img.src = ingredientCards[i].imgLink;
+                imgDiv.appendChild(img);
+                sliderCard.appendChild(imgDiv);
+
+                var heartImg = document.createElement('img');
+                heartImg.className = "heartIcon";
+                if (savedIngredients.indexOf(i) > -1) {
+                    heartImg.src = "img/heart_full.png";
+                } else {
+                    heartImg.src = "img/heart_empty.png";
+                }
+                heartImg.onclick = function () {
+                    toggleHeart(this);
+                };
+                sliderCard.appendChild(heartImg);
+
+                var nameNode = document.createElement('h3');
+                nameNode.innerHTML = ingredientCards[i].name;
+                sliderCard.appendChild(nameNode);
+
+                var oneArrowStats = [];
+                var twoArrowStats = [];
+                for (var j = 0; j < currentNutrients.length; j++) {
+                    if (ingredientCards[i].stats[currentNutrients[j]]) {
+
+                        if (ingredientCards[i].stats[currentNutrients[j]] > nutrients[currentNutrients[j]].twoArrowCutoff) {
+
+                            var statsNode = document.createElement('h6');
+                            statsNode.innerHTML = "↑↑ " + currentNutrients[j] + " (" + ingredientCards[i].stats[currentNutrients[j]] + ")";
+                            statsNode.style.color = "#07c41d";
+                            twoArrowStats.push(statsNode);
+                        } else if (ingredientCards[i].stats[currentNutrients[j]] > nutrients[currentNutrients[j]].oneArrowCutoff) {
+
+                            var statsNode = document.createElement('h6');
+                            statsNode.innerHTML = "↑ " + currentNutrients[j] + " (" + ingredientCards[i].stats[currentNutrients[j]] + ")";
+                            statsNode.style.color = "#8ef29a";
+                            oneArrowStats.push(statsNode);
+                        }
+
                     }
                 }
-            }
-            for (var j = 0; j < twoArrowStats.length; j++) {
-                sliderCard.appendChild(twoArrowStats[j]);
-            }
-            for (var j = 0; j < oneArrowStats.length; j++) {
-                sliderCard.appendChild(oneArrowStats[j]);
-            }
-
-            let inputIngredientID = i;
-            sliderCard.onclick = function (pointing) {
-                if (!pointing.target.classList.contains('heartIcon')) {
-                    Cookies.set('ingredientInputID', inputIngredientID);
-                    window.location = 'ingredient.html';
+                for (var j = 0; j < twoArrowStats.length; j++) {
+                    sliderCard.appendChild(twoArrowStats[j]);
                 }
+                for (var j = 0; j < oneArrowStats.length; j++) {
+                    sliderCard.appendChild(oneArrowStats[j]);
+                }
+
+                let inputIngredientID = i;
+                sliderCard.onclick = function (pointing) {
+                    if (!pointing.target.classList.contains('heartIcon')) {
+                        Cookies.set('ingredientInputID', inputIngredientID);
+                        window.location = 'ingredient.html';
+                    }
+                }
+
+                exploreSlider.appendChild(sliderCard);
+                var leftStart = (window.innerWidth / 2) - (sliderCard.offsetWidth / 2)
+                var leftVal = leftStart + ((sliderCard.offsetWidth + sliderCardSpacing) * numCards);
+                sliderCard.style.left = leftVal + "px";
+                sliderCard.index = i;
+
+                sliderCard.style.zIndex = String(-1 * i);
+                numCards++;
             }
-
-            exploreSlider.appendChild(sliderCard);
-            var leftStart = (window.innerWidth / 2) - (sliderCard.offsetWidth / 2)
-            var leftVal = leftStart + ((sliderCard.offsetWidth + sliderCardSpacing) * i);
-            sliderCard.style.left = String(leftVal) + "px";
-            sliderCard.index = i;
-
-            sliderCard.style.zIndex = String(-1 * i);
         }
     });
 }
@@ -128,28 +170,28 @@ function toggleHeart(heart) {
 }
 
 function moveSliderLeft(speed) {
-        animationDone = false;
-        if (sliderIndex > 0) {
-            $('.sliderCard').animate({
-                left: "+=290"
-            }, speed, function () {
-                animationDone = true;
-            });
-            sliderIndex--;
-        }
+    animationDone = false;
+    if (sliderIndex > 0) {
+        $('.sliderCard').animate({
+            left: "+=290"
+        }, speed, function () {
+            animationDone = true;
+        });
+        sliderIndex--;
+    }
 }
 
 function moveSliderRight(speed) {
-        animationDone = false;
-        var numCards = document.getElementsByClassName('sliderCard').length - 1;
-        if (sliderIndex < numCards) {
-            $('.sliderCard').animate({
-                left: "-=290"
-            }, 200, function () {
-                animationDone = true;
-            });
-            sliderIndex++;
-        }
+    animationDone = false;
+    var numCards = document.getElementsByClassName('sliderCard').length - 1;
+    if (sliderIndex < numCards) {
+        $('.sliderCard').animate({
+            left: "-=290"
+        }, 200, function () {
+            animationDone = true;
+        });
+        sliderIndex++;
+    }
 }
 
 window.onload = function () {

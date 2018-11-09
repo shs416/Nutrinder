@@ -12,7 +12,13 @@
                 "calcium": 1.4,
                 "iron": 6.9
             },
-            "imgLink": "https://www.onceuponachef.com/images/2010/06/6a0115721bb963970b013481996702970c-450wi.jpg"
+            "imgLink": "https://www.onceuponachef.com/images/2010/06/6a0115721bb963970b013481996702970c-450wi.jpg",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": false,
+                "Vegetarian": false
+            }
         },
 
         {
@@ -27,7 +33,13 @@
                 "calcium": 12,
                 "iron": 22
             },
-            "imgLink": "https://www.highmowingseeds.com/pub/media/catalog/product/cache/image/675x675/e9c3970ab036de70892d86c6d221abfe/2/8/2885.jpg"
+            "imgLink": "https://www.highmowingseeds.com/pub/media/catalog/product/cache/image/675x675/e9c3970ab036de70892d86c6d221abfe/2/8/2885.jpg",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": true,
+                "Vegetarian": true
+            }
         },
 
         {

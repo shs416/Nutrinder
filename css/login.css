@@ -1,0 +1,59 @@
+/*
+#loginButton {
+    text-align: center;
+    width: 60%;
+    padding: 10px;
+    
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px #bbbbbb;
+    background-color: springgreen;
+}
+
+#loginButton h3 {
+    color: white;
+}
+*/
+
+input, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+#loginDiv {
+    margin: 20px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.text-uppercase {
+    margin-top: 75px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+#loginStatus {
+    color: red;
+    text-align: center;
+}

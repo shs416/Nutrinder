@@ -1,3 +1,7 @@
+if (!Cookies.get('loggedIn') || Cookies.get('loggedIn') == 'false') {
+    window.location = 'login.html';
+}
+
 let currentVersion = 1.0;
 
 if (!Cookies.get('cacheVersion') || Number(Cookies.get('cacheVersion') < currentVersion)) {
