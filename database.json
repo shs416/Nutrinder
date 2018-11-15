@@ -89,14 +89,14 @@
         {
             "name": "Eggs",
             "stats": {
-                "calories": 72,
-                "totalfat": 4.8,
-                "carbs": 0.4,
-                "protein": 6.3,
-                "vitaminA": 5.4,
+                "calories": 144,
+                "totalfat": 9.6,
+                "carbs": 0.8,
+                "protein": 12.6,
+                "vitaminA": 10.8,
                 "vitaminC": 0,
-                "calcium": 2.2,
-                "iron": 4.9
+                "calcium": 4.4,
+                "iron": 9.6,
             },
             "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR57WAjXsB0pqp6WDZ4h1zDwLjqL2whoiemYecwrp4HAgX0gNvaiw",
             "diet": {
@@ -246,7 +246,7 @@
                 "calories": 36,
                 "totalfat": 0.5,
                 "carbs": 7.3,
-                "protein": 2.5,
+                "protein": 4,
                 "vitaminA": 354,
                 "vitaminC": 89,
                 "calcium": 7.2,
@@ -570,80 +570,142 @@
             }
         }
 
-    ],
+        {
+            "name": "Quinoa",
+            "stats": {
+                "calories": 111,
+                "totalfat": 1.8,
+                "carbs": 20,
+                "protein": 4.1,
+                "vitaminA": 0.1,
+                "vitaminC": 0,
+                "calcium": 1.2,
+                "iron": 7.7,
+            },
+            "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/762_thumb.jpg",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": true,
+                "Vegetarian": true
+            }
+        }
+        {
+            "name": "Lentils",
+            "stats": {
+                "calories": 226,
+                "totalfat": 0.8,
+                "carbs": 39,
+                "protein": 18,
+                "vitaminA": 0.3,
+                "vitaminC": 5,
+                "calcium": 2.9,
+                "iron": 37,
+            },
+            "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRCYBuy9J0KlNEmJsmwpjAKTIYSop5VHU6W1suH9QUq1zt0n2B",
+            "diet": {
+                "Gluten-free": true,
+                "Paleo": true,
+                "Vegan": true,
+                "Vegetarian": true
+            }
+         {
+              "name": "Tofu",
+              "stats": {
+                  "calories": 114,
+                  "totalfat": 7.2,
+                  "carbs": 1.7,
+                  "protein": 13.7,
+                  "vitaminA": 0,
+                  "vitaminC": 0,
+                  "calcium": 30,
+                  "iron": 15,
+              },
+              "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI09468jmiZRpau2QOz2QQw6uZyH5CL-QglVwj5txE4_DlV7OOZQ",
+              "diet": {
+                  "Gluten-free": true,
+                  "Paleo": false,
+                  "Vegan": true,
+                  "Vegetarian": true
+              }
+        {
+                "name": "Beans",
+                "stats": {
+                    "calories": 239,
+                    "totalfat": 0.9,
+                    "carbs": 54,
+                    "protein": 12,
+                    "vitaminA": 5.5,
+                    "vitaminC": 0,
+                    "calcium": 6.6,
+                    "iron": 17,
+                },
+                "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/229_thumb.jpg",
+                "diet": {
+                    "Gluten-free": true,
+                    "Paleo": true,
+                    "Vegan": true,
+                    "Vegetarian": true
+                }
+            }
 
+
+{
     "recipes": [
         {
             "name": "Chicken Alfredo",
-            "ingredients": ["2 Boneless Chicken Breasts", "2 tbsp. olive oil", "Salt and pepper", "1 jar of Alfredo's Alfredo Sauce", "1 cup Parmesan Cheese"],
+            "ingredients": ["2 boneless chicken breasts", "2 tbsp. olive oil", "Salt and pepper", "1 jar of Alfredo's Alfredo Sauce", "1 cup parmesan cheese"],
             "imgLink": "https://hips.hearstapps.com/del.h-cdn.co/assets/17/24/1024x512/landscape-1497458683-delish-one-pot-chicken-alfredo-1-1024.jpg",
             "steps": ["1. Heat oil in large skillet, cook chicken breasts until cooked, then season with salt and pepper", "2. Add pasta and stir in Alfredo's Alfredo Sauce. Simmer until pasta is soft", "3. Remove from heat and serve."]
         },
         {
             "name": "Honey Garlic Chicken",
-            "ingredients": ["1 Chicken Breast", "3 Honey", "8mL of Garlic"],
+            "ingredients": ["2 boneless chicken breasts", "2 tbsp honey", "2 tbsp of garlic", "2 tsp olive oil", "2 tsp salt"],
             "imgLink": "https://i1.wp.com/cafedelites.com/wp-content/uploads/2016/09/Honey-Garlic-Chicken-IMAGE-1.jpg?resize=980%2C1470&ssl=1",
-            "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
+            "steps": ["1. Mix honey, garlic, salt, and 1 tbsp olive oil. Marinate chicken breasts in mixture for at least two hours.", "2. Heat remaining olive oil in pan and add chicken breasts.", "Cook for 5 minutes per side, until gently browned. Remove from heat and serve."]
         },
         {
-            "name": "Chicken Picatta",
-            "ingredients": ["A Chicken Breast", "Several Picatta"],
-            "imgLink": "https://www.simplyrecipes.com/wp-content/uploads/2015/07/chicken-piccata-vertical-a-1600.jpg",
-            "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
+            "name": "Orange Chicken",
+            "ingredients": ["2 chicken breasts, diced", "1 orange, squeezed and zested", "2 tbsp soy sauce","1 tbsp garlic", "1 onion, chopped", "2 tbsp brown sugar", "1 cup flour", "2 tbsp olive oil", "1/2 tsp salt and pepper", "1 cup water"],
+            "imgLink": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiTsGGNP_yG4PmTFxDbUtCz6LGYiu0W7jWXUjcEIC4jofe_tGowQ",
+            "steps": ["1. Add orange juice, zest, soy sauce, garlic, onion, brown sugar, and water to sauce pan and bring to boil. Remove from heat and cool for 15 minutes.", "2. Add chicken to bag, mix flour, salt, and pepper", "3. Refrigerate for at least two hours.", "Heat olive oil in pan, and add chicken breasts. Cook until browned on both sides.", "Add cooked chicken breast to sauce and serve."]
         },
         {
             "name": "Chicken Tikka Masala",
-            "ingredients": ["Chicken Breast", "Tikka", "Masala"],
+            "ingredients": ["2 chicken breasts", "1 jar of Tikka Masala sauce", "1 onion, diced", "1 tbsp olive oil"],
             "imgLink": "https://i0.wp.com/cafedelites.com/wp-content/uploads/2018/04/Best-Chicken-Tikka-Masala-IMAGE-1.jpg?w=1600&ssl=1",
-            "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
-        },
-        {
-            "name": "Caprese Stuffed Chicken",
-            "ingredients": ["Chicken Breast", "5 Italy", "A spicy meatball", "1.3 Leaves of Spinach"],
-            "imgLink": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-caprese-stuffed-chicken-pinterest-still001-1521230500.jpg",
-            "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
+            "steps": ["1. Heat oil in pan, add chicken breasts. Cook 3 minutes per side", "2. Add Tikka Masala sauce and onions, simmer for 15 minutes", "Remove from heat, serve over rice"]
         },
         {
             "name": "Cheesy Spinach Artichoke Bagels",
-            "ingredients": ["Cheesy Spinach", "Cheesy Artichoke", "Cheesy Cheese", "Cheesy Bagels"],
+            "ingredients": ["4 bagels","2 cups spinach, diced", "8 artichoke hearts", "1 cup parmesan cheese", "1 cup pepper jack cheese", "1 cup mayonnaise", "2 tbsp garlic salt"],
             "imgLink": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gallery-1515429625-delish-spinach-artichoke-pizza-bagels-pin-2-1529095463.jpg",
-            "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
+            "steps": ["1. Combine the artichoke hearts, mayonnaise, parmesan cheese, pepper jack cheese, garlic salt, and spinach in a baking tray", "2. Bake, uncovered, at 350 degrees for 20 minutes." "Spread over bagels and serve"]
         },
         {
             "name": "Creamed Spinach Stuffed Salmon",
-            "ingredients": ["Spinach", "Cream", "pepperjack cheese", "Cream Cheese", "Tuna"],
+            "ingredients": ["2 salmon fillets","1 cup spinach, chopped", "8 tbsp cream cheese", "1/4 cup parmesan cheese", "2 tsp salt and pepper", "2 tbsp olive oil"],
             "imgLink": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-creamed-spinach-stuffed-salmon-pinterest-still001-1532720411.jpg",
-            "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
+            "steps": ["1. Mix spinach, cream cheese, parmesan cheese, salt, and pepper in bowl", "2. Wrap salmon fillets around mixture","Heat oil in baking tray, add salmon and bake at 350 degrees for 30 minutes." "Remove from heat and serve."]
         },
-        {
-            "name": "Strangolapreti",
-            "ingredients": ["Strangolapreti", "Spinach", "american cheese", "Chicken Alfredo"],
-            "imgLink": "http://www.mylittleitaliankitchen.com/wp-content/uploads/2016/06/strangolapreti1.jpg",
-            "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
-        },
-        {
-            "name": "Spinach and Ricotta Ravioli",
-            "ingredients": ["Spinach", "Ricotta", "Pasta", "Parmesan Cheese", "Ravioli", "Ravioli", "Eggs"],
-            "imgLink": "https://www.saveur.com/g00/3_c-5eee.aidmcz.kwu_/c-5UWZMXPMCA09x24pbbx78ax3ax2fx2feee.aidmcz.kwux2faqbmax2faidmcz.kwux2fnqtmax2fabgtmax2f688_9f_x2fx78cjtqkx2fquiomax2f0893x2f87x2f5-aid938-921.ax78qvikpzidqwtq-9488f9088.rx78ox3fqbwsx3d6dGk3v2-x26q98k.uizsx3dquiom_$/$/$/$/$/$/$/$/$/$/$",
-            "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
-        },
+
         {
             "name": "Chicken Noodle Soup",
-            "ingredients": ["Campbell's Chicken Noodle Soup", "Chicken Breast", "Pasta"],
+            "ingredients": ["Campbell's Chicken Noodle Soup", "1 package pasta noodles"],
             "imgLink": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pasta-recipes-chicken-noodle-1541004778.jpg",
-            "steps": ["1. Just boil everything together"]
+            "steps": ["1. Heat Noodle Soup in pot, and add pasta","Bring to boil, until noodles are softened."," Remove from heat and serve."]
         },
         {
             "name": "Anchor Steam Mac and Cheese",
-            "ingredients": ["Pasta", "Mac", "Cheese"],
+            "ingredients": ["1 package pasta elbows", "4 tbsp Anchor Steam seasoning", "1 cup American Cheese", "1 cup Parmesan Cheese", "4 tbsp butter"],
             "imgLink": "https://hips.hearstapps.com/clv.h-cdn.co/assets/17/19/1494521586-recipes-anchor-steam-mac-and-cheese-0617.jpg",
-            "steps": ["1. Google how to make this recipe", "2. Make this recipe"]
+            "steps": ["1. Add pasta to water and bring to boil for 13 minutes.", "2. Strain pasta and add butter, Anchor Steam seasoning, and cheeses until creamy. Remove from heat and serve."]
         },
         {
             "name": "Spaghetti",
-            "ingredients": ["Pasta", "Tomato", "Meat Sauce"],
+            "ingredients": ["1 package pasta", "2 tomatoes", "1 onion, diced", "4 tbsp italian seasoning"],
             "imgLink": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pasta-recipes-spaghetti-red-onion-1540999367.jpg",
-            "steps": ["1. Ask your mom"]
+            "steps": ["1. Add pasta to water and bring to boil for 13 minutes.", "Add tomatoes, onions, and seasoning to pan. Stir until well mixed.","Add pasta to sauce, remove from heat, and serve."]
         },
         {
             "name": "Shrimp Jambalaya",
@@ -654,34 +716,34 @@
         {
 
             "name": "Tomato Basil Salmon",
-            "ingredients": ["2 boneless salmon fillets", "1 tbsp basil", "2 tomatoes, diced", "2 tbsp parmesan", "2 tbsp. olive oil"],
+            "ingredients": ["2 boneless salmon fillets", "1 tbsp basil", "2 tomatoes, diced", "2 tbsp parmesan cheese", "2 tbsp olive oil"],
             "imgLink": "https://images.media-allrecipes.com/userphotos/560x315/691788.jpg",
             "steps": ["1. Preheat oven to 375 degrees F (190 degrees C). ",
                       "2. Line a baking sheet with a piece of aluminum foil, and spray with nonstick cooking spray.",
-                      "3. Place the salmon fillets onto the foil, sprinkle with basil, top with tomato slices, drizzle with olive oil, and sprinkle with the Parmesan cheese.Heat oil in large pan, saute onions and peppers until tender.", 
+                      "3. Place the salmon fillets onto the foil, sprinkle with basil, top with tomato slices, drizzle with olive oil, and sprinkle with the Parmesan cheese.Heat oil in large pan, saute onions and peppers until tender.",
                       "4. Bake in the preheated oven until the salmon is opaque in the center, and the Parmesan cheese is lightly browned on top, about 20 minutes."]
         },
         {
             "name": "Romaine and Mandarin Orange Salad",
-            "ingredients": ["10 cups lettuce", "1 cup chopped orange", "2 tomatoes, diced", "2 apples, julienned", "1 onion", "2 cups uncooked rice", "2 teaspoons mustard", "2 tbsp. salt"],
+            "ingredients": ["4 cups lettuce", "1 cup chopped orange", "2 tomatoes, diced", "2 apples, julienned", "1 onion", "2 cups uncooked rice", "2 teaspoons mustard", "2 tbsp. salt"],
             "imgLink": "https://images.media-allrecipes.com/userphotos/560x315/366742.jpg",
-            "steps": ["1. Place red onion, mustard powder, and salt into the bowl of a blender. Cover, and puree on high until smooth.", 
+            "steps": ["1. Place red onion, mustard powder, and salt into the bowl of a blender. Cover, and puree on high until smooth.",
                 "2. Toss the lettuce in a large bowl with the Mandarin oranges and enough dressing to moisten."]
-        },  
+        },
         {
             "name": "Orange and Milk-Braised Pork Carnitas",
             "ingredients": ["10 cups pork", "1 orange", "2 bay leaves", "1 onion", "2 cups milk", "2 teaspoons mustard", "2 tbsp. salt"],
             "imgLink": "https://images.media-allrecipes.com/userphotos/720x405/2280918.jpg",
             "steps": ["1. Season pork with bay leaves, cumin, dried oregano, and cayenne pepper. Stir in fresh orange juice, orange zest, and milk. Bring mixture to a boil over high heat; reduce heat to low. ",
-                "2. Cover and simmer, stirring occasionally, until meat is fork tender but not falling apart, about 2 hours.", 
+                "2. Cover and simmer, stirring occasionally, until meat is fork tender but not falling apart, about 2 hours.",
                 "3. Preheat oven to 450 degrees F (230 degrees C). Bake in preheated oven until pork is browned, about 15 minutes. Stir pork."]
-        },              
+        },
         {
             "name": "Vegetable Curry",
             "ingredients": ["1 bell pepper, julienned", "1 cup chopped onion",  "4 cups coconut milk", "2 tbsp. olive oil", "4 tbsp curry powder"],
             "imgLink": "https://images.media-allrecipes.com/userphotos/720x405/2280918.jpg",
-            "steps": ["1. Heat oil in large pan, saute onions and peppers until tender.", 
-                "2. Add coconut milk, add curry powder, and bring to boil.", 
+            "steps": ["1. Heat oil in large pan, saute onions and peppers until tender.",
+                "2. Add coconut milk, add curry powder, and bring to boil.",
                 "3. Reduce to simmer for 20 minutes. Serve over rice."]
         },
         {
