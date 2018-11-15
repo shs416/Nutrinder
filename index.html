@@ -93,7 +93,7 @@
         window.onload = function() {
             populateList();
         };
-        
+
         let maxStatsShown = 3;
 
         function getIngredientStatString(ingredients, ingredientStats) {
@@ -110,11 +110,11 @@
             if (savedIngredientIndexes && savedIngredientIndexes.length > 0) {
                 $.getJSON("database.json", function(result) {
                     var ingredients = result.ingredients;
-                                        
+
                     for (var i = 0; i < savedIngredientIndexes.length; i++) {
                         var ingredient = ingredients[savedIngredientIndexes[i]];
                         if (ingredient) {
-                            
+
                             var item = document.createElement('li');
 
                             var imgDiv = document.createElement('div');

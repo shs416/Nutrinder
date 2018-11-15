@@ -15,7 +15,7 @@ function addIngredientCards() {
     if (Cookies.get('preferences')) {
         preferences = JSON.parse(Cookies.get('preferences'));
     }
-        
+
     $.getJSON("database.json", function (result) {
 
         var ingredientCards = result.ingredients;
@@ -23,6 +23,8 @@ function addIngredientCards() {
 
         var numCards = 0;
         for (var i = 0; i < ingredientCards.length; i++) {
+
+            var statsList = formatItemStats(ingredientCards, ingredientCards[i].stats);
 
             var dietAllows = true;
             try {
@@ -32,32 +34,28 @@ function addIngredientCards() {
             try {
                 if (preferences.carbs == 'Low' && ingredientCards[i].stats.carbs > nutrients.carbs.twoArrowCutoff) {
                     dietAllows = false;
-                    console.log("High in carbs");
                 }
             } catch {}
 
             try {
                 if (preferences.carbs == 'High' && ingredientCards[i].stats.carbs < nutrients.carbs.twoArrowCutoff) {
                     dietAllows = false;
-                    console.log("Low in carbs");
                 }
             } catch {}
 
             try {
                 if (preferences.protein == 'Low' && ingredientCards[i].stats.protein > nutrients.protein.twoArrowCutoff) {
                     dietAllows = false;
-                    console.log("High in protein");
                 }
             } catch {}
 
             try {
                 if (preferences.protein == 'High' && ingredientCards[i].stats.protein < nutrients.protein.twoArrowCutoff) {
                     dietAllows = false;
-                    console.log("Low in protein");
                 }
             } catch {}
-                
-                
+
+
 
             if (dietAllows) {
 
@@ -86,7 +84,7 @@ function addIngredientCards() {
                 var nameNode = document.createElement('h3');
                 nameNode.innerHTML = ingredientCards[i].name;
                 sliderCard.appendChild(nameNode);
-                
+
 
                 var statsListNode = document.createElement('div');
                 statsListNode.classList = 'tooltipDiv';
@@ -94,10 +92,9 @@ function addIngredientCards() {
                 statsToolTip.classList = 'tooltiptext';
                 statsToolTip.textContent = '↑ is >20% of your daily needs, ↑↑ is >60% of your daily needs';
                 statsListNode.appendChild(statsToolTip);
-                var statsList = formatItemStats(ingredientCards, ingredientCards[i].stats);
                 for (var j = 0; j < (statsList.length > maxStatsShown ? maxStatsShown : statsList.length); j++) {
                     var statsNode = document.createElement('h6');
-                    statsNode.innerHTML = statsList[j][0]+' '+statsList[j][1];
+                    statsNode.innerHTML = statsList[j][0] + ' ' + statsList[j][1];
                     if (statsList[j] == '↑') statsNode.style.color = "#8ef29a";
                     else if (statsList[j] == '↑↑') statsNode.style.color = "#07c41d";
                     statsListNode.appendChild(statsNode);
