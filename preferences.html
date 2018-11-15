@@ -92,7 +92,7 @@
 
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
-                    <strong>Select your diet:</strong>
+                    <strong>Select your diet preference:</strong>
                 </div>
                 <div class="options">
                     <form id="dietForm">
@@ -142,7 +142,7 @@
             </div>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                 <div class="card-body">
-                    <strong>Select your carbohydrate level:</strong>
+                    <strong>Select your carbohydrate preference:</strong>
                 </div>
                 <div class="options">
                     <form id="carbForm">
@@ -179,7 +179,7 @@
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                 <div class="card-body">
-                    <strong>Select your protein level:</strong>
+                    <strong>Select your protein preference:</strong>
                 </div>
                 <div class="options">
                     <form id="proteinForm">
@@ -209,54 +209,36 @@
         <div class="card">
             <div class="card-header" id="headingFour">
                 <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="allergiesButton">
-                        ALLERGIES
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="fatButton">
+                        FATS
                     </button>
                 </h5>
             </div>
             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                 <div class="card-body">
-                    <strong>Select your allergies, if any:</strong>
+                    <strong>Select your fat preference:</strong>
                 </div>
                 <div class="options">
-                    <div class="form-check">
-                        <form id="allergiesForm">
-                            <input class="form-check-input" type="checkbox" name="radio4" id="radio4" value="option1">
+                    <form id="fatForm">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radio4" id="radio4" value="No preference" checked>
                             <label class="form-check-label" for="exampleRadios1">
-                                Eggs
+                                No preference
                             </label>
-                        </form>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="radio4" id="radio4" value="option2">
-                        <label class="form-check-label" for="exampleRadios2">
-                            Fish
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="radio4" id="radio4" value="option3">
-                        <label class="form-check-label" for="exampleRadios3">
-                            Milk
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="radio4" id="radio4" value="option3">
-                        <label class="form-check-label" for="exampleRadios3">
-                            Nuts
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="radio4" id="radio4" value="option3">
-                        <label class="form-check-label" for="exampleRadios3">
-                            Soy
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="radio4" id="radio4" value="option3">
-                        <label class="form-check-label" for="exampleRadios3">
-                            Wheat
-                        </label>
-                    </div>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radio4" id="radio4" value="Low">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Low
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radio4" id="radio4" value="High">
+                            <label class="form-check-label" for="exampleRadios3">
+                                High
+                            </label>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -294,7 +276,31 @@
     <!-- Custom scripts for this template -->
     <script src="js/preferences.js"></script>
     <script src="js/creative.min.js"></script>
+    <script>
+        window.onload = function() {
+            populatePref();
+        };
 
+        /* Adds current preference into heading */
+        function populatePref() {
+
+            var target = $('#dietButton');
+            var value = $('input[name=radio1]:checked', '#dietForm').val();
+            var elem = document.getElementById("dietButton").innerHTML = "Diet: " + value;            
+            var target = $('#carbButton');
+            var value = $('input[name=radio2]:checked', '#carbForm').val();
+            var elem = document.getElementById("carbButton").innerHTML = "Carbohydrates: " + value;            
+            var target = $('#proteinButton');
+            var value = $('input[name=radio3]:checked', '#proteinForm').val();
+            var elem = document.getElementById("proteinButton").innerHTML = "Protein: " + value;
+            
+
+            var target = $('#fatButton');
+            var value = $('input[name=radio4]:checked', '#fatForm').val();
+            var elem = document.getElementById("fatButton").innerHTML = "Fats: " + value;            
+        };
+
+    </script>
 
 </body>
 

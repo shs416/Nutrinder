@@ -46,10 +46,11 @@ $('#proteinForm input').on('change', function () {
     /*console.log("Protein: " + $('input[name=radio3]:checked', '#proteinForm').val());*/
 });
 
-/*
-$('#form input').on('change', function() {
-   var target = $('#dietButton');
-   target.html("Diet: " + $('input[name=exampleRadios]:checked', '#form').val()); 
-   console.log("Diet: " + $('input[name=exampleRadios]:checked', '#form').val());
+
+$('#fatForm').on('change', function() {
+   var target = $('#fatButton');
+   target.html("Fats: " + $('input[name=radio4]:checked', '#fatForm').val()); 
+    savePreferences();
+   /*console.log("Fats: " + $('input[name=radio4]:checked', '#fatForm').val());*/
 });
-*/
+

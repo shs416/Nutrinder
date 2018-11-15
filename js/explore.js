@@ -29,32 +29,36 @@ function addIngredientCards() {
             var dietAllows = true;
             try {
                 if (ingredientCards[i].diet[preferences.diet] == false) dietAllows = false;
+                console.log('Diet doesnt allow', ingredientCards[i].name);
             } catch {}
 
             try {
                 if (preferences.carbs == 'Low' && ingredientCards[i].stats.carbs > nutrients.carbs.twoArrowCutoff) {
                     dietAllows = false;
+                    console.log('Too high carbs in', ingredientCards[i].name);
                 }
             } catch {}
 
             try {
-                if (preferences.carbs == 'High' && ingredientCards[i].stats.carbs < nutrients.carbs.twoArrowCutoff) {
+                if (preferences.carbs == 'High' && ingredientCards[i].stats.carbs < nutrients.carbs.oneArrowCutoff) {
                     dietAllows = false;
+                    console.log('Too low carbs in', ingredientCards[i].name);
                 }
             } catch {}
 
             try {
                 if (preferences.protein == 'Low' && ingredientCards[i].stats.protein > nutrients.protein.twoArrowCutoff) {
                     dietAllows = false;
+                    console.log('Too high protein in', ingredientCards[i].name);
                 }
             } catch {}
 
             try {
-                if (preferences.protein == 'High' && ingredientCards[i].stats.protein < nutrients.protein.twoArrowCutoff) {
+                if (preferences.protein == 'High' && ingredientCards[i].stats.protein < nutrients.protein.oneArrowCutoff) {
                     dietAllows = false;
+                    console.log('Too low protein in', ingredientCards[i].name);
                 }
             } catch {}
-
 
 
             if (dietAllows) {
