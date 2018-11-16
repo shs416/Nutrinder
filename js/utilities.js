@@ -89,6 +89,34 @@ function formatItemStats(ingredients, itemStats) {
     return outputStats;
 }
 
+
+addHeader();
+
+function addHeader() {
+    var nav = document.createElement('nav');
+    nav.id = 'mainNav';
+    nav.classList = 'navbar navbar-expand-lg navbar-light fixed-top';
+    var container = document.createElement('div');
+    container.classList = 'container';
+    var title = document.createElement('a');
+    title.classList = 'navbar-brand js-scroll-trigger';
+    title.href = 'index.html';
+    title.textContent = 'Nütrinder';
+    var logout = document.createElement('h6');
+    logout.onclick = function () {
+        Cookies.set('loggedIn', false);
+        Cookies.set('loggedIn', null)
+        window.location = 'login.html';
+    }
+    logout.textContent = 'Logout';
+    container.appendChild(title);
+    container.appendChild(logout);
+    nav.appendChild(container);
+    document.body.appendChild(nav);
+}
+
+
+
 addFooter();
 
 function addFooter() {
@@ -104,10 +132,10 @@ function addFooter() {
         var midIcon = document.createElement('div');
         midIcon.classList = 'midIcon';
         let link = onclicks[i];
-        midIcon.onclick = function() {
+        midIcon.onclick = function () {
             window.location = link;
         };
-        
+
         var icon = document.createElement('i');
         icon.classList = iconPaths[i];
         midIcon.appendChild(icon);
@@ -116,7 +144,7 @@ function addFooter() {
         iconText.textContent = iconNames[i];
         midIcon.appendChild(iconText);
         middleIconsDiv.appendChild(midIcon);
-        
+
         if (window.location.href.includes(onclicks[i])) {
             midIcon.style.color = '#50C878';
             iconText.style.color = '#50C878';

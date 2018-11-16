@@ -62,3 +62,21 @@ function checkLogin() {
     }
     return false;
 }
+
+
+addHeader();
+
+function addHeader() {
+    var nav = document.createElement('nav');
+    nav.id = 'mainNav';
+    nav.classList = 'navbar navbar-expand-lg navbar-light fixed-top';
+    var container = document.createElement('div');
+    container.classList = 'container';
+    var title = document.createElement('a');
+    title.classList = 'navbar-brand js-scroll-trigger';
+    title.href = 'index.html';
+    title.textContent = 'Nütrinder';
+    container.appendChild(title);
+    nav.appendChild(container);
+    document.body.appendChild(nav);
+}
