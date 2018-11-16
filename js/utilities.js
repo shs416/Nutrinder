@@ -1,11 +1,10 @@
-
 // Check if logged in
 if (!Cookies.get('loggedIn') || Cookies.get('loggedIn') == 'false' || !Cookies.get('username')) {
     window.location = 'login.html';
 }
 
 let currentVersion = 1.0;
-var userRef = firebase.database().ref('users/'+Cookies.get('username'));
+var userRef = firebase.database().ref('users/' + Cookies.get('username'));
 var foodDatabase;
 
 function setUserState(featureName, data) {
@@ -88,4 +87,60 @@ function formatItemStats(ingredients, itemStats) {
         return b[3] - a[3];
     });
     return outputStats;
+}
+
+addFooter();
+
+function addFooter() {
+    var footer = document.createElement('div');
+    footer.classList = 'footer';
+    footer.style.width = '100%';
+    footer.style.height = '56px';
+    footer.style.position = 'fixed';
+    footer.style.bottom = '0';
+    footer.style.backgroundColor = '#ffffff';
+    footer.style.boxShadow = '1px 1px 6px #aaaaaa';
+    footer.style.zIndex = '999';
+
+    var middleIconsDiv = document.createElement('div');
+    middleIconsDiv.style.display = 'flex';
+    middleIconsDiv.style.textAlign = 'center';
+    middleIconsDiv.style.margin = '0 auto';
+    middleIconsDiv.style.width = '210px';
+    middleIconsDiv.style.textAlign = 'center';
+
+
+    var iconNames = ['Saved', 'Explore', 'Preferences'];
+    var iconPaths = ['/img/heart.png', '/img/star.png', '/img/gear.png'];
+    var onclicks = ['index.html', 'explore.html', 'preferences.html'];
+    for (var i = 0; i < 3; i++) {
+        var midIcon = document.createElement('div');
+        //        midIcon.style.padding = '5px';
+        midIcon.style.margin = '7px 2px';
+        midIcon.style.height = '40px';
+        midIcon.style.width = '66px';
+        midIcon.style.display = 'inline-block';
+        midIcon.style.textAlign = 'center';
+        let link = onclicks[i];
+        midIcon.onclick = function() {
+            window.location = link;
+        };
+
+        var img = new Image(30, 30);
+        img.src = iconPaths[i];
+        img.style.marginBottom = '2px';
+        midIcon.appendChild(img);
+
+        var iconText = document.createElement('h6');
+        iconText.textContent = iconNames[i];
+        iconText.style.fontSize = '10px';
+        iconText.style.bottom = '0';
+        midIcon.appendChild(iconText);
+        middleIconsDiv.appendChild(midIcon);
+    }
+
+
+    footer.appendChild(middleIconsDiv);
+
+    document.body.appendChild(footer);
 }

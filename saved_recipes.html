@@ -34,19 +34,20 @@
     <link href="css/creative.css" rel="stylesheet">
     <link href="css/saved.css" rel="stylesheet">
 
-    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-database.js"></script>
     <script>
-        // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBtfJMKvbeaHYHyg3NsQggE1r3mdCsJLT4",
-    authDomain: "nutrinder-ucsd.firebaseapp.com",
-    databaseURL: "https://nutrinder-ucsd.firebaseio.com",
-    projectId: "nutrinder-ucsd",
-    storageBucket: "nutrinder-ucsd.appspot.com",
-    messagingSenderId: "697825427058"
-  };
-  firebase.initializeApp(config);
-</script>
+        var config = {
+            apiKey: "AIzaSyBtfJMKvbeaHYHyg3NsQggE1r3mdCsJLT4",
+            authDomain: "nutrinder-ucsd.firebaseapp.com",
+            databaseURL: "https://nutrinder-ucsd.firebaseio.com",
+            projectId: "nutrinder-ucsd",
+            storageBucket: "nutrinder-ucsd.appspot.com",
+            messagingSenderId: "697825427058"
+        };
+        firebase.initializeApp(config);
+    </script>
 
 </head>
 
