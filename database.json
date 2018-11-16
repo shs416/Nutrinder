@@ -88,7 +88,7 @@
 
 
         {
-            "name": "Eggs",
+            "name": "Egg",
             "stats": {
                 "calories": 144,
                 "totalfat": 9.6,
@@ -132,7 +132,7 @@
         },
 
         {
-            "name": "Steak",
+            "name": "Beef",
             "stats": {
                 "calories": 307,
                 "totalfat": 20.5,
@@ -321,7 +321,7 @@
             "imgLink": "https://d2xdmhkmkbyw75.cloudfront.net/199_thumb.jpg",
             "diet": {
                 "Gluten-free": true,
-                "Paleo": true,
+                "Paleo": false,
                 "Vegan": true,
                 "Vegetarian": true
             }
@@ -371,7 +371,7 @@
 
         },
         {
-            "name": "2% Milk",
+            "name": "Milk",
             "stats": {
                 "calories": 122,
                 "totalfat": 4.8,
@@ -734,9 +734,9 @@
         },
         {
             "name": "Chicken Tikka Masala",
-            "ingredients": ["2 chicken breasts", "1 jar of Tikka Masala sauce", "1 onion, diced", "1 tbsp olive oil"],
+            "ingredients": ["2 chicken breasts", "1 jar of Tikka Masala sauce", "1 onion, diced", "1 tbsp olive oil", "1/2 cup milk"],
             "imgLink": "https://i0.wp.com/cafedelites.com/wp-content/uploads/2018/04/Best-Chicken-Tikka-Masala-IMAGE-1.jpg?w=1600&ssl=1",
-            "steps": ["1. Heat oil in pan, add chicken breasts. Cook 3 minutes per side", "2. Add Tikka Masala sauce and onions, simmer for 15 minutes", "Remove from heat, serve over rice"]
+            "steps": ["1. Heat oil in pan, add chicken breasts. Cook 3 minutes per side", "2. Add Tikka Masala sauce, milk, and onions, simmer for 15 minutes", "Remove from heat, serve over rice"]
         },
         {
             "name": "Cheesy Spinach Artichoke Bagels",
@@ -746,9 +746,9 @@
         },
         {
             "name": "Creamed Spinach Stuffed Salmon",
-            "ingredients": ["2 salmon fillets","1 cup spinach, chopped", "8 tbsp cream cheese", "1/4 cup parmesan cheese", "2 tsp salt and pepper", "2 tbsp olive oil"],
+            "ingredients": ["2 salmon fillets","1 cup spinach, chopped", "8 tbsp cream cheese", "1/4 cup parmesan cheese", "2 tsp salt and pepper", "2 tbsp olive oil", "1/4 cup milk"],
             "imgLink": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-creamed-spinach-stuffed-salmon-pinterest-still001-1532720411.jpg",
-            "steps": ["1. Mix spinach, cream cheese, parmesan cheese, salt, and pepper in bowl", "2. Wrap salmon fillets around mixture","Heat oil in baking tray, add salmon and bake at 350 degrees for 30 minutes." "Remove from heat and serve."]
+            "steps": ["1. Mix spinach, cream cheese, parmesan cheese, milk, salt, and pepper in bowl", "2. Wrap salmon fillets around mixture","Heat oil in baking tray, add salmon and bake at 350 degrees for 30 minutes." "Remove from heat and serve."]
         },
 
         {
@@ -759,9 +759,9 @@
         },
         {
             "name": "Anchor Steam Mac and Cheese",
-            "ingredients": ["1 package pasta elbows", "4 tbsp Anchor Steam seasoning", "1 cup American Cheese", "1 cup Parmesan Cheese", "4 tbsp butter"],
+            "ingredients": ["1 package pasta elbows", "4 tbsp Anchor Steam seasoning", "1 cup American Cheese", "1 cup Parmesan Cheese", "4 tbsp butter", "1 cup milk"],
             "imgLink": "https://hips.hearstapps.com/clv.h-cdn.co/assets/17/19/1494521586-recipes-anchor-steam-mac-and-cheese-0617.jpg",
-            "steps": ["1. Add pasta to water and bring to boil for 13 minutes.", "2. Strain pasta and add butter, Anchor Steam seasoning, and cheeses until creamy. Remove from heat and serve."]
+            "steps": ["1. Add pasta to water and bring to boil for 13 minutes.", "2. Strain pasta and add butter, Anchor Steam seasoning, milk, and cheeses until creamy. Remove from heat and serve."]
         },
         {
             "name": "Spaghetti",
@@ -820,6 +820,19 @@
             "imgLink": "https://images.media-allrecipes.com/userphotos/720x405/2280918.jpg",
             "steps": ["1. Heat oil in large pan, add thinly sliced steak. Cook until outer edges are browned.", "2. Add onions, bell peppers, mushrooms, and season with salt and pepper.", "3. Separate into 4 sections, add cheese to top until melted.","Top bread with steak, make into sandwich. Serve with fries."]
         }
+        {
+            "name": "Shrimp Tacos",
+            "ingredients": ["1 lb of shrimp", "1 onion, diced",  "4 tbsp mild salsa", "8 tortillas","4 tbsp chipotle sauce", "1 avocado, slived"],
+            "imgLink": "https://peasandcrayons.com/wp-content/uploads/2017/04/spicy-sriracha-shrimp-tacos-cilantro-lime-slaw-recipe-peasandcrayons-blog2-0243.jpg",
+            "steps": ["1. Heat oil in large pan, add shrimp. Cook until no longer red.", "2. Add shrimp to tortillas, top with salsa, sauce, and avocado, serve"]
+        }
+        {
+            "name": "Oven Roasted Salmon",
+            "ingredients": ["2 salmon fillets", "3 tbsp salmon seasoning",  "2 tbsp olive oil"],
+            "imgLink": "https://www.gimmesomeoven.com/wp-content/uploads/2018/09/How-To-Baked-Salmon-Recipe-9-1.jpg",
+            "steps": ["1. Heat oil in large pan, add salmon filets. Sear 2 minutes per side, season.", "2. Add salmon to preheated oven at 350 degrees for 20 minutes. Serve"]
+        }
+
     ]
 
 
