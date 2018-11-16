@@ -3,7 +3,7 @@
 
 <head>
     <Title>Recipe Info</Title>
-    
+
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
@@ -20,6 +20,9 @@
     <meta name="author" content="">
 
     <link href="css/explore.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -34,6 +37,22 @@
 
     <!-- Custom styles for this template -->
     <link href="css/creative.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
+
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-database.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyBtfJMKvbeaHYHyg3NsQggE1r3mdCsJLT4",
+            authDomain: "nutrinder-ucsd.firebaseapp.com",
+            databaseURL: "https://nutrinder-ucsd.firebaseio.com",
+            projectId: "nutrinder-ucsd",
+            storageBucket: "nutrinder-ucsd.appspot.com",
+            messagingSenderId: "697825427058"
+        };
+        firebase.initializeApp(config);
+    </script>
 
 </head>
 
@@ -77,9 +96,11 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="index.html">Nütrinder</a>
+<!--
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+-->
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
@@ -114,99 +135,98 @@
         };
 
         function populateRecipe() {
-            $.getJSON("database.json", function(result) {
-                var recipes = result.recipes;
-                var ingredients = result.ingredients;
-                var savedRecipes = [];
-                if (Cookies.get('savedRecipes')) {
-                    savedRecipes = JSON.parse(Cookies.get('savedRecipes'));
+            var result = JSON.parse(localStorage.getItem('foodDatabase'));
+            var recipes = result.recipes;
+            var ingredients = result.ingredients;
+            var savedRecipes = [];
+            if (Cookies.get('savedRecipes')) {
+                savedRecipes = JSON.parse(Cookies.get('savedRecipes'));
+            }
+
+            var recipe = recipes[Cookies.get('recipeInputID')];
+            if (recipe) {
+                document.getElementsByClassName('recipeTitle')[0].innerHTML = recipe.name;
+
+                var img = document.createElement('img');
+                img.src = recipe.imgLink;
+                document.getElementsByClassName('bannerDiv')[0].appendChild(img);
+
+                for (var i = 0; i < recipe.ingredients.length; i++) {
+                    var ingred = document.createElement('li');
+                    ingred.innerHTML = recipe.ingredients[i];
+                    document.getElementById('ingredientList').appendChild(ingred);
                 }
 
-                var recipe = recipes[Cookies.get('recipeInputID')];
-                if (recipe) {
-                    document.getElementsByClassName('recipeTitle')[0].innerHTML = recipe.name;
-
-                    var img = document.createElement('img');
-                    img.src = recipe.imgLink;
-                    document.getElementsByClassName('bannerDiv')[0].appendChild(img);
-
-                    for (var i = 0; i < recipe.ingredients.length; i++) {
-                        var ingred = document.createElement('li');
-                        ingred.innerHTML = recipe.ingredients[i];
-                        document.getElementById('ingredientList').appendChild(ingred);
-                    }
-
-                    var heartImg = document.createElement('img');
-                    heartImg.className = "big_heartIcon";
-                    if (savedRecipes.indexOf(Number(Cookies.get('recipeInputID'))) > -1) {
-                        heartImg.src = "img/heart_full.png";
-                    } else {
-                        heartImg.src = "img/heart_empty.png";
-                    }
-                    heartImg.onclick = function() {
-                        if (this.src.includes("heart_empty.png")) {
-                            this.src = "img/heart_full.png";
-                            savedRecipes.push(Number(Cookies.get('recipeInputID')));
-                            Cookies.set('savedRecipes', JSON.stringify(savedRecipes));
-                        } else {
-                            this.src = "img/heart_empty.png";
-                            for (var i = savedRecipes.length - 1; i >= 0; i--) {
-                                if (savedRecipes[i] == Cookies.get('recipeInputID')) {
-                                    savedRecipes.splice(i, 1);
-                                }
-                            }
-                            Cookies.set('savedRecipes', JSON.stringify(savedRecipes));
-                        }
-                    };
-                    document.getElementsByTagName("body")[0].appendChild(heartImg);
-
-                    for (var i = 0; i < recipe.steps.length; i++) {
-                        var step = document.createElement('li');
-                        step.innerHTML = recipe.steps[i];
-                        document.getElementById('stepsList').appendChild(step);
-                    }
-
-                    for (var i = 0; i < ingredients.length; i++) {
-                        var containsIngredient = false;
-                        if (recipe.name.toUpperCase().includes(ingredients[i].name.toUpperCase())) {
-                            containsIngredient = true
-                        };
-                        for (var j = 0; j < recipe.ingredients.length; j++) {
-                            if (recipe.ingredients[j].toUpperCase().includes(ingredients[i].name.toUpperCase())) {
-                                containsIngredient = true;
-                            }
-                        }
-
-                        if (containsIngredient) {
-                            var outerDiv = document.createElement('div');
-                            outerDiv.className = 'featuredBlock';
-                            var imgDiv = document.createElement('div');
-                            imgDiv.className = 'featuredBlockImg';
-
-                            var img = document.createElement('img');
-                            img.src = ingredients[i].imgLink;
-                            imgDiv.appendChild(img);
-                            outerDiv.appendChild(imgDiv);
-
-                            var blockTitle = document.createElement('h6');
-                            blockTitle.innerHTML = ingredients[i].name;
-                            outerDiv.appendChild(blockTitle);
-
-                            document.getElementsByClassName('featuredSlider_inner')[0].appendChild(outerDiv);
-                            let ingredientID = i;
-                            outerDiv.onclick = function() {
-                                Cookies.set('ingredientInputID', ingredientID);
-                                window.location = 'ingredient.html';
-                            }
-                        }
-                    }
-
-
-
+                var heartImg = document.createElement('img');
+                heartImg.className = "big_heartIcon";
+                if (savedRecipes.indexOf(Number(Cookies.get('recipeInputID'))) > -1) {
+                    heartImg.src = "img/heart_full.png";
                 } else {
-                    //TODO: Recipe not found
+                    heartImg.src = "img/heart_empty.png";
                 }
-            });
+                heartImg.onclick = function() {
+                    if (this.src.includes("heart_empty.png")) {
+                        this.src = "img/heart_full.png";
+                        savedRecipes.push(Number(Cookies.get('recipeInputID')));
+                        setUserState('savedRecipes', savedRecipes);
+                    } else {
+                        this.src = "img/heart_empty.png";
+                        for (var i = savedRecipes.length - 1; i >= 0; i--) {
+                            if (savedRecipes[i] == Cookies.get('recipeInputID')) {
+                                savedRecipes.splice(i, 1);
+                            }
+                        }
+                        setUserState('savedRecipes', savedRecipes);
+                    }
+                };
+                document.getElementsByTagName("body")[0].appendChild(heartImg);
+
+                for (var i = 0; i < recipe.steps.length; i++) {
+                    var step = document.createElement('li');
+                    step.innerHTML = recipe.steps[i];
+                    document.getElementById('stepsList').appendChild(step);
+                }
+
+                for (var i = 0; i < ingredients.length; i++) {
+                    var containsIngredient = false;
+                    if (recipe.name.toUpperCase().includes(ingredients[i].name.toUpperCase())) {
+                        containsIngredient = true
+                    };
+                    for (var j = 0; j < recipe.ingredients.length; j++) {
+                        if (recipe.ingredients[j].toUpperCase().includes(ingredients[i].name.toUpperCase())) {
+                            containsIngredient = true;
+                        }
+                    }
+
+                    if (containsIngredient) {
+                        var outerDiv = document.createElement('div');
+                        outerDiv.className = 'featuredBlock';
+                        var imgDiv = document.createElement('div');
+                        imgDiv.className = 'featuredBlockImg';
+
+                        var img = document.createElement('img');
+                        img.src = ingredients[i].imgLink;
+                        imgDiv.appendChild(img);
+                        outerDiv.appendChild(imgDiv);
+
+                        var blockTitle = document.createElement('h6');
+                        blockTitle.innerHTML = ingredients[i].name;
+                        outerDiv.appendChild(blockTitle);
+
+                        document.getElementsByClassName('featuredSlider_inner')[0].appendChild(outerDiv);
+                        let ingredientID = i;
+                        outerDiv.onclick = function() {
+                            Cookies.set('ingredientInputID', ingredientID);
+                            window.location = 'ingredient.html';
+                        }
+                    }
+                }
+
+
+
+            } else {
+                //TODO: Recipe not found
+            }
         };
 
     </script>
