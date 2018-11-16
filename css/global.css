@@ -17,7 +17,8 @@
 #mainNav h6 {
     font-size: 12px;
     padding-top: 6px;
-    color: darkgrey;
+    color: #808080;
+    cursor: pointer;
 }
 
 #middleIconsDiv {
