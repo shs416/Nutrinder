@@ -6,13 +6,10 @@ let maxStatsShown = 3;
 let sliderScrollSensitivity = 20;
 var scrollSwipeDone = true;
 
-console.log('STARTING MAIN JAVASCRIPT');
 
 if (Cookies.get('savedIngredients')) {
     savedIngredients = JSON.parse(Cookies.get('savedIngredients'))
 }
-
-console.log('Checkpoint 1');
 
 function addIngredientCards() {
     var preferences = {};
@@ -20,9 +17,7 @@ function addIngredientCards() {
         preferences = JSON.parse(Cookies.get('preferences'));
     }
 
-    console.log('Starting');
     var result = JSON.parse(localStorage.getItem('foodDatabase'));
-    console.log('Done!');
 
     var ingredientCards = result.ingredients;
     var exploreSlider = document.getElementById('sliderDiv');
@@ -173,10 +168,8 @@ function moveSliderRight(speed) {
     }
 }
 
-console.log('Checkpoint 2');
 
 window.onload = function () {
-    console.log('onload triggered');
     addIngredientCards();
 
     $('#sliderDiv').on('mousewheel DOMMouseScroll', function (e) {

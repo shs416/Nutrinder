@@ -89,58 +89,68 @@ function formatItemStats(ingredients, itemStats) {
     return outputStats;
 }
 
+
+addHeader();
+
+function addHeader() {
+    var nav = document.createElement('nav');
+    nav.id = 'mainNav';
+    nav.classList = 'navbar navbar-expand-lg navbar-light fixed-top';
+    var container = document.createElement('div');
+    container.classList = 'container';
+    var title = document.createElement('a');
+    title.classList = 'navbar-brand js-scroll-trigger';
+    title.href = 'index.html';
+    title.textContent = 'Nütrinder';
+    var logout = document.createElement('h6');
+    logout.onclick = function () {
+        Cookies.set('loggedIn', false);
+        Cookies.set('loggedIn', null)
+        window.location = 'login.html';
+    }
+    logout.textContent = 'Logout';
+    container.appendChild(title);
+    container.appendChild(logout);
+    nav.appendChild(container);
+    document.body.appendChild(nav);
+}
+
+
+
 addFooter();
 
 function addFooter() {
     var footer = document.createElement('div');
-    footer.classList = 'footer';
-    footer.style.width = '100%';
-    footer.style.height = '56px';
-    footer.style.position = 'fixed';
-    footer.style.bottom = '0';
-    footer.style.backgroundColor = '#ffffff';
-    footer.style.boxShadow = '1px 1px 6px #aaaaaa';
-    footer.style.zIndex = '999';
+    footer.id = 'footer';
 
     var middleIconsDiv = document.createElement('div');
-    middleIconsDiv.style.display = 'flex';
-    middleIconsDiv.style.textAlign = 'center';
-    middleIconsDiv.style.margin = '0 auto';
-    middleIconsDiv.style.width = '210px';
-    middleIconsDiv.style.textAlign = 'center';
-
-
+    middleIconsDiv.id = 'middleIconsDiv';
     var iconNames = ['Saved', 'Explore', 'Preferences'];
-    var iconPaths = ['/img/heart.png', '/img/star.png', '/img/gear.png'];
+    var iconPaths = ['fas fa-heart', 'fas fa-star', 'fas fa-cogs'];
     var onclicks = ['index.html', 'explore.html', 'preferences.html'];
     for (var i = 0; i < 3; i++) {
         var midIcon = document.createElement('div');
-        //        midIcon.style.padding = '5px';
-        midIcon.style.margin = '7px 2px';
-        midIcon.style.height = '40px';
-        midIcon.style.width = '66px';
-        midIcon.style.display = 'inline-block';
-        midIcon.style.textAlign = 'center';
+        midIcon.classList = 'midIcon';
         let link = onclicks[i];
-        midIcon.onclick = function() {
+        midIcon.onclick = function () {
             window.location = link;
         };
 
-        var img = new Image(30, 30);
-        img.src = iconPaths[i];
-        img.style.marginBottom = '2px';
-        midIcon.appendChild(img);
+        var icon = document.createElement('i');
+        icon.classList = iconPaths[i];
+        midIcon.appendChild(icon);
 
         var iconText = document.createElement('h6');
         iconText.textContent = iconNames[i];
-        iconText.style.fontSize = '10px';
-        iconText.style.bottom = '0';
         midIcon.appendChild(iconText);
         middleIconsDiv.appendChild(midIcon);
+
+        if (window.location.href.includes(onclicks[i]) || (window.location.href.includes('saved') && i==0)) {
+            midIcon.style.color = '#50C878';
+            iconText.style.color = '#50C878';
+        }
     }
 
-
     footer.appendChild(middleIconsDiv);
-
     document.body.appendChild(footer);
 }
