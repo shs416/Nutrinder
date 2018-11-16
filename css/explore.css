@@ -95,6 +95,10 @@ body {
     min-height: 100%;
 }
 
+.ingredientInfo, .recipeInfo {
+    padding-bottom: 60px;
+}
+
 .ingredientTitles, .recipeTitles, .recipeSteps, .recipeInfo {
     padding: 10px;
 }

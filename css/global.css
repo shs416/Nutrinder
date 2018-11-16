@@ -14,6 +14,15 @@
     border-radius: 4px;
 }
 
+#savedItems {
+    height: 100%;
+    padding-bottom: 60px;
+}
+
+#savedItems li {
+    border-radius: 6px;
+}
+
 #mainNav {
     padding: 2px 16px
 }

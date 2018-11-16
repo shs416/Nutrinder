@@ -16,6 +16,10 @@ html {
 	padding-bottom: 1rem;
 }
 
+.accordion {
+    padding-bottom: 60px;
+}
+
 .card-header {
 	background-color: #50c878d1;
     padding: 0;
