@@ -1,0 +1,38 @@
+#footer {
+    width: 100%;
+    height: 56px;
+    position: fixed;
+    bottom: 0;
+    background-color: #fafafa;
+    box-shadow: 1px 1px 6px #aaaaaa;
+    z-index: 999;
+    display: inline-block;
+    text-align: center;
+}
+
+#middleIconsDiv {
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+}
+
+.midIcon {
+    margin: 10px 10px;
+    height: 40px;
+    width: 50px;
+    display: inline-block;
+    text-align: center;
+}
+
+.midIcon img {
+    margin-bottom: 4px;
+    width: 25px;
+    height: 25px;
+}
+
+.midIcon h6 {
+    font-size: 9px;
+    bottom: 0;
+}
