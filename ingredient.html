@@ -119,7 +119,10 @@
                 document.getElementsByClassName('bannerDiv')[0].appendChild(img);
 
                 var backButton = document.createElement('button');
-                var text = document.createTextNode('Back');
+                var icon = document.createElement('i');
+                icon.classList = "fas fa-chevron-left";
+                backButton.appendChild(icon);
+                var text = document.createTextNode(' Back');
                 backButton.appendChild(text);
                 backButton.className = "backButton";
                 
