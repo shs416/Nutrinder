@@ -98,7 +98,7 @@ function addFooter() {
     var middleIconsDiv = document.createElement('div');
     middleIconsDiv.id = 'middleIconsDiv';
     var iconNames = ['Saved', 'Explore', 'Preferences'];
-    var iconPaths = ['/img/heart.png', '/img/star.png', '/img/gear.png'];
+    var iconPaths = ['fas fa-heart', 'fas fa-star', 'fas fa-cogs'];
     var onclicks = ['index.html', 'explore.html', 'preferences.html'];
     for (var i = 0; i < 3; i++) {
         var midIcon = document.createElement('div');
@@ -107,15 +107,20 @@ function addFooter() {
         midIcon.onclick = function() {
             window.location = link;
         };
-
-        var img = new Image(30, 30);
-        img.src = iconPaths[i];
-        midIcon.appendChild(img);
+        
+        var icon = document.createElement('i');
+        icon.classList = iconPaths[i];
+        midIcon.appendChild(icon);
 
         var iconText = document.createElement('h6');
         iconText.textContent = iconNames[i];
         midIcon.appendChild(iconText);
         middleIconsDiv.appendChild(midIcon);
+        
+        if (window.location.href.includes(onclicks[i])) {
+            midIcon.style.color = '#50C878';
+            iconText.style.color = '#50C878';
+        }
     }
 
     footer.appendChild(middleIconsDiv);

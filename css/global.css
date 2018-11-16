@@ -10,6 +10,10 @@
     text-align: center;
 }
 
+#mainNav {
+    padding: 2px 16px
+}
+
 #middleIconsDiv {
     display: flex;
     text-align: center;
@@ -24,12 +28,12 @@
     width: 50px;
     display: inline-block;
     text-align: center;
+    color: darkgrey;
 }
 
-.midIcon img {
-    margin-bottom: 4px;
-    width: 25px;
-    height: 25px;
+.midIcon i {
+    margin-bottom: 6px;
+    font-size: 25px;
 }
 
 .midIcon h6 {
