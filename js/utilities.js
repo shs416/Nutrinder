@@ -145,7 +145,7 @@ function addFooter() {
         midIcon.appendChild(iconText);
         middleIconsDiv.appendChild(midIcon);
 
-        if (window.location.href.includes(onclicks[i])) {
+        if (window.location.href.includes(onclicks[i]) || (window.location.href.includes('saved') && i==0)) {
             midIcon.style.color = '#50C878';
             iconText.style.color = '#50C878';
         }
