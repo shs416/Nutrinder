@@ -111,7 +111,7 @@ body {
 .featuredBlock {
 /*    background-color: grey;*/
     width: 100px;
-    margin: 2px;
+    margin: 4px;
 }
 
 .featuredBlock h6 {
@@ -119,13 +119,14 @@ body {
 }
 
 .featuredBlockImg {
-    height: 70px;
+    height: 100px;
 }
 
 .featuredBlockImg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 8px;
 }
 
 #stepsList {
