@@ -34,11 +34,27 @@
     <link href="css/creative.css" rel="stylesheet">
     <link href="css/saved.css" rel="stylesheet">
 
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-database.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyBtfJMKvbeaHYHyg3NsQggE1r3mdCsJLT4",
+            authDomain: "nutrinder-ucsd.firebaseapp.com",
+            databaseURL: "https://nutrinder-ucsd.firebaseio.com",
+            projectId: "nutrinder-ucsd",
+            storageBucket: "nutrinder-ucsd.appspot.com",
+            messagingSenderId: "697825427058"
+        };
+        firebase.initializeApp(config);
+    </script>
+
 </head>
 
 <body id="page-top">
     <script src="js/js-cookie.js"></script>
     <script src="js/utilities.js"></script>
+    
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -108,47 +124,45 @@
         function populateList() {
             var savedIngredientIndexes = JSON.parse(Cookies.get('savedIngredients'));
             if (savedIngredientIndexes && savedIngredientIndexes.length > 0) {
-                $.getJSON("database.json", function(result) {
-                    var ingredients = result.ingredients;
+                var result = JSON.parse(localStorage.getItem('foodDatabase'));
+                var ingredients = result.ingredients;
 
-                    for (var i = 0; i < savedIngredientIndexes.length; i++) {
-                        var ingredient = ingredients[savedIngredientIndexes[i]];
-                        if (ingredient) {
+                for (var i = 0; i < savedIngredientIndexes.length; i++) {
+                    var ingredient = ingredients[savedIngredientIndexes[i]];
+                    if (ingredient) {
 
-                            var item = document.createElement('li');
+                        var item = document.createElement('li');
 
-                            var imgDiv = document.createElement('div');
-                            imgDiv.className = 'savedItemImg';
-                            imgDiv.style.backgroundImage = "url(" + ingredient.imgLink + ")";
-                            item.appendChild(imgDiv);
+                        var imgDiv = document.createElement('div');
+                        imgDiv.className = 'savedItemImg';
+                        imgDiv.style.backgroundImage = "url(" + ingredient.imgLink + ")";
+                        item.appendChild(imgDiv);
 
-                            var itemInfo = document.createElement('div');
-                            itemInfo.className = 'itemInfo';
+                        var itemInfo = document.createElement('div');
+                        itemInfo.className = 'itemInfo';
 
-                            var title = document.createElement('h4');
-                            title.innerHTML = ingredient.name;
-                            itemInfo.append(title);
+                        var title = document.createElement('h4');
+                        title.innerHTML = ingredient.name;
+                        itemInfo.append(title);
 
-                            var info = document.createElement('p');
-                            var list = formatItemStats(ingredients, ingredient.stats);
-                            var outputString = '';
-                            for (var j = 0; j < (list.length > maxStatsShown ? maxStatsShown : list.length); j++) {
-                                outputString += (list[j][0] + list[j][1] + ' ');
-                            }
-                            info.innerHTML = outputString;
-                            itemInfo.appendChild(info);
-
-                            item.appendChild(itemInfo);
-                            let ingredientIndex = savedIngredientIndexes[i];
-                            item.onclick = function() {
-                                Cookies.set('ingredientInputID', ingredientIndex);
-                                window.location = 'ingredient.html';
-                            }
-                            document.getElementById('savedItems').appendChild(item);
+                        var info = document.createElement('p');
+                        var list = formatItemStats(ingredients, ingredient.stats);
+                        var outputString = '';
+                        for (var j = 0; j < (list.length > maxStatsShown ? maxStatsShown : list.length); j++) {
+                            outputString += (list[j][0] + list[j][1] + ' ');
                         }
-                    }
+                        info.innerHTML = outputString;
+                        itemInfo.appendChild(info);
 
-                });
+                        item.appendChild(itemInfo);
+                        let ingredientIndex = savedIngredientIndexes[i];
+                        item.onclick = function() {
+                            Cookies.set('ingredientInputID', ingredientIndex);
+                            window.location = 'ingredient.html';
+                        }
+                        document.getElementById('savedItems').appendChild(item);
+                    }
+                }
             } else {
                 var outerDiv = document.createElement('a');
                 outerDiv.href = 'explore.html';
@@ -159,21 +173,25 @@
                 document.getElementsByTagName('body')[0].appendChild(outerDiv);
             }
         };
-
+        
     </script>
+    
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    
 
     <!-- Custom scripts for this template -->
     <script src="js/preferences.js"></script>
     <script src="js/creative.min.js"></script>
+    
 
 </body>
 

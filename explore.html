@@ -3,7 +3,7 @@
 
 <head>
     <Title>Explore</Title>
-    
+
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
@@ -35,6 +35,20 @@
     <!-- Custom styles for this template -->
     <link href="css/creative.css" rel="stylesheet">
 
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBtfJMKvbeaHYHyg3NsQggE1r3mdCsJLT4",
+    authDomain: "nutrinder-ucsd.firebaseapp.com",
+    databaseURL: "https://nutrinder-ucsd.firebaseio.com",
+    projectId: "nutrinder-ucsd",
+    storageBucket: "nutrinder-ucsd.appspot.com",
+    messagingSenderId: "697825427058"
+  };
+  firebase.initializeApp(config);
+</script>
+
 </head>
 
 <body id="page-top">
@@ -48,8 +62,8 @@
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="index.html">Nütrinder</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">

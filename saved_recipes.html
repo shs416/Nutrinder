@@ -3,7 +3,7 @@
 
 <head>
     <Title>Saved Recipes</Title>
-    
+
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
@@ -34,6 +34,20 @@
     <link href="css/creative.css" rel="stylesheet">
     <link href="css/saved.css" rel="stylesheet">
 
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBtfJMKvbeaHYHyg3NsQggE1r3mdCsJLT4",
+    authDomain: "nutrinder-ucsd.firebaseapp.com",
+    databaseURL: "https://nutrinder-ucsd.firebaseio.com",
+    projectId: "nutrinder-ucsd",
+    storageBucket: "nutrinder-ucsd.appspot.com",
+    messagingSenderId: "697825427058"
+  };
+  firebase.initializeApp(config);
+</script>
+
 </head>
 
 <body id="page-top">
@@ -45,8 +59,8 @@
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="index.html">Nütrinder</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
 
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -88,51 +102,50 @@
     <div>
         <ul id="savedItems"></ul>
     </div>
-    
+
     <script>
         window.onload = function() {
             populateList();
         };
-        
+
         function populateList() {
             var savedRecipeIndexes = JSON.parse(Cookies.get('savedRecipes'));
             if (savedRecipeIndexes && savedRecipeIndexes.length > 0) {
-                $.getJSON("database.json", function(result) {
-                    var recipes = result.recipes;
+                var result = JSON.parse(localStorage.getItem('foodDatabase'));
+                var recipes = result.recipes;
 
-                    for (var i = 0; i < savedRecipeIndexes.length; i++) {
-                        var recipe = recipes[savedRecipeIndexes[i]];
-                        if (recipe) {
+                for (var i = 0; i < savedRecipeIndexes.length; i++) {
+                    var recipe = recipes[savedRecipeIndexes[i]];
+                    if (recipe) {
 
-                            var item = document.createElement('li');
+                        var item = document.createElement('li');
 
-                            var imgDiv = document.createElement('div');
-                            imgDiv.className = 'savedItemImg';
-                            imgDiv.style.backgroundImage = "url(" + recipe.imgLink + ")";
-                            item.appendChild(imgDiv);
+                        var imgDiv = document.createElement('div');
+                        imgDiv.className = 'savedItemImg';
+                        imgDiv.style.backgroundImage = "url(" + recipe.imgLink + ")";
+                        item.appendChild(imgDiv);
 
-                            var itemInfo = document.createElement('div');
-                            itemInfo.className = 'itemInfo';
+                        var itemInfo = document.createElement('div');
+                        itemInfo.className = 'itemInfo';
 
-                            var title = document.createElement('h4');
-                            title.innerHTML = recipe.name;
-                            itemInfo.append(title);
+                        var title = document.createElement('h4');
+                        title.innerHTML = recipe.name;
+                        itemInfo.append(title);
 
-                            var info = document.createElement('p');
-                            info.innerHTML = recipe.ingredients.length + " nutritious ingredients";
-                            itemInfo.appendChild(info);
+                        var info = document.createElement('p');
+                        info.innerHTML = recipe.ingredients.length + " nutritious ingredients";
+                        itemInfo.appendChild(info);
 
-                            item.appendChild(itemInfo);
-                            let recipeIndex = savedRecipeIndexes[i];
-                            item.onclick = function() {
-                                Cookies.set('recipeInputID', recipeIndex);
-                                window.location = 'recipe.html';
-                            }
-                            document.getElementById('savedItems').appendChild(item);
+                        item.appendChild(itemInfo);
+                        let recipeIndex = savedRecipeIndexes[i];
+                        item.onclick = function() {
+                            Cookies.set('recipeInputID', recipeIndex);
+                            window.location = 'recipe.html';
                         }
+                        document.getElementById('savedItems').appendChild(item);
                     }
+                }
 
-                });
             } else {
                 var outerDiv = document.createElement('a');
                 outerDiv.href = 'explore.html';
@@ -145,7 +158,7 @@
         };
 
     </script>
-    
+
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

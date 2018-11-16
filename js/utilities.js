@@ -1,8 +1,40 @@
-if (!Cookies.get('loggedIn') || Cookies.get('loggedIn') == 'false') {
+
+// Check if logged in
+if (!Cookies.get('loggedIn') || Cookies.get('loggedIn') == 'false' || !Cookies.get('username')) {
     window.location = 'login.html';
 }
 
 let currentVersion = 1.0;
+var userRef = firebase.database().ref('users/'+Cookies.get('username'));
+var foodDatabase;
+
+function setUserState(featureName, data) {
+    Cookies.set(featureName, JSON.stringify(data));
+
+    if (userRef) {
+        userRef.set({
+            preferences: JSON.parse(Cookies.get('preferences')),
+            savedIngredients: JSON.parse(Cookies.get('savedIngredients')),
+            savedRecipes: JSON.parse(Cookies.get('savedRecipes'))
+        });
+    } else {
+        console.log('Error saving state to Firebase');
+    }
+}
+
+
+// Keep food database updated
+firebase.database().ref('ingredients').on('value', function (ingredientSnapshot) {
+    firebase.database().ref('recipes').on('value', function (recipeSnapshot) {
+        var foodDatabase = {
+            ingredients: ingredientSnapshot.val(),
+            recipes: recipeSnapshot.val()
+        }
+        localStorage.setItem('foodDatabase', JSON.stringify(foodDatabase));
+    });
+});
+
+
 
 if (!Cookies.get('cacheVersion') || Number(Cookies.get('cacheVersion') < currentVersion)) {
     Cookies.set('savedRecipes', JSON.stringify([]));
@@ -33,8 +65,8 @@ function formatItemStats(ingredients, itemStats) {
             arr.sort(function (a, b) {
                 return a - b;
             });
-            nutrients[currentNutrients[i]].twoArrowCutoff = arr[arr.length-1] - (arr[arr.length-1] - arr[0]) * twoArrowUpperPercentile;
-            nutrients[currentNutrients[i]].oneArrowCutoff = arr[arr.length - 1] - (arr[arr.length-1] - arr[0]) * oneArrowUpperPercentile;
+            nutrients[currentNutrients[i]].twoArrowCutoff = arr[arr.length - 1] - (arr[arr.length - 1] - arr[0]) * twoArrowUpperPercentile;
+            nutrients[currentNutrients[i]].oneArrowCutoff = arr[arr.length - 1] - (arr[arr.length - 1] - arr[0]) * oneArrowUpperPercentile;
         }
     }
 
@@ -46,8 +78,7 @@ function formatItemStats(ingredients, itemStats) {
         if (itemStats[stat] > nutrients[stat].twoArrowCutoff) {
             arrows = '↑↑';
             name = stat;
-        }
-        else if (itemStats[stat] > nutrients[stat].oneArrowCutoff) {
+        } else if (itemStats[stat] > nutrients[stat].oneArrowCutoff) {
             arrows = '↑';
             name = stat;
         }

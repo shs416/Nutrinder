@@ -34,10 +34,24 @@
     <link href="css/creative.css" rel="stylesheet">
     <link href="css/preferences.css" rel="stylesheet">
 
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBtfJMKvbeaHYHyg3NsQggE1r3mdCsJLT4",
+    authDomain: "nutrinder-ucsd.firebaseapp.com",
+    databaseURL: "https://nutrinder-ucsd.firebaseio.com",
+    projectId: "nutrinder-ucsd",
+    storageBucket: "nutrinder-ucsd.appspot.com",
+    messagingSenderId: "697825427058"
+  };
+  firebase.initializeApp(config);
+</script>
+
 </head>
 
 <body id="page-top">
-    
+
     <script src="js/js-cookie.js"></script>
     <script src="js/utilities.js"></script>
 
@@ -243,7 +257,7 @@
             </div>
         </div>
 
-        
+
         <div class="card" id="logoutCard">
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
@@ -259,8 +273,8 @@
                 </div>
             </div>
         </div>
-        
-        
+
+
     </div>
 
 
@@ -286,18 +300,18 @@
 
             var target = $('#dietButton');
             var value = $('input[name=radio1]:checked', '#dietForm').val();
-            var elem = document.getElementById("dietButton").innerHTML = "Diet: " + value;            
+            var elem = document.getElementById("dietButton").innerHTML = "Diet: " + value;
             var target = $('#carbButton');
             var value = $('input[name=radio2]:checked', '#carbForm').val();
-            var elem = document.getElementById("carbButton").innerHTML = "Carbohydrates: " + value;            
+            var elem = document.getElementById("carbButton").innerHTML = "Carbohydrates: " + value;
             var target = $('#proteinButton');
             var value = $('input[name=radio3]:checked', '#proteinForm').val();
             var elem = document.getElementById("proteinButton").innerHTML = "Protein: " + value;
-            
+
 
             var target = $('#fatButton');
             var value = $('input[name=radio4]:checked', '#fatForm').val();
-            var elem = document.getElementById("fatButton").innerHTML = "Fats: " + value;            
+            var elem = document.getElementById("fatButton").innerHTML = "Fats: " + value;
         };
 
     </script>

@@ -18,7 +18,7 @@ function logout() {
 }
 
 function savePreferences() {
-    Cookies.set('preferences', JSON.stringify(preferences));
+    setUserState('preferences', preferences);
 }
 
 $('#dietForm input').on('change', function () {
