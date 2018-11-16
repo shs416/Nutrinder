@@ -23,6 +23,7 @@
     height: 30px;
     width: 30px;
     position: absolute;
+    cursor: pointer;
 }
 
 .big_heartIcon {
@@ -31,6 +32,7 @@
     height: 40px;
     width: 40px;
     position: absolute;
+    cursor: pointer;
 }
 
 .sliderImg {

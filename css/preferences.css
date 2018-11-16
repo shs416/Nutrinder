@@ -37,11 +37,16 @@ html {
 }
 
 .card-body {
-	color:black;
+	color:black !important;
+    cursor: pointer;
 }
 
 #logoutCard {
 	padding-top:100px;
+}
+
+input[type=radio] {
+    cursor: pointer;
 }
 
 @media (min-width: 992px) {

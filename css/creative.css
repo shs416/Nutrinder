@@ -4,6 +4,17 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-creative/blob/master/LICENSE)
  */
 
+.backButton {
+    background-color: #50C878;
+    color: white;
+    border-color: white;
+    position: absolute;
+    top: 67px;
+    height: 40px;
+    left: 10px;
+    cursor: pointer;
+}
+
 body,
 html {
   width: 100%;
@@ -17,7 +28,7 @@ body {
 hr {
   max-width: 50px;
   border-width: 3px;
-  border-color: #F05F40;
+  border-color: #50C878;
 }
 
 hr.light {
@@ -45,7 +56,7 @@ h6 {
 }
 
 .bg-primary {
-  background-color: #F05F40 !important;
+  background-color: #50C878 !important;
 }
 
 .bg-dark {
