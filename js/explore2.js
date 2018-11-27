@@ -1,6 +1,7 @@
 var sliderCardSpacing = 20;
 var sliderIndex = 0;
 var savedIngredients = [];
+var numCards = 0;
 
 let maxStatsShown = 4;
 let sliderScrollSensitivity = 20;
@@ -22,7 +23,6 @@ function addIngredientCards() {
     var ingredientCards = result.ingredients;
     var exploreSlider = document.getElementById('sliderDiv');
 
-    var numCards = 0;
     for (var i = 0; i < ingredientCards.length; i++) {
 
         var statsList = formatItemStats(ingredientCards, ingredientCards[i].stats);
@@ -135,7 +135,22 @@ function addIngredientCards() {
 
             sliderCard.style.zIndex = String(-1 * i);
             numCards++;
+            
+            updateArrowButtonVisibility();
         }
+    }
+}
+
+function updateArrowButtonVisibility() {
+    if (sliderIndex == 0) {
+        document.getElementById('arrow-left').style.visibility = 'hidden';
+    } else {
+        document.getElementById('arrow-left').style.visibility = 'inherit';
+    }
+    if (sliderIndex == numCards-1) {
+        document.getElementById('arrow-right').style.visibility = 'hidden';
+    } else {
+        document.getElementById('arrow-right').style.visibility = 'inherit';
     }
 }
 
@@ -167,6 +182,7 @@ function moveSliderLeft(speed) {
         sliderIndex--;
         Cookies.set('cardOffset', sliderIndex);
     }
+    updateArrowButtonVisibility();
 }
 
 function moveSliderRight(speed) {
@@ -181,6 +197,7 @@ function moveSliderRight(speed) {
         sliderIndex++;
         Cookies.set('cardOffset', sliderIndex);
     }
+    updateArrowButtonVisibility();
 }
 
 
