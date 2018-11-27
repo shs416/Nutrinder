@@ -162,3 +162,7 @@
     z-index: 1;
     transform: translate(50%, 0);
 }
+
+.text-uppercase {
+    z-index: 100;
+}
