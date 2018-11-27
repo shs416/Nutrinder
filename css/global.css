@@ -115,3 +115,50 @@
 .tooltipDiv:hover .tooltiptext {
     visibility: visible;
 }
+
+
+.arrow_box {
+	position: relative;
+	background: white;
+	border: 4px solid limegreen;
+    width: 200px;
+    margin-left: -30px;
+    border-radius: 8px;
+    padding: 6px;
+}
+
+.arrow_box h6 {
+    font-size: 13px;
+}
+
+.arrow_box:after, .arrow_box:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: white;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.arrow_box:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-top-color: #50C878;
+	border-width: 16px;
+	margin-left: -16px;
+}
+
+.warningOuterDiv {
+    position: absolute;
+    width: 100%;
+    bottom: 75px;
+    z-index: 1;
+    transform: translate(50%, 0);
+}

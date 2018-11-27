@@ -99,16 +99,16 @@ function genPercPowerBar(percent) {
     var numDots = 10;
     for (var i = 0; i < numDots; i++) {
         var dot = document.createElement('div');
-        if (percent < i/numDots) {
+        if (percent < i / numDots) {
             dot.classList = 'dot lit';
         } else {
             dot.classList = 'dot';
         }
-        if (percent < .3333 && percent > i/numDots) {
+        if (percent < .3333 && percent > i / numDots) {
             dot.style.backgroundColor = 'yellow';
-        } else if (percent < .6666 && percent > i/numDots) {
+        } else if (percent < .6666 && percent > i / numDots) {
             dot.style.backgroundColor = 'greenyellow';
-        } else if (percent > i/numDots) {
+        } else if (percent > i / numDots) {
             dot.style.backgroundColor = 'lime';
         }
         powerBarDiv.appendChild(dot);
@@ -172,7 +172,7 @@ function addFooter() {
         midIcon.appendChild(iconText);
         middleIconsDiv.appendChild(midIcon);
 
-        if (window.location.href.includes(onclicks[i]) || (window.location.href.includes('saved') && i==0)) {
+        if (window.location.href.includes(onclicks[i]) || (window.location.href.includes('saved') && i == 0) || (window.location.href.includes('explore') && i == 1)) {
             midIcon.style.color = '#50C878';
             iconText.style.color = '#50C878';
         }
@@ -180,4 +180,24 @@ function addFooter() {
 
     footer.appendChild(middleIconsDiv);
     document.body.appendChild(footer);
+
+    var prefs = JSON.parse(Cookies.get('preferences'));
+    var hasPrefs = false;
+    for (pref in prefs) {
+        if (prefs[pref] != "No preference") {
+            hasPrefs = true;
+        }
+    }
+    if (!hasPrefs && window.location.href.includes('explore')) {
+        var warningOuterDiv = document.createElement('div');
+        warningOuterDiv.classList = 'warningOuterDiv';
+        var prefWarningDiv = document.createElement('div');
+        prefWarningDiv.classList = 'arrow_box';
+        var warningText = document.createElement('h6');
+        warningText.textContent = "Looks like you haven't set any dietary preferences yet, tap on Preferences to get started!";
+        prefWarningDiv.appendChild(warningText);
+        warningOuterDiv.appendChild(prefWarningDiv);
+        document.body.appendChild(warningOuterDiv);
+    }
+
 }
