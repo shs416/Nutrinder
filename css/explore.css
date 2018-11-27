@@ -109,17 +109,22 @@ body {
 }
 
 .featuredSlider {
-    overflow: scroll;
+/*    overflow: scroll;*/
 }
 
 .featuredSlider_inner {
+/*    display: inline-flex;*/
+/*    display: inline-grid;*/
+/*    display: inline-block;*/
     display: inline-flex;
+    flex-wrap: wrap;
 /*    width: 1000px;*/
 }
 
 .featuredBlock {
 /*    background-color: grey;*/
-    width: 100px;
+/*    width: 100px;*/
+    width: 48%;
     margin: 4px;
 }
 

@@ -52,6 +52,7 @@
             messagingSenderId: "697825427058"
         };
         firebase.initializeApp(config);
+
     </script>
 
 </head>
@@ -125,13 +126,13 @@
                 var text = document.createTextNode(' Back');
                 backButton.appendChild(text);
                 backButton.className = "backButton";
-                
-                backButton.onclick = function () {
+
+                backButton.onclick = function() {
                     window.history.back();
                 }
                 document.getElementsByClassName('bannerDiv')[0].appendChild(backButton);
-                            
-                
+
+
                 var heartImg = document.createElement('img');
                 heartImg.className = "big_heartIcon";
                 if (savedIngredients.indexOf(Number(ingredientInputID)) > -1) {
@@ -157,7 +158,7 @@
                 document.getElementsByTagName("body")[0].appendChild(heartImg);
 
 
-                
+
                 var statsList = formatItemStats(ingredients, ingredients[ingredientInputID].stats);
                 console.log(statsList);
                 for (var i = 0; i < statsList.length; i++) {
@@ -167,35 +168,37 @@
                 }
 
                 for (var i = 0; i < recipes.length; i++) {
-                    var containsIngredient = false;
-                    if (recipes[i].name.toUpperCase().includes(ingredient.name.toUpperCase())) {
-                        containsIngredient = true;
-                    };
-                    for (var j = 0; j < recipes[i].ingredients.length; j++) {
-                        if (recipes[i].ingredients[j].toUpperCase().includes(ingredient.name.toUpperCase())) {
+                    if (recipes[i]) {
+                        var containsIngredient = false;
+                        if (recipes[i].name.toUpperCase().includes(ingredient.name.toUpperCase())) {
                             containsIngredient = true;
+                        };
+                        for (var j = 0; j < recipes[i].ingredients.length; j++) {
+                            if (recipes[i].ingredients[j] && recipes[i].ingredients[j].toUpperCase().includes(ingredient.name.toUpperCase())) {
+                                containsIngredient = true;
+                            }
                         }
-                    }
-                    if (containsIngredient) {
-                        var outerDiv = document.createElement('div');
-                        outerDiv.className = 'featuredBlock';
-                        var imgDiv = document.createElement('div');
-                        imgDiv.className = 'featuredBlockImg';
+                        if (containsIngredient) {
+                            var outerDiv = document.createElement('div');
+                            outerDiv.className = 'featuredBlock';
+                            var imgDiv = document.createElement('div');
+                            imgDiv.className = 'featuredBlockImg';
 
-                        var img = document.createElement('img');
-                        img.src = recipes[i].imgLink;
-                        imgDiv.appendChild(img);
-                        outerDiv.appendChild(imgDiv);
+                            var img = document.createElement('img');
+                            img.src = recipes[i].imgLink;
+                            imgDiv.appendChild(img);
+                            outerDiv.appendChild(imgDiv);
 
-                        var blockTitle = document.createElement('h6');
-                        blockTitle.innerHTML = recipes[i].name;
-                        outerDiv.appendChild(blockTitle);
+                            var blockTitle = document.createElement('h6');
+                            blockTitle.innerHTML = recipes[i].name;
+                            outerDiv.appendChild(blockTitle);
 
-                        document.getElementsByClassName('featuredSlider_inner')[0].appendChild(outerDiv);
-                        let recipeID = i;
-                        outerDiv.onclick = function() {
-                            Cookies.set('recipeInputID', recipeID);
-                            window.location = 'recipe.html';
+                            document.getElementsByClassName('featuredSlider_inner')[0].appendChild(outerDiv);
+                            let recipeID = i;
+                            outerDiv.onclick = function() {
+                                Cookies.set('recipeInputID', recipeID);
+                                window.location = 'recipe.html';
+                            }
                         }
                     }
                 }
