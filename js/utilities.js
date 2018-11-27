@@ -80,6 +80,9 @@ function formatItemStats(ingredients, itemStats) {
         } else if (itemStats[stat] > nutrients[stat].oneArrowCutoff) {
             arrows = '↑';
             name = stat;
+        } else {
+            arrows = '';
+            name = stat;
         }
         if (name) outputStats.push([arrows, name, itemStats[stat], percentile]);
     }
@@ -87,6 +90,30 @@ function formatItemStats(ingredients, itemStats) {
         return b[3] - a[3];
     });
     return outputStats;
+}
+
+
+function genPercPowerBar(percent) {
+    var powerBarDiv = document.createElement('div');
+    powerBarDiv.classList = 'powerBarDiv';
+    var numDots = 10;
+    for (var i = 0; i < numDots; i++) {
+        var dot = document.createElement('div');
+        if (percent < i/numDots) {
+            dot.classList = 'dot lit';
+        } else {
+            dot.classList = 'dot';
+        }
+        if (percent < .3333 && percent > i/numDots) {
+            dot.style.backgroundColor = 'yellow';
+        } else if (percent < .6666 && percent > i/numDots) {
+            dot.style.backgroundColor = 'greenyellow';
+        } else if (percent > i/numDots) {
+            dot.style.backgroundColor = 'lime';
+        }
+        powerBarDiv.appendChild(dot);
+    }
+    return powerBarDiv;
 }
 
 

@@ -10,6 +10,36 @@
     text-align: center;
 }
 
+.statsNode {
+    display: inline-flex;
+}
+
+.statsNode h6 {
+    display: inline-flex;
+    margin: 0;
+}
+
+.powerBarDiv {
+    height: 14px;
+    box-shadow: 0px 0.5px 2px #ccc;
+    border-radius: 2px;
+    display: inline-flex;
+    margin-top: 4px;
+    margin-right: 6px;
+}
+
+.dot {
+    background-color: white;
+    height: 12px;
+    width: 10px;
+    margin: 1px;
+/*    box-shadow: 1px 1px 6px #aaaaaa;*/
+/*    clip-path: circle(5px at center);*/
+    border-radius: 2px;
+    opacity: 0.9;
+}
+
+
 .backButton {
     border-radius: 4px;
 }
@@ -59,4 +89,29 @@
 .midIcon h6 {
     font-size: 9px;
     bottom: 0;
+}
+
+
+.tooltipDiv {
+    position: relative;
+    display: inline-grid;
+/*    border-bottom: 1px dotted black;*/
+}
+
+.tooltipDiv .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgba(0.5,0.5,0.5,0.5);
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    right: -130px;
+}
+
+.tooltipDiv:hover .tooltiptext {
+    visibility: visible;
 }
