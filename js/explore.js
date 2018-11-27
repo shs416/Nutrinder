@@ -116,7 +116,12 @@ function addIngredientCards() {
 
             exploreSlider.appendChild(sliderCard);
             var leftStart = (window.innerWidth / 2) - (sliderCard.offsetWidth / 2)
-            var leftVal = leftStart + ((sliderCard.offsetWidth + sliderCardSpacing) * numCards);
+
+            if (Cookies.get('cardOffset')) {
+                sliderIndex = Cookies.get('cardOffset');
+            }
+            var leftVal = leftStart + ((sliderCard.offsetWidth + sliderCardSpacing) * numCards) + ((-1*sliderIndex)*(sliderCard.offsetWidth + sliderCardSpacing));
+            
             sliderCard.style.left = leftVal + "px";
             sliderCard.index = i;
 
@@ -152,6 +157,7 @@ function moveSliderLeft(speed) {
             animationDone = true;
         });
         sliderIndex--;
+        Cookies.set('cardOffset', sliderIndex);
     }
 }
 
@@ -165,6 +171,7 @@ function moveSliderRight(speed) {
             animationDone = true;
         });
         sliderIndex++;
+        Cookies.set('cardOffset', sliderIndex);
     }
 }
 

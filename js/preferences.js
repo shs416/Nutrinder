@@ -19,6 +19,7 @@ function logout() {
 
 function savePreferences() {
     setUserState('preferences', preferences);
+    Cookies.set('cardOffset', 0);
 }
 
 $('#dietForm input').on('change', function () {
