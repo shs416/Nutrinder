@@ -3,7 +3,7 @@ var sliderIndex = 0;
 var savedIngredients = [];
 var numCards = 0;
 
-let maxStatsShown = 3;
+let maxStatsShown = 4;
 let sliderScrollSensitivity = 20;
 var scrollSwipeDone = true;
 
@@ -61,7 +61,8 @@ function addIngredientCards() {
             }
         } catch {}
 
-
+        var cardHeight = Math.min(document.getElementById('sliderDiv').offsetHeight-370, 320)+'px';
+            
         if (dietAllows) {
 
             var sliderCard = document.createElement('div');
@@ -69,6 +70,7 @@ function addIngredientCards() {
 
             var imgDiv = document.createElement('div');
             imgDiv.className = 'sliderImg';
+            imgDiv.style.height = cardHeight;
             var img = document.createElement('img');
             img.src = ingredientCards[i].imgLink;
             imgDiv.appendChild(img);
@@ -98,10 +100,13 @@ function addIngredientCards() {
             statsToolTip.textContent = '↑ is >20% of your daily needs, ↑↑ is >60% of your daily needs';
             statsListNode.appendChild(statsToolTip);
             for (var j = 0; j < (statsList.length > maxStatsShown ? maxStatsShown : statsList.length); j++) {
-                var statsNode = document.createElement('h6');
-                statsNode.innerHTML = statsList[j][0] + ' ' + statsList[j][1];
-                if (statsList[j] == '↑') statsNode.style.color = "#8ef29a";
-                else if (statsList[j] == '↑↑') statsNode.style.color = "#07c41d";
+                var statsNode = document.createElement('div');
+                statsNode.classList = 'statsNode';
+                var statsText = document.createElement('h6');
+                statsText.innerHTML = statsList[j][1];
+                var statsBar = genPercPowerBar(statsList[j][3]);
+                statsNode.appendChild(statsBar);
+                statsNode.appendChild(statsText);
                 statsListNode.appendChild(statsNode);
             }
             sliderCard.appendChild(statsListNode);
