@@ -154,7 +154,7 @@ function addFooter() {
     middleIconsDiv.id = 'middleIconsDiv';
     var iconNames = ['Saved', 'Explore', 'Preferences'];
     var iconPaths = ['fas fa-heart', 'fas fa-star', 'fas fa-cogs'];
-    var onclicks = ['index.html', 'explore.html', 'preferences.html'];
+    var onclicks = ['index.html', 'explore2.html', 'preferences.html'];
     for (var i = 0; i < 3; i++) {
         var midIcon = document.createElement('div');
         midIcon.classList = 'midIcon';
