@@ -71,6 +71,11 @@ function formatItemStats(ingredients, itemStats) {
         }
     }
 
+    var preferences = {};
+    if (Cookies.get('preferences')) {
+        preferences = JSON.parse(Cookies.get('preferences'));
+    }
+
     outputStats = [];
     for (stat in itemStats) {
         var percentile = 0;
@@ -79,19 +84,37 @@ function formatItemStats(ingredients, itemStats) {
         } else {
             switch (stat) {
                 case 'protein':
-                    percentile = itemStats[stat]/49;
+                    if (preferences.protein == 'Low') {
+                        percentile = itemStats[stat] / (150*0.36);
+                    } else if (preferences.protein == 'High') {
+                        percentile = itemStats[stat] / (180*0.36);
+                    } else {
+                        percentile = itemStats[stat] / 49;
+                    }
                     break;
                 case 'carbs':
-                    percentile = itemStats[stat]/280;
+                    if (preferences.carbs == 'Low') {
+                        percentile = itemStats[stat] / 225;
+                    } else if (preferences.carbs == 'High') {
+                        percentile = itemStats[stat] / 325;
+                    } else {
+                        percentile = itemStats[stat] / 280;
+                    }
                     break;
                 case 'totalfat':
-                    percentile = itemStats[stat]/60;
+                    if (preferences.totalfat == 'Low') {
+                        percentile = itemStats[stat] / 40;
+                    } else if (preferences.totalfat == 'High') {
+                        percentile = itemStats[stat] / 70;
+                    } else {
+                        percentile = itemStats[stat] / 55;
+                    }
                     break;
                 case 'calories':
-                    percentile = itemStats[stat]/2000;
+                    percentile = itemStats[stat] / 2000;
                     break;
                 default:
-                    percentile = itemStats[stat]/100;
+                    percentile = itemStats[stat] / 100;
             }
         }
         var percentile = (itemStats[stat] - nutrients[stat].vals[0]) / (nutrients[stat].vals[nutrients[stat].vals.length - 1] - nutrients[stat].vals[0]);
