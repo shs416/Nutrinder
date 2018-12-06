@@ -120,14 +120,16 @@
                         var imgDiv = document.createElement('div');
                         imgDiv.className = 'savedItemImg';
                         imgDiv.style.backgroundImage = "url(" + ingredient.imgLink + ")";
-                        item.appendChild(imgDiv);
+
 
                         var itemInfo = document.createElement('div');
                         itemInfo.className = 'itemInfo';
 
                         var title = document.createElement('h4');
                         title.innerHTML = ingredient.name;
+                        
                         itemInfo.append(title);
+
 
                         var info = document.createElement('p');
                         var list = formatItemStats(ingredients, ingredient.stats);
@@ -136,9 +138,12 @@
                             outputString += (list[j][0] + list[j][1] + ' ');
                         }
                         info.innerHTML = outputString;
-                        itemInfo.appendChild(info);
+//                        itemInfo.appendChild(info);
 
+                        item.appendChild(imgDiv);
                         item.appendChild(itemInfo);
+                        
+                        
                         let ingredientIndex = savedIngredientIndexes[i];
                         item.onclick = function() {
                             Cookies.set('ingredientInputID', ingredientIndex);

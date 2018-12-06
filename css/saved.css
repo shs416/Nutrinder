@@ -44,12 +44,20 @@
 }
 
 .itemInfo {
-    padding-top: 8px;
-    padding-left: 12px;
+    padding: 8px 12px;
     color: limegreen;
     white-space: nowrap;
 /*    overflow: hidden;*/
     text-overflow: ellipsis;
+    height: 100%;
+    display: table;
+}
+
+.itemInfo h4 {
+    white-space: normal;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 18px;
 }
 
 a {
