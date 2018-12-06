@@ -64,8 +64,8 @@ function addIngredientCards() {
             }
         } catch {}
 
-        var cardHeight = Math.min(document.getElementsByTagName("BODY")[0].offsetHeight-370, 320)+'px';
-            
+        var cardHeight = Math.min(document.getElementsByTagName("BODY")[0].offsetHeight - 370, 320) + 'px';
+
         if (dietAllows) {
 
             var sliderCard = document.createElement('div');
@@ -101,22 +101,35 @@ function addIngredientCards() {
             var statsToolTip = document.createElement('span');
             statsToolTip.classList = 'tooltiptext';
             statsToolTip.textContent = 'This represents what percent each nutrient is of your daily need';
-            statsListNode.appendChild(statsToolTip);
+            //            statsListNode.appendChild(statsToolTip);
             statsTitle = document.createElement('h6');
             statsTitle.classList = 'statsTitle';
             statsTitle.textContent = 'Percentage of Daily Needs';
             statsListNode.appendChild(statsTitle);
-            for (var j = 0; j < (statsList.length > maxStatsShown ? maxStatsShown : statsList.length); j++) {
-                var statsNode = document.createElement('div');
-                statsNode.classList = 'statsNode';
-                var statsText = document.createElement('h6');
-                statsText.innerHTML = fixCaps(statsList[j][1]);
-                var statsBar = genPercPowerBar(statsList[j][3]);
-                statsNode.appendChild(statsText);
-                statsNode.appendChild(statsBar);
-                statsListNode.appendChild(statsNode);
+
+            console.log(statsList);
+
+            var statsToShow = ['calories', 'protein', 'carbs', 'totalfat'];
+            for (curStat in statsToShow) {
+//                console.log('Now checking for', curStat);
+                for (var j = 0; j < statsList.length; j++) {
+//                    console.log('Against', statsList[j][1])
+                    if (statsList[j][1] == statsToShow[curStat]) {
+                        var statsNode = document.createElement('div');
+                        statsNode.classList = 'statsNode';
+                        var statsText = document.createElement('h6');
+                        statsText.innerHTML = fixCaps(statsList[j][1]);
+                        var statsBar = genPercPowerBar(statsList[j][3]);
+                        statsNode.appendChild(statsText);
+                        statsNode.appendChild(statsBar);
+                        statsListNode.appendChild(statsNode);
+                    }
+                }
             }
             sliderCard.appendChild(statsListNode);
+
+
+
 
             let inputIngredientID = i;
             sliderCard.onclick = function (pointing) {
@@ -132,14 +145,14 @@ function addIngredientCards() {
             if (Cookies.get('cardOffset')) {
                 sliderIndex = Cookies.get('cardOffset');
             }
-            var leftVal = leftStart + ((sliderCard.offsetWidth + sliderCardSpacing) * numCards) + ((-1*sliderIndex)*(sliderCard.offsetWidth + sliderCardSpacing));
-            
+            var leftVal = leftStart + ((sliderCard.offsetWidth + sliderCardSpacing) * numCards) + ((-1 * sliderIndex) * (sliderCard.offsetWidth + sliderCardSpacing));
+
             sliderCard.style.left = leftVal + "px";
             sliderCard.index = i;
 
             sliderCard.style.zIndex = String(-1 * i);
             numCards++;
-            
+
             updateArrowButtonVisibility();
         }
     }
@@ -151,7 +164,7 @@ function updateArrowButtonVisibility() {
     } else {
         document.getElementById('arrow-left').style.visibility = 'inherit';
     }
-    if (sliderIndex == numCards-1) {
+    if (sliderIndex == numCards - 1) {
         document.getElementById('arrow-right').style.visibility = 'hidden';
     } else {
         document.getElementById('arrow-right').style.visibility = 'inherit';
