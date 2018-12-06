@@ -201,3 +201,35 @@ function addFooter() {
     }
 
 }
+
+function fixCaps(inputString) {
+    switch (inputString) {
+        case 'vitaminA':
+            var result = 'Vitamin A';
+            break;
+        case 'iron':
+            var result = 'Iron';
+            break;
+        case 'calcium':
+            var result = 'Calcium';
+            break;
+        case 'protein':
+            var result = 'Protein';
+            break;
+        case 'carbs':
+            var result = 'Carbs';
+            break;
+        case 'vitaminC':
+            var result = 'Vitamin C';
+            break;
+        case 'calories':
+            var result = 'Calories';
+            break;
+        case 'totalfat':
+            var result = 'Total Fat';
+            break;
+        default:
+            var result = inputString;
+    }
+    return result
+}

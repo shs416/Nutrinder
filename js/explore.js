@@ -103,7 +103,7 @@ function addIngredientCards() {
                 var statsNode = document.createElement('div');
                 statsNode.classList = 'statsNode';
                 var statsText = document.createElement('h6');
-                statsText.innerHTML = statsList[j][1];
+                statsText.innerHTML = fixCaps(statsList[j][1]);
                 var statsBar = genPercPowerBar(statsList[j][3]);
                 statsNode.appendChild(statsBar);
                 statsNode.appendChild(statsText);
