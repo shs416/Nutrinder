@@ -104,7 +104,7 @@ function addIngredientCards() {
             statsListNode.appendChild(statsToolTip);
             statsTitle = document.createElement('h6');
             statsTitle.classList = 'statsTitle';
-            statsTitle.textContent = '% of Daily Needs';
+            statsTitle.textContent = 'Percentage of Daily Needs';
             statsListNode.appendChild(statsTitle);
             for (var j = 0; j < (statsList.length > maxStatsShown ? maxStatsShown : statsList.length); j++) {
                 var statsNode = document.createElement('div');
