@@ -105,8 +105,8 @@ function addIngredientCards() {
                 var statsText = document.createElement('h6');
                 statsText.innerHTML = fixCaps(statsList[j][1]);
                 var statsBar = genPercPowerBar(statsList[j][3]);
-                statsNode.appendChild(statsBar);
                 statsNode.appendChild(statsText);
+                statsNode.appendChild(statsBar);
                 statsListNode.appendChild(statsNode);
             }
             sliderCard.appendChild(statsListNode);

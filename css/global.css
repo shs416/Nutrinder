@@ -16,7 +16,7 @@
 
 .statsNode h6 {
     display: inline-flex;
-    margin: 0;
+    margin: 0 10px 0 auto
 }
 
 .powerBarDiv {
@@ -95,6 +95,8 @@
 .tooltipDiv {
     position: relative;
     display: inline-grid;
+    justify-content: center;
+    width: 100%;
 /*    border-bottom: 1px dotted black;*/
 }
 
