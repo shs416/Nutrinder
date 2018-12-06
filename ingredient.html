@@ -176,7 +176,7 @@
 //                    statsText.style.width = '80px';
                     var statsAmount = document.createElement('h6');
                     console.log(statsList[j][3]);
-                    statsAmount.innerHTML = (statsList[j][3]*100).toString().substring(0,(statsList[j][3]*100).toString().indexOf('.'))+'%';
+                    statsAmount.innerHTML = Math.ceil(statsList[j][3]*100)+'%';
                     statsAmount.style.textAlign = 'left';
                     statsAmount.style.width = '50px';
                     statsAmount.style.margin = '0';
