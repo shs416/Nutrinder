@@ -82,9 +82,6 @@
             <h4>Featured Ingredients</h4>
 
             <div class='featuredSlider'>
-                <div class='featuredSlider_inner'>
-
-                </div>
             </div>
 
         </div>
@@ -202,7 +199,7 @@
                         blockTitle.innerHTML = ingredients[i].name;
                         outerDiv.appendChild(blockTitle);
 
-                        document.getElementsByClassName('featuredSlider_inner')[0].appendChild(outerDiv);
+                        document.getElementsByClassName('featuredSlider')[0].appendChild(outerDiv);
                         let ingredientID = i;
                         outerDiv.onclick = function() {
                             Cookies.set('ingredientInputID', ingredientID);
