@@ -61,7 +61,7 @@ function addIngredientCards() {
             }
         } catch {}
 
-        var cardHeight = Math.min(document.getElementById('sliderDiv').offsetHeight-370, 320)+'px';
+        var cardHeight = Math.min(document.getElementsByTagName("BODY")[0].offsetHeight-370, 320)+'px';
             
         if (dietAllows) {
 
