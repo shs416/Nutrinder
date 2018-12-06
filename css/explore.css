@@ -67,7 +67,11 @@
     height: 50px;
     width: 50px;
     top: 50%;
-    opacity: 0.4;
+/*    opacity: 0.4;*/
+    background-color: #50C878;
+    border-radius: 50%;
+    box-shadow: 1px 1px 6px #bbbbbb;
+    padding: 2px;
 }
 
 #arrow-left {
