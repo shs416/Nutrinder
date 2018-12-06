@@ -73,6 +73,27 @@ function formatItemStats(ingredients, itemStats) {
 
     outputStats = [];
     for (stat in itemStats) {
+        var percentile = 0;
+        if (stat.includes('vitamin') || stat == 'iron' || stat == 'calcium') {
+            percentile = itemStats[stat];
+        } else {
+            switch (stat) {
+                case 'protein':
+                    percentile = itemStats[stat]/49;
+                    break;
+                case 'carbs':
+                    percentile = itemStats[stat]/280;
+                    break;
+                case 'totalfat':
+                    percentile = itemStats[stat]/60;
+                    break;
+                case 'calories':
+                    percentile = itemStats[stat]/2000;
+                    break;
+                default:
+                    percentile = itemStats[stat]/100;
+            }
+        }
         var percentile = (itemStats[stat] - nutrients[stat].vals[0]) / (nutrients[stat].vals[nutrients[stat].vals.length - 1] - nutrients[stat].vals[0]);
         var name = null;
         var arrows = null;
