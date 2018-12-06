@@ -76,7 +76,7 @@ function addHeader() {
     var title = document.createElement('a');
     title.classList = 'navbar-brand js-scroll-trigger';
     title.href = 'index.html';
-    title.textContent = 'Nütrinder';
+    title.textContent = 'NütriSeek';
     container.appendChild(title);
     nav.appendChild(container);
     document.body.appendChild(nav);
