@@ -179,7 +179,7 @@ function addHeader() {
     var title = document.createElement('a');
     title.classList = 'navbar-brand js-scroll-trigger';
     title.href = 'index.html';
-    title.textContent = 'Nütrinder';
+    title.textContent = 'NütriSeek';
     var logout = document.createElement('h6');
     logout.onclick = function () {
         Cookies.set('loggedIn', false);
