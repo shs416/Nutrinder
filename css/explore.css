@@ -53,6 +53,7 @@
 
 .sliderCard h3 {
     margin-top: 10px;
+    font-size: 24px;
     color: #4f4e4e;
     white-space: nowrap;
     overflow: hidden;
@@ -163,4 +164,9 @@ body {
 
 .nav-pills .nav-link.active {
     background-color: #50C878;
+}
+
+.tooltipDiv h6 {
+    margin-bottom: 0;
+    margin-top: 4px;
 }

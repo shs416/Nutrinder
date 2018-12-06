@@ -157,12 +157,13 @@
 
 
                 var statsList = formatItemStats(ingredients, ingredients[ingredientInputID].stats);
+                console.log(statsList);
                 var statsListNode = document.createElement('div');
                 statsListNode.classList = 'tooltipDiv';
                 var statsToolTip = document.createElement('span');
                 statsToolTip.classList = 'tooltiptext';
                 statsToolTip.textContent = 'This represents what percent each nutrient is of your daily need';
-//                statsListNode.appendChild(statsToolTip);
+                //                statsListNode.appendChild(statsToolTip);
                 statsTitle = document.createElement('h6');
                 statsTitle.classList = 'statsTitle';
                 statsTitle.textContent = 'Percentage of Daily Needs';
@@ -172,9 +173,21 @@
                     statsNode.classList = 'statsNode';
                     var statsText = document.createElement('h6');
                     statsText.innerHTML = fixCaps(statsList[j][1]);
+//                    statsText.style.width = '80px';
+                    var statsAmount = document.createElement('h6');
+                    console.log(statsList[j][3]);
+                    statsAmount.innerHTML = (statsList[j][3]*100).toString().substring(0,(statsList[j][3]*100).toString().indexOf('.'))+'%';
+                    statsAmount.style.textAlign = 'left';
+                    statsAmount.style.width = '50px';
+                    statsAmount.style.margin = '0';
                     var statsBar = genPercPowerBar(statsList[j][3]);
                     statsNode.appendChild(statsText);
+                    
                     statsNode.appendChild(statsBar);
+                    
+                    statsNode.appendChild(statsAmount);
+
+//                                        statsListNode.appendChild(statsText);
                     statsListNode.appendChild(statsNode);
                 }
                 document.getElementById('statsList').appendChild(statsListNode);

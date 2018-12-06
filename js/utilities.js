@@ -75,13 +75,17 @@ function formatItemStats(ingredients, itemStats) {
     if (Cookies.get('preferences')) {
         preferences = JSON.parse(Cookies.get('preferences'));
     }
+    
+    var unit = '';
 
     outputStats = [];
     for (stat in itemStats) {
         var percentile = 0;
         if (stat.includes('vitamin') || stat == 'iron' || stat == 'calcium') {
             percentile = itemStats[stat];
+            unit = '%';
         } else {
+            unit = 'g';
             switch (stat) {
                 case 'protein':
                     if (preferences.protein == 'Low') {
@@ -112,6 +116,7 @@ function formatItemStats(ingredients, itemStats) {
                     break;
                 case 'calories':
                     percentile = itemStats[stat] / 2000;
+                    unit = '';
                     break;
                 default:
                     percentile = itemStats[stat] / 100;
@@ -130,7 +135,7 @@ function formatItemStats(ingredients, itemStats) {
             arrows = '';
             name = stat;
         }
-        if (name) outputStats.push([arrows, name, itemStats[stat], percentile]);
+        if (name) outputStats.push([arrows, name, itemStats[stat]+unit, percentile]);
     }
     outputStats.sort(function (a, b) {
         return b[3] - a[3];
@@ -142,10 +147,10 @@ function formatItemStats(ingredients, itemStats) {
 function genPercPowerBar(percent) {
     var powerBarDiv = document.createElement('div');
     powerBarDiv.classList = 'powerBarDiv';
-    var numDots = 10;
+    var numDots = 11;
     for (var i = 0; i < numDots; i++) {
         var dot = document.createElement('div');
-        if (percent < i / numDots) {
+        if (percent <= i / numDots) {
             dot.classList = 'dot lit';
         } else {
             dot.classList = 'dot';
