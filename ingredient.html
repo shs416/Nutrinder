@@ -75,9 +75,6 @@
             <h4>Recipes</h4>
 
             <div class='featuredSlider'>
-                <div class='featuredSlider_inner'>
-
-                </div>
             </div>
 
         </div>
@@ -165,7 +162,7 @@
                 var statsToolTip = document.createElement('span');
                 statsToolTip.classList = 'tooltiptext';
                 statsToolTip.textContent = 'This represents what percent each nutrient is of your daily need';
-                statsListNode.appendChild(statsToolTip);
+//                statsListNode.appendChild(statsToolTip);
                 statsTitle = document.createElement('h6');
                 statsTitle.classList = 'statsTitle';
                 statsTitle.textContent = 'Percentage of Daily Needs';
@@ -212,7 +209,7 @@
                             blockTitle.innerHTML = recipes[i].name;
                             outerDiv.appendChild(blockTitle);
 
-                            document.getElementsByClassName('featuredSlider_inner')[0].appendChild(outerDiv);
+                            document.getElementsByClassName('featuredSlider')[0].appendChild(outerDiv);
                             let recipeID = i;
                             outerDiv.onclick = function() {
                                 Cookies.set('recipeInputID', recipeID);
