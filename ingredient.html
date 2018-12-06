@@ -161,11 +161,35 @@
 
                 var statsList = formatItemStats(ingredients, ingredients[ingredientInputID].stats);
                 console.log(statsList);
-                for (var i = 0; i < statsList.length; i++) {
-                    var stat = document.createElement('li');
-                    stat.innerHTML = statsList[i][0] + '\t' + statsList[i][1] + ': ' + statsList[i][2] + 'g';
-                    document.getElementById('statsList').appendChild(stat);
+//                for (var i = 0; i < statsList.length; i++) {
+//                    var stat = document.createElement('li');
+//                    stat.innerHTML = statsList[i][0] + '\t' + statsList[i][1] + ': ' + statsList[i][2] + 'g';
+//                    document.getElementById('statsList').appendChild(stat);
+//                }
+
+
+
+                var statsListNode = document.createElement('div');
+                statsListNode.classList = 'tooltipDiv';
+                var statsToolTip = document.createElement('span');
+                statsToolTip.classList = 'tooltiptext';
+                statsToolTip.textContent = 'This represents what percent each nutrient is of your daily need';
+                statsListNode.appendChild(statsToolTip);
+                for (var j = 0; j < statsList.length; j++) {
+                    var statsNode = document.createElement('div');
+                    statsNode.classList = 'statsNode';
+                    var statsText = document.createElement('h6');
+                    statsText.innerHTML = statsList[j][1];
+                    var statsBar = genPercPowerBar(statsList[j][3]);
+                    statsNode.appendChild(statsBar);
+                    statsNode.appendChild(statsText);
+                    statsListNode.appendChild(statsNode);
                 }
+                document.getElementById('statsList').appendChild(statsListNode);
+
+
+
+
 
                 for (var i = 0; i < recipes.length; i++) {
                     if (recipes[i]) {

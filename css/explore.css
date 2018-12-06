@@ -141,14 +141,6 @@ body {
     padding-left: 25px;
 }
 
-#statsList {
-    list-style-type: none;
-    padding-left: 10px;
-    color: limegreen;
-    font-weight: 600;
-    font-size: 20px;
-}
-
 .text-uppercase {
     top: 65px;
     position: relative;

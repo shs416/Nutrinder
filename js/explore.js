@@ -97,7 +97,7 @@ function addIngredientCards() {
             statsListNode.classList = 'tooltipDiv';
             var statsToolTip = document.createElement('span');
             statsToolTip.classList = 'tooltiptext';
-            statsToolTip.textContent = '↑ is >20% of your daily needs, ↑↑ is >60% of your daily needs';
+            statsToolTip.textContent = 'This represents what percent each nutrient is of your daily need';
             statsListNode.appendChild(statsToolTip);
             for (var j = 0; j < (statsList.length > maxStatsShown ? maxStatsShown : statsList.length); j++) {
                 var statsNode = document.createElement('div');
