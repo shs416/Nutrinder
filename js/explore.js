@@ -1,3 +1,6 @@
+console.log('Running explore.js');
+
+
 var sliderCardSpacing = 20;
 var sliderIndex = 0;
 var savedIngredients = [];
@@ -99,6 +102,10 @@ function addIngredientCards() {
             statsToolTip.classList = 'tooltiptext';
             statsToolTip.textContent = 'This represents what percent each nutrient is of your daily need';
             statsListNode.appendChild(statsToolTip);
+            statsTitle = document.createElement('h6');
+            statsTitle.classList = 'statsTitle';
+            statsTitle.textContent = '% of Daily Needs';
+            statsListNode.appendChild(statsTitle);
             for (var j = 0; j < (statsList.length > maxStatsShown ? maxStatsShown : statsList.length); j++) {
                 var statsNode = document.createElement('div');
                 statsNode.classList = 'statsNode';
@@ -223,3 +230,7 @@ window.onload = function () {
 function updateSaved() {
     setUserState('savedIngredients', savedIngredients);
 }
+
+
+
+console.log('Done running explore.js');

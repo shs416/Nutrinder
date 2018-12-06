@@ -1,3 +1,5 @@
+console.log('Running utilities');
+
 // Check if logged in
 if (!Cookies.get('loggedIn') || Cookies.get('loggedIn') == 'false' || !Cookies.get('username')) {
     window.location = 'login.html';
@@ -233,3 +235,7 @@ function fixCaps(inputString) {
     }
     return result
 }
+
+
+
+console.log('Done running utilities');

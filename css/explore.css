@@ -57,10 +57,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.sliderCard h6 {
-    color: #50C878;
+    text-align: center;
 }
 
 #arrow-left, #arrow-right {

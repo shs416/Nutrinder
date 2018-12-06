@@ -166,6 +166,10 @@
                 statsToolTip.classList = 'tooltiptext';
                 statsToolTip.textContent = 'This represents what percent each nutrient is of your daily need';
                 statsListNode.appendChild(statsToolTip);
+                statsTitle = document.createElement('h6');
+                statsTitle.classList = 'statsTitle';
+                statsTitle.textContent = '% of Daily Needs';
+                statsListNode.appendChild(statsTitle);
                 for (var j = 0; j < statsList.length; j++) {
                     var statsNode = document.createElement('div');
                     statsNode.classList = 'statsNode';
