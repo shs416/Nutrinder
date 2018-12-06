@@ -72,7 +72,7 @@
 
         <div class="recipeSteps">
             <h4>Instructions</h4>
-            <h6 id="recipeInfo">1 Serving - 1.5 Hours</h6>
+            <h6 id="recipeInfo">Loading...</h6>
             <ul id="stepsList">
             </ul>
         </div>
@@ -173,6 +173,8 @@
                     step.innerHTML = recipe.steps[i];
                     document.getElementById('stepsList').appendChild(step);
                 }
+                
+                document.getElementById('recipeInfo').textContent = '1 Serving - '+parseInt(Math.floor(Math.random()* 9)+1)*10+' Minutes';
 
                 for (var i = 0; i < ingredients.length; i++) {
                     var containsIngredient = false;
