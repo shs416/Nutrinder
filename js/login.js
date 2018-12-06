@@ -33,7 +33,8 @@ function checkLogin() {
                     preferences: {
                         protein: "No preference",
                         diet: "No preference",
-                        carbs: "No preference"
+                        carbs: "No preference",
+                        totalfat: "No preference"
                     },
                     savedIngredients: [],
                     savedRecipes: []

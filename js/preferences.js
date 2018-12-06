@@ -1,15 +1,18 @@
 var preferences = {};
 if (Cookies.get('preferences')) {
     preferences = JSON.parse(Cookies.get('preferences'));
-    
-    $(":radio[value=\'"+preferences.diet+"\']", "#dietForm").prop("checked", true);
+
+    $(":radio[value=\'" + preferences.diet + "\']", "#dietForm").prop("checked", true);
     $('#dietButton').html(preferences.diet ? "Diet: " + preferences.diet : "Diet");
-                          
-    $(":radio[value=\'"+preferences.carbs+"\']", "#carbForm").prop("checked", true);
+
+    $(":radio[value=\'" + preferences.carbs + "\']", "#carbForm").prop("checked", true);
     $('#carbButton').html(preferences.carbs ? "Carbohydrates: " + preferences.carbs : "Carbohydrates");
-                          
-    $(":radio[value=\'"+preferences.protein+"\']", "#proteinForm").prop("checked", true);
+
+    $(":radio[value=\'" + preferences.protein + "\']", "#proteinForm").prop("checked", true);
     $('#proteinButton').html(preferences.protein ? "Protein: " + preferences.protein : "Protein");
+    
+    $(":radio[value=\'" + preferences.totalfat + "\']", "#totalfatForm").prop("checked", true);
+    $('#totalfatButton').html(preferences.totalfat ? "Total Fat: " + preferences.totalfat : "Total Fat");
 }
 
 function logout() {
@@ -48,10 +51,10 @@ $('#proteinForm input').on('change', function () {
 });
 
 
-$('#fatForm').on('change', function() {
-   var target = $('#fatButton');
-   target.html("Fats: " + $('input[name=radio4]:checked', '#fatForm').val()); 
+$('#totalfatForm').on('change', function () {
+    var target = $('#totalfatButton');
+    target.html("Total Fats: " + $('input[name=radio4]:checked', '#totalfatForm').val());
+    preferences.totalfat = $('input[name=radio4]:checked', '#totalfatForm').val();
     savePreferences();
-   /*console.log("Fats: " + $('input[name=radio4]:checked', '#fatForm').val());*/
+    /*console.log("Fats: " + $('input[name=radio4]:checked', '#fatForm').val());*/
 });
-
