@@ -248,6 +248,9 @@ function addFooter() {
         warningText.textContent = "Looks like you haven't set any dietary preferences yet, tap on Preferences to get started!";
         prefWarningDiv.appendChild(warningText);
         warningOuterDiv.appendChild(prefWarningDiv);
+        warningOuterDiv.onclick = function() {
+            document.getElementsByClassName('warningOuterDiv')[0].style.display = 'none';
+        }
         document.body.appendChild(warningOuterDiv);
     }
 
